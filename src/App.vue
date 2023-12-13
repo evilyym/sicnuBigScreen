@@ -26,43 +26,43 @@
             </div>
             <div class="textBox">
               <p>校区数量(个)</p>
-              <p>123</p>
+              <p>13</p>
             </div>
           </div>
 
           <div>
             <div class="appIcon">
-              <img src="./assets/imgs/学校.png" alt="">
+              <img src="./assets/imgs/部门.png" alt="">
             </div>
             <div class="textBox">
-              <p>校区数量(个)</p>
-              <p>123</p>
+              <p>部门数量(个)</p>
+              <p>23</p>
             </div>
           </div>
           <div>
             <div class="appIcon">
-              <img src="./assets/imgs/学校.png" alt="">
+              <img src="./assets/imgs/身份信息.png" alt="">
             </div>
             <div class="textBox">
-              <p>校区数量(个)</p>
-              <p>123</p>
+              <p>身份数量(个)</p>
+              <p>9923</p>
             </div>
           </div>
           <div>
             <div class="appIcon">
-              <img src="./assets/imgs/学校.png" alt="">
+              <img src="./assets/imgs/icon_激活.png" alt="">
             </div>
             <div class="textBox">
-              <p>校区数量(个)</p>
-              <p>123</p>
+              <p>激活使用率</p>
+              <p>54%</p>
             </div>
           </div>
         </div>
       </div>
 
       <div class="navList">
-        <div class="things" @mouseover="nav = 1" @mouseout="nav = 0"></div>
-        <div class="life" @mouseover="nav = 2" @mouseout="nav = 0"></div>
+        <div class="things" @mouseover="nav = 2" @mouseout="nav = 0"></div>
+        <div class="life" @mouseover="nav = 1" @mouseout="nav = 0"></div>
         <div class="supermarket" @mouseover="nav = 3" @mouseout="nav = 0"></div>
         <div class="pay" @mouseover="nav = 4" @mouseout="nav = 0"></div>
       </div>
@@ -75,15 +75,15 @@
             <p>1231</p>
           </div>
           <div>
-            <p>在编校聘人员(人)</p>
+            <p>后勤自聘人员(人)</p>
             <p>1231</p>
           </div>
           <div>
-            <p>在编校聘人员(人)</p>
+            <p>本科及以上学历人员(人)</p>
             <p>1231</p>
           </div>
           <div>
-            <p>在编校聘人员(人)</p>
+            <p>中级职称及以上(人)</p>
             <p>1231</p>
           </div>
         </div>
@@ -113,6 +113,7 @@
           <div id="main1"></div>
         </div>
       </div>
+
       <div class="itmeBox itmeBoxWidth" style="grid-column-start:2;grid-column-end:4;">
         <div class="itmeTitle">数字化应用</div>
         <div class="appList">
@@ -386,11 +387,12 @@ onMounted(() => {
     series: [
       {
         type: 'pie',
-        radius: ['30%', '50%'],
+        radius: ['20%', '45%'],
         avoidLabelOverlap: false,
+        label: { formatter: '{b}\n{c}%', textBorderColor: 'none', color: '#fff' },
         data: [
-          { value: 1048, name: '11' },
-          { value: 735, name: '22' }
+          { value: 80, name: '入住率' },
+          { value: 20, name: '未入住率' }
         ]
       }
     ]
@@ -805,9 +807,10 @@ onMounted(() => {
         background-image: url(./assets/imgs/数据框-六边形.png);
 
         p:first-child {
-          margin-top: 45px;
+          margin-top: 40px;
           color: #FFFFFF;
           font-size: 14px;
+          padding: 0 10px;
           text-align: center;
         }
 
@@ -927,4 +930,5 @@ onMounted(() => {
       right: 0;
     }
   }
-}</style>
+}
+</style>
