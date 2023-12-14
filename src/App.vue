@@ -2,9 +2,10 @@
   <div class="divBox">
     <div class="title">川师大生活数据大屏
       <!-- @click="toFullScreen" -->
-      <div style="color: aliceblue;">2023年12月11日 星期日 <i class="iocn clouds"></i> 多云 丨 <span v-if="1"
-          @click="toFullScreen"><i class="iocn full"></i>全屏</span><span v-else @click="toWindowScreen"><i
-            class="iocn window"></i>窗口</span>
+      <div style="color: aliceblue;">{{ getDateDay() }} {{ getWeek() }}
+        <!-- <i class="iocn clouds"></i> 多云  -->
+        丨 <span v-if="!isFull" @click="toFullScreen"><i class="iocn full"></i>全屏</span><span v-else
+          @click="toWindowScreen"><i class="iocn window"></i>窗口</span>
       </div>
     </div>
     <div class="navBox">
@@ -13,11 +14,11 @@
         <div class="peopleTitle"> 在校师生人数(人) </div>
         <div class="numBox">
           <div>1</div>
-          <div>2</div>
-          <div>3</div>
-          <div>4</div>
+          <div>0</div>
           <div>5</div>
-          <div>6</div>
+          <div>9</div>
+          <div>9</div>
+          <div>2</div>
         </div>
         <div class="applicationList">
           <div>
@@ -26,7 +27,7 @@
             </div>
             <div class="textBox">
               <p>校区数量(个)</p>
-              <p>13</p>
+              <p>2</p>
             </div>
           </div>
 
@@ -36,7 +37,7 @@
             </div>
             <div class="textBox">
               <p>部门数量(个)</p>
-              <p>23</p>
+              <p>100</p>
             </div>
           </div>
           <div>
@@ -45,7 +46,7 @@
             </div>
             <div class="textBox">
               <p>身份数量(个)</p>
-              <p>9923</p>
+              <p>30</p>
             </div>
           </div>
           <div>
@@ -54,17 +55,19 @@
             </div>
             <div class="textBox">
               <p>激活使用率</p>
-              <p>54%</p>
+              <p>90%</p>
             </div>
           </div>
         </div>
       </div>
 
       <div class="navList">
-        <div class="things" @mouseover="nav = 2" @mouseout="nav = 0"></div>
-        <div class="life" @mouseover="nav = 1" @mouseout="nav = 0"></div>
-        <div class="supermarket" @mouseover="nav = 3" @mouseout="nav = 0"></div>
-        <div class="pay" @mouseover="nav = 4" @mouseout="nav = 0"></div>
+        <div>
+          <div class="things" @mouseover="nav = 2" @mouseout="nav = 0"></div>
+          <div class="life" @mouseover="nav = 1" @mouseout="nav = 0"></div>
+          <div class="supermarket" @mouseover="nav = 3" @mouseout="nav = 0"></div>
+          <div class="pay" @mouseover="nav = 4" @mouseout="nav = 0"></div>
+        </div>
       </div>
 
       <div class="itmeBox">
@@ -72,19 +75,19 @@
         <div class="dataList peopleList">
           <div>
             <p>在编校聘人员(人)</p>
-            <p>1231</p>
+            <p>3982</p>
           </div>
           <div>
             <p>后勤自聘人员(人)</p>
-            <p>1231</p>
+            <p>3791</p>
           </div>
           <div>
             <p>本科及以上学历人员(人)</p>
-            <p>1231</p>
+            <p>3155</p>
           </div>
           <div>
             <p>中级职称及以上(人)</p>
-            <p>1231</p>
+            <p>3469</p>
           </div>
         </div>
       </div>
@@ -94,19 +97,19 @@
         <div class="dataBox">
           <div>
             <p>总楼幢数量(幢)</p>
-            <p>12,342</p>
+            <p>47</p>
           </div>
           <div>
             <p>总房间数(个)</p>
-            <p>12,342</p>
+            <p>8,935</p>
           </div>
           <div>
             <p>总床位数(个)</p>
-            <p>12,342</p>
+            <p>46,942</p>
           </div>
           <div>
             <p>总入住人数</p>
-            <p>12,342</p>
+            <p>41,663</p>
           </div>
 
           <div id="main"></div>
@@ -337,53 +340,50 @@
 import * as echarts from 'echarts';
 import autofit from 'autofit.js'
 
-import HorizontalBar from "./components/HorizontalBar.vue";
-import MapChart from "./components/MapChart.vue";
-import RadarBar from "./components/RadarBar.vue";
-import Relation from "./components/Relation.vue";
-import RingBar from "./components/RingBar.vue";
-import TotalData from "./components/TotalData.vue";
-import VerticalBar from "./components/VerticalBar.vue";
-import WordCloud from "./components/WordCloud.vue";
 import bg1 from '@/assets/imgs/bg-1.jpg';
-import { NSpin, NSpace } from 'naive-ui'
 
 import { provide, ref, onMounted } from "vue";
-import { getVisualization } from './api/visualization.js'
-import ChangeBg from "@/components/ChangeBg.vue";
 
 let currentBg = ref(bg1)
 provide('changeBackground', currentBg)
 
 const nav = ref(0)
-// const data = ref(null)
-// const loadData = async () => {
-//   data.value = await getVisualization()
-// }
-
-// loadData()
-// setInterval(() => {
-//   loadData()
-// }, 3000)
 
 autofit.init()
 
 const toFullScreen = () => {
-  document.documentElement.requestFullscreen()
+  // document.documentElement.requestFullscreen()
+  if (document.documentElement.requestFullscreen) {
+    document.documentElement.requestFullscreen();
+  } else if (document.documentElement.mozRequestFullScreen) {
+    document.documentElement.mozRequestFullScreen();
+  } else if (document.documentElement.webkitRequestFullscreen) {
+    document.documentElement.webkitRequestFullscreen();
+  } else if (document.documentElement.msRequestFullscreen) {
+    document.documentElement.msRequestFullscreen();
+  }
+  isFull.value = true
 }
 const toWindowScreen = () => {
-  document.documentElement.requestFullscreen()
+  if (document.exitFullScreen) {
+    document.exitFullScreen();
+  } else if (document.mozCancelFullScreen) {
+    document.mozCancelFullScreen();
+  } else if (document.webkitExitFullscreen) {
+    document.webkitExitFullscreen();
+  } else if (element.msExitFullscreen) {
+    element.msExitFullscreen();
+  }
+  isFull.value = false
 }
 
 onMounted(() => {
 
-  var chartDom = document.getElementById('main');
-  var chartDom1 = document.getElementById('main1');
-  var myChart = echarts.init(chartDom);
-  var myChart1 = echarts.init(chartDom1);
-  var option;
-
-  option = {
+  const chartDom = document.getElementById('main');
+  const chartDom1 = document.getElementById('main1');
+  const myChart = echarts.init(chartDom);
+  const myChart1 = echarts.init(chartDom1);
+  const option = {
     series: [
       {
         type: 'pie',
@@ -411,7 +411,26 @@ onMounted(() => {
   // },1000)
 })
 
+const isFull = ref(document.fullscreenElement !== null);
 
+const date = new Date()
+
+const getDateDay = () => {
+  const date = new Date();
+  const nowMonth = date.getMonth() + 1;
+  const strDate = date.getDate();
+  const seperator = "-";
+  if (nowMonth >= 1 && nowMonth <= 9) {
+    nowMonth = "0" + nowMonth;
+  }
+  if (strDate >= 0 && strDate <= 9) {
+    strDate = "0" + strDate;
+  }
+  return date.getFullYear() + "年" + nowMonth + "月" + strDate + "日";
+}
+const getWeek = () => {
+  return '星期' + '日一二三四五六'.charAt(new Date().getDay());
+}
 </script>
 
 <style lang="less" scoped>
@@ -718,7 +737,6 @@ onMounted(() => {
         width: 25px;
         display: inline-block;
         vertical-align: middle;
-
       }
 
       &::before {
@@ -860,6 +878,12 @@ onMounted(() => {
     position: relative;
 
     &>div {
+      margin: auto;
+      position: relative;
+      width: 850px;
+    }
+
+    &>div>div {
       position: absolute;
       width: 220px;
       height: 240px;
@@ -918,6 +942,7 @@ onMounted(() => {
       height: 100%;
       display: inline-block;
       left: 0;
+      top: 0;
     }
 
     &::after {
@@ -928,6 +953,7 @@ onMounted(() => {
       height: 100%;
       display: inline-block;
       right: 0;
+      top: 0;
     }
   }
 }
