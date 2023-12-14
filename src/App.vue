@@ -37,7 +37,7 @@
             </div>
             <div class="textBox">
               <p>部门数量(个)</p>
-              <p>100</p>
+              <p>{{113+22+7+36}}</p>
             </div>
           </div>
           <div>
@@ -46,7 +46,7 @@
             </div>
             <div class="textBox">
               <p>身份数量(个)</p>
-              <p>30</p>
+              <p>28</p>
             </div>
           </div>
           <div>
@@ -55,7 +55,7 @@
             </div>
             <div class="textBox">
               <p>激活使用率</p>
-              <p>90%</p>
+              <p>62%</p>
             </div>
           </div>
         </div>
@@ -125,18 +125,18 @@
 
             <div class="appOverview">
               <div class="appOverviewNum">
-                152
+                31
                 <p>应用总数</p>
               </div>
               <div class="appOverviewInfo">
-                <p>平台数量 <span> 40</span> </p>
-                <p>SaaS应用数<span> 40</span> </p>
+                <p>平台数量 <span> 4</span> </p>
+                <p>SaaS应用数<span> 29</span> </p>
               </div>
             </div>
 
             <div class="appOverview">
               <div class="appOverviewNum">
-                12
+                25
                 <p>场景总数</p>
               </div>
               <div>
