@@ -437,7 +437,7 @@ const date = new Date()
 const getDateDay = () => {
   const date = new Date();
   const nowMonth = date.getMonth() + 1;
-  const strDate = date.getDate();
+  let strDate = date.getDate();
   const seperator = "-";
   if (nowMonth >= 1 && nowMonth <= 9) {
     nowMonth = "0" + nowMonth;

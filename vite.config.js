@@ -6,7 +6,7 @@ import { resolve } from "path"
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [vue()],
-  base: '/bigScreen/',
+  base: '/sicnuCockpitBigScreen/',
   resolve: {
     alias: [ // 配置 @ 指代 src
       {
