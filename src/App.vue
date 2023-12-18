@@ -63,10 +63,10 @@
 
       <div class="navList">
         <div>
-          <div class="things" @mouseover="nav = 2" @mouseout="nav = 0"></div>
-          <div class="life" @mouseover="nav = 1" @mouseout="nav = 0"></div>
-          <div class="supermarket" @mouseover="nav = 3" @mouseout="nav = 0"></div>
-          <div class="pay" @mouseover="nav = 4" @mouseout="nav = 0"></div>
+          <div class="things" @mouseover="nav = 2" @click="goDataDetails" @mouseout="nav = 0"></div>
+          <div class="life" @mouseover="nav = 1" @click="goDataDetails" @mouseout="nav = 0"></div>
+          <div class="supermarket" @mouseover="nav = 3" @click="goDataDetails" @mouseout="nav = 0"></div>
+          <div class="pay" @mouseover="nav = 4" @click="goDataDetails" @mouseout="nav = 0"></div>
         </div>
       </div>
 
@@ -307,8 +307,8 @@
                   <div v-for="i in item">
                     <h4>{{ i.title }}</h4>
                     <div>
-                      <div v-for="j in i.list">
-                        <p>{{ j.name }}</p>
+                      <div v-for="j in i.list" style="">
+                        <p style="">{{ j.name }}</p>
                         {{ j.val }}
                       </div>
                     </div>
@@ -346,7 +346,7 @@ const arr = ref(array)
 let currentBg = ref(bg1)
 provide('changeBackground', currentBg)
 
-const nav = ref(0)
+const nav = ref(1)
 
 autofit.init()
 
@@ -374,6 +374,26 @@ const toWindowScreen = () => {
     element.msExitFullscreen();
   }
   isFull.value = false
+}
+
+const goDataDetails = (item) => {
+  switch (item.target.className) {
+    case 'things':
+      location.href
+      break;
+
+    case 'life':
+      location.href
+      break;
+
+    case 'supermarket':
+      location.href
+      break;
+
+    case 'pay':
+      location.href = 'https://dataease.goliveplus.cn/link/I9LI2gMx'
+      break;
+  }
 }
 
 onMounted(() => {
@@ -506,7 +526,7 @@ const getWeek = () => {
 
   div.itmeBox {
     width: 100%;
-    height: 440px;
+    height: 450px;
     background-image: url(./assets/imgs/区域框-标准.png);
     background-size: 100% 100%;
 
@@ -523,7 +543,7 @@ const getWeek = () => {
         font-weight: 400;
         color: #D8FEFF;
         font-size: 18px;
-        gap: 50px;
+        gap: 10px;
 
         .appListTitle {
           background-image: url(./assets/imgs/小标题-背景.png);
@@ -540,7 +560,7 @@ const getWeek = () => {
             gap: 20px;
 
             .appOverviewNum {
-              background-image: url(./assets//imgs/数字框.png);
+              background-image: url(./assets/imgs/数字框.png);
               background-size: 100% 100%;
               font-size: 40px;
               color: #0FFBD6;
@@ -616,7 +636,7 @@ const getWeek = () => {
             &>div {
               padding: 10px 20px;
               width: calc(50% - 15px);
-              background-image: url(./assets//imgs/数字框.png);
+              background-image: url(./assets/imgs/数字框.png);
               background-size: 100% 100%;
               height: 100px;
               font-size: 40px;
@@ -676,14 +696,18 @@ const getWeek = () => {
           // 生活 
           &.lifeList {
             .appListInfo {
-              margin-top: 15px;
+              margin-top: 5px;
               gap: 20px;
+              .lifeListInfo{
+                h4{
+                  margin-top: 5px;
+                }
+              }
 
               &>div {
                 padding: 0;
                 background: none;
                 width: calc(50% - 15px);
-                height: 120px;
                 color: #0FFBD6;
                 font-size: 18px;
 
@@ -693,11 +717,12 @@ const getWeek = () => {
                   // margin-top: 10px;
 
                   &>div {
-                    background-image: url(./assets//imgs/数字框.png);
+                    background-image: url(./assets/imgs/数字框.png);
                     background-size: 100% 100%;
-                    width: 30%;
+                    width: 33%;
                     height: 65px;
                     padding: 10px 20px;
+                    font-size: 14px;
                   }
                 }
               }
@@ -744,7 +769,7 @@ const getWeek = () => {
         width: 25px;
         display: inline-block;
         margin: auto;
-        content: url(./assets//imgs/小标题装饰-left.png);
+        content: url(./assets/imgs/小标题装饰-left.png);
       }
     }
 
@@ -892,10 +917,10 @@ const getWeek = () => {
       &.things {
         left: 50px;
         top: 70px;
-        background-image: url(./assets//imgs/智慧物联.png);
+        background-image: url(./assets/imgs/智慧物联.png);
 
         &:hover {
-          background-image: url('./assets//imgs/智慧物联(1).png');
+          background-image: url('./assets/imgs/智慧物联(1).png');
         }
       }
 
@@ -903,10 +928,10 @@ const getWeek = () => {
         left: 240px;
         height: 250px;
         top: 180px;
-        background-image: url(./assets//imgs/智慧生活.png);
+        background-image: url(./assets/imgs/智慧生活.png);
 
         &:hover {
-          background-image: url('./assets//imgs/智慧生活(1).png');
+          background-image: url('./assets/imgs/智慧生活(1).png');
         }
       }
 
@@ -914,10 +939,10 @@ const getWeek = () => {
         left: 420px;
         height: 265px;
         top: 20px;
-        background-image: url(./assets//imgs/餐饮商超.png);
+        background-image: url(./assets/imgs/餐饮商超.png);
 
         &:hover {
-          background-image: url('./assets//imgs/餐饮商超(1).png');
+          background-image: url('./assets/imgs/餐饮商超(1).png');
         }
       }
 
@@ -925,10 +950,10 @@ const getWeek = () => {
         left: 600px;
         height: 265px;
         top: 150px;
-        background-image: url(./assets//imgs/支付平台.png);
+        background-image: url(./assets/imgs/支付平台.png);
 
         &:hover {
-          background-image: url('./assets//imgs/支付平台(1).png');
+          background-image: url('./assets/imgs/支付平台(1).png');
         }
       }
     }
@@ -936,7 +961,7 @@ const getWeek = () => {
     &::before {
       position: absolute;
       content: ' ';
-      background-image: url(./assets//imgs/弧-left.png);
+      background-image: url(./assets/imgs/弧-left.png);
       width: 60px;
       height: 100%;
       display: inline-block;
