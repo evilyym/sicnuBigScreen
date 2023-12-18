@@ -346,7 +346,7 @@ const arr = ref(array)
 let currentBg = ref(bg1)
 provide('changeBackground', currentBg)
 
-const nav = ref(1)
+const nav = ref(0)
 
 autofit.init()
 
