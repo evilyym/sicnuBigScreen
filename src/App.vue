@@ -37,7 +37,7 @@
             </div>
             <div class="textBox">
               <p>部门数量(个)</p>
-              <p>{{113+22+7+36}}</p>
+              <p>{{ 113 + 22 + 7 + 36 }}</p>
             </div>
           </div>
           <div>
@@ -75,7 +75,7 @@
         <div class="dataList peopleList">
           <div>
             <p>在编校聘人员(人)</p>
-            <p>3982</p>
+            <p>5982</p>
           </div>
           <div>
             <p>后勤自聘人员(人)</p>
@@ -83,7 +83,7 @@
           </div>
           <div>
             <p>本科及以上学历人员(人)</p>
-            <p>3155</p>
+            <p>4155</p>
           </div>
           <div>
             <p>中级职称及以上(人)</p>
@@ -166,19 +166,19 @@
             <div class="appListInfo">
               <div>
                 <p>总交易金额(元)</p>
-                123123123
+                63526373.43
               </div>
               <div style="color: #AF67FF;">
                 <p>总交易笔数(笔)</p>
-                123123123
+                543235
               </div>
               <div style="color: #0FFBD6;">
                 <p>总支付场景数量</p>
-                123个
+                25个
               </div>
               <div style="color: #6DE256;">
                 <p>总支付渠道</p>
-                12个
+                3个
               </div>
             </div>
           </div>
@@ -216,46 +216,50 @@
           <div class="appInfoDetails supermarketList" v-show="nav == 3">
             <div>
               <div class="appListTitle">智慧餐饮</div>
-              <p>食堂数量(个) <span>124</span> 食堂数量(个) <span>124</span> </p>
+              <p> 食堂数量(个) <span style="width: 90px;display: inline-block;padding-left: 10px;">4</span>
+                档口数量(个) <span style="width: 90px;display: inline-block;padding-left: 10px;">76</span>
+              </p>
               <div class="appListInfo" style="gap: 10px;margin-top:10px">
                 <div>
-                  <p>总交易金额(元)</p>
-                  1
+                  <p>今日交易笔数(笔)</p>
+                  882
                 </div>
                 <div style="color: #AF67FF;">
-                  <p>总交易笔数(笔)</p>
-                  2
+                  <p>今日交易金额(元)</p>
+                  283,293
                 </div>
                 <div style="color: #0FFBD6;">
-                  <p>总支付场景数量</p>
-                  123个
+                  <p>订单总笔数(万笔)</p>
+                  24.32
                 </div>
                 <div style="color: #6DE256;">
-                  <p>总支付渠道</p>
-                  12个
+                  <p>订单总金额</p>
+                  33526373.43
                 </div>
               </div>
             </div>
 
             <div>
               <div class="appListTitle">智慧商圈</div>
-              <p>食堂数量(个) <span>124</span> 食堂数量(个) <span>124</span> </p>
+              <p> 门店数量(个) <span style="width: 90px;display: inline-block;padding-left: 10px;">2</span>
+                商品数量(个) <span style="width: 90px;display: inline-block;padding-left: 10px;">387</span>
+              </p>
               <div class="appListInfo" style="gap: 10px;margin-top:10px">
                 <div>
-                  <p>总交易金额(元)</p>
-                  2
+                  <p>今日交易笔数(笔)</p>
+                  182
                 </div>
                 <div style="color: #AF67FF;">
-                  <p>总交易笔数(笔)</p>
-                  3
+                  <p>今日交易金额(元)</p>
+                  183,293
                 </div>
                 <div style="color: #0FFBD6;">
-                  <p>总支付场景数量</p>
-                  123个
+                  <p>订单总笔数(万笔)</p>
+                  14.32
                 </div>
                 <div style="color: #6DE256;">
-                  <p>总支付渠道</p>
-                  12个
+                  <p>订单总金额</p>
+                  23526373.88
                 </div>
               </div>
             </div>
@@ -268,27 +272,27 @@
               <div class="appListInfo">
                 <div>
                   <h4>能汇通</h4>
-                  <p>总充值订单数量： 22123</p>
-                  <p>总充值金额： 12123</p>
-                  <p>日平均耗能量： 12123</p>
+                  <p>总充值订单数量： 6532 笔</p>
+                  <p>总充值金额： 76326372.21 元</p>
+                  <p>日平均耗能量： 2392 度</p>
                 </div>
                 <div>
-                  <h4>能汇通</h4>
-                  <p>总充值订单数量： 22123</p>
-                  <p>总充值金额： 12123</p>
-                  <p>日平均耗能量： 12123</p>
+                  <h4>充电桩</h4>
+                  <p>总网点数量： 542 个</p>
+                  <p>总充电次数： 2322123 次</p>
+                  <p>总充电时长： 231242 小数</p>
                 </div>
                 <div>
-                  <h4>能汇通</h4>
-                  <p>总充值订单数量： 22123</p>
-                  <p>总充值金额： 12123</p>
-                  <p>日平均耗能量： 12123</p>
+                  <h4>智能保修</h4>
+                  <p>总维修工数： 2312 个</p>
+                  <p>总工单数： 12123 单</p>
+                  <p>总工单完成率： 98% </p>
                 </div>
                 <div>
-                  <h4>能汇通</h4>
-                  <p>总充值订单数量： 22123</p>
-                  <p>总充值金额： 12123</p>
-                  <p>日平均耗能量： 12123</p>
+                  <h4>智能门禁</h4>
+                  <p>总设备数： 4321 个</p>
+                  <p>总通行记录： 9872123 次</p>
+                  <p>总异常人员数： 2312 人</p>
                 </div>
               </div>
             </div>
@@ -299,21 +303,13 @@
             <div>
               <div class="appListTitle">智慧生活</div>
               <div class="appListInfo">
-                <div class="lifeListInfo" v-for="i in [1, 2]">
-                  <div v-for="i in [1, 2, 3]">
-                    <h4>服务监督</h4>
+                <div class="lifeListInfo" v-for="item in arr">
+                  <div v-for="i in item">
+                    <h4>{{ i.title }}</h4>
                     <div>
-                      <div>
-                        <p>总充值订单</p>
-                        123
-                      </div>
-                      <div>
-                        <p>总充值金额</p>
-                        32412
-                      </div>
-                      <div>
-                        <p>平均耗能量</p>
-                        123
+                      <div v-for="j in i.list">
+                        <p>{{ j.name }}</p>
+                        {{ j.val }}
                       </div>
                     </div>
                   </div>
@@ -343,6 +339,9 @@ import autofit from 'autofit.js'
 import bg1 from '@/assets/imgs/bg-1.jpg';
 
 import { provide, ref, onMounted } from "vue";
+import array from "./arr"
+
+const arr = ref(array)
 
 let currentBg = ref(bg1)
 provide('changeBackground', currentBg)
