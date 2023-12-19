@@ -22,7 +22,7 @@ const buildConfig = {
 }
 export default defineConfig({
   plugins: [vue()],
-  base: '/sicnuCockpitBigScreen/',
+  base: '/',
   resolve: {
     alias: [ // 配置 @ 指代 src
       {
