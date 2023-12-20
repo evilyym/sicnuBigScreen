@@ -54,7 +54,7 @@ watch(arrIsSel, () => {
 // }
 
 .tabBox {
-  filter: hue-rotate(410deg);
+  // filter: hue-rotate(410deg);
   width: 100%;
   height: 100%;
   background-image: url(../assets/imgs/区域框-标准.png);
