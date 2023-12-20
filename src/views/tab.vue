@@ -54,8 +54,8 @@ watch(arrIsSel, () => {
 // }
 
 .tabBox {
-  width: 450px;
-  height: 580px;
+  width: 100%;
+  height: 100%;
   background-image: url(../assets/imgs/区域框-标准.png);
   background-size: 100% 100%;
   color: #D8FEFF;
