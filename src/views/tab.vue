@@ -54,9 +54,11 @@ watch(arrIsSel, () => {
 // }
 
 .tabBox {
+  filter: hue-rotate(410deg);
   width: 100%;
   height: 100%;
   background-image: url(../assets/imgs/区域框-标准.png);
+  // background-image: url(https://dataease.goliveplus.cn/static-resource/f8d60e20-9e0f-11ee-9b26-1d0cddc1a2e3.png);
   background-size: 100% 100%;
   color: #D8FEFF;
 
