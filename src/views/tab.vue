@@ -13,8 +13,8 @@
         </div>
       </div>
       <div class="chartsContent">
-        <div v-for="itme in arr[arrIsSel.title].list[arrIsSel.content].list" style="margin-top: 12px;">
-          <div class="chartsContentSerial">{{ itme.index + 1 }}</div>
+        <div v-for="(itme,index) in arr[arrIsSel.title].list[arrIsSel.content].list" style="margin-top: 12px;">
+          <div class="chartsContentSerial">{{ index + 1 }}</div>
           <div class="chartsContentText">{{ itme.name }}</div>
           <div class="chartsContentBar">
             <div :style="{ width: itme.balance / 20 + '%' }"></div>
@@ -33,6 +33,18 @@ import { ref, watch } from "vue";
 import array from "../arrTab"
 
 const arr = ref(array)
+
+const sortVal = (val1, val2) => {
+  return val2.balance - val1.balance
+}
+
+for (let index = 0; index < arr.value.length; index++) {
+  for (let j = 0; j < arr.value[index].list.length; j++) {
+    arr.value[index].list[j].list.sort(sortVal)
+  }
+}
+
+
 const arrIsSel = ref({
   title: sessionStorage.getItem('arrIsSelTitle') || 0,
   content: sessionStorage.getItem('arrIsSelContent') || 0,
