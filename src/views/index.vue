@@ -379,15 +379,15 @@ const toWindowScreen = () => {
 const goDataDetails = (item) => {
   switch (item.target.className) {
     case 'things':
-      location.href
+      location.href = 'https://dataease.goliveplus.cn/link/VADnTOvW'
       break;
 
     case 'life':
-      location.href
+      location.href = 'https://dataease.goliveplus.cn/link/DFMTrnXd'
       break;
 
     case 'supermarket':
-      location.href
+      location.href = 'https://dataease.goliveplus.cn/link/QbsJOgQh'
       break;
 
     case 'pay':
@@ -436,7 +436,7 @@ const date = new Date()
 
 const getDateDay = () => {
   const date = new Date();
-  const nowMonth = date.getMonth() + 1;
+  let nowMonth = date.getMonth() + 1;
   let strDate = date.getDate();
   const seperator = "-";
   if (nowMonth >= 1 && nowMonth <= 9) {
