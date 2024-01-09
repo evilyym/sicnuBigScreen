@@ -1,6 +1,6 @@
 <template>
   <div class="divBox">
-    <div class="title">川师微生活数据大屏
+    <div class="title">AA大学生活数据大屏
       <!-- @click="toFullScreen" -->
       <div style="color: aliceblue;">{{ getDateDay() }} {{ getWeek() }}
         <!-- <i class="iocn clouds"></i> 多云  -->
