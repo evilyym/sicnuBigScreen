@@ -379,19 +379,19 @@ const toWindowScreen = () => {
 const goDataDetails = (item) => {
   switch (item.target.className) {
     case 'things':
-      location.href = 'https://dataease.goliveplus.cn/link/VADnTOvW'
+      location.href = 'http://101.69.251.102:28186/link/VADnTOvW'
       break;
 
     case 'life':
-      location.href = 'https://dataease.goliveplus.cn/link/DFMTrnXd'
+      location.href = 'http://101.69.251.102:28186/link/DFMTrnXd'
       break;
 
     case 'supermarket':
-      location.href = 'https://dataease.goliveplus.cn/link/QbsJOgQh'
+      location.href = 'http://101.69.251.102:28186/link/QbsJOgQh'
       break;
 
     case 'pay':
-      location.href = 'https://dataease.goliveplus.cn/link/I9LI2gMx'
+      location.href = 'http://101.69.251.102:28186/link/I9LI2gMx'
       break;
   }
 }
