@@ -192,8 +192,15 @@
             </div>
           </div>
           <div class="payChannel"></div>
-          <div class="foodRanking">
-            <!-- top5排行 -->
+          <!-- top5排行 -->
+          <div class="chartsContent">
+            <div v-for="(itme, index) in arrTab[1].list[1].list" style="margin-top: 0px;">
+              <div class="chartsContentText">{{ itme.name }}</div>
+              <div class="chartsContentBar">
+                <div :style="{ width: itme.balance / 20 + '%' }"></div>
+                <div class="chartsContentVal">{{ itme.balance }}</div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -435,6 +442,22 @@ import autofit from "autofit.js";
 import { ref, onMounted } from "vue";
 import array from "../arr";
 
+import array1 from "../arrTab"
+
+const arrTab = ref(array1)
+
+const sortVal = (val1, val2) => {
+  return val2.balance - val1.balance
+}
+
+for (let index = 0; index < arrTab.value.length; index++) {
+  for (let j = 0; j < arrTab.value[index].list.length; j++) {
+    arrTab.value[index].list[j].list.sort(sortVal)
+  }
+}
+
+
+
 const arr = ref(array);
 const nav = ref(0);
 const isFull = ref(document.fullscreenElement !== null);
@@ -624,7 +647,7 @@ onMounted(() => {
     display: flex;
     flex-direction: column;
     background-image: url(../assets/imgs/apng/板块底边线-窄.png);
-    background-size: 100xp 2px;
+    background-size: 100% 3px;
     background-repeat: no-repeat;
     background-position: 0 100%;
 
@@ -1011,59 +1034,81 @@ onMounted(() => {
         url(../assets/imgs/images/楼宇背景.png) !important;
       background-size: 100% 100%, 100% 220px !important;
       background-repeat: no-repeat;
+      align-items: center;
+      justify-content: center;
 
       &>div {
         width: 50%;
+        color: #FFFFFF;
+        text-align: left;
+        padding: 16px;
+        gap: 10px;
 
-        // &:nth-child(-n+4) {
-        //   &:nth-child(1) {
-        //     background-color: rgba(0, 178, 75, 1);
-        //   }
+        &:nth-child(-n+4) {
+          animation-duration: 3s;
+          animation-timing-function: ease-in-out;
+          animation-iteration-count: infinite;
+          animation-fill-mode: both;
+          animation-direction: alternate;
 
-        //   &:nth-child(2) {
-        //     background-color: rgba(0, 222, 219, 1);
-        //   }
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          transition: all 3s;
 
-        //   &:nth-child(3) {
-        //     background-color: rgba(0, 38, 178, 1);
-        //   }
+          &:nth-child(1) {
+            align-self: flex-start;
+            animation-name: zoom-down;
+            background-color: rgba(0, 178, 75, 1);
+            transform: scale(0.8);
+          }
 
-        //   &:nth-child(4) {
-        //     background-color: rgba(158, 0, 240, 1);
-        //   }
+          &:nth-child(2) {
+            background-color: rgba(0, 222, 219, 1);
+          }
 
-        //   width: 112px;
-        //   height: 112px;
+          &:nth-child(3) {
+            align-self: flex-start;
+            animation-name: zoom-down;
+            background-color: rgba(0, 38, 178, 1);
+            transform: scale(0.8);
+          }
 
-        //   &:nth-child(2n) {
-        //     width: 84px;
-        //     height: 84px;
-        //   }
+          &:nth-child(4) {
+            background-color: rgba(158, 0, 240, 1);
+          }
 
-        //   background-color: red;
-        //   border-radius: 50%;
-        // }
+          width: 104px;
+          height: 104px;
+
+          &:nth-child(2n) {
+            align-self: flex-end;
+            animation-name: zoom-up-and-down;
+            width: 84px;
+            height: 84px;
+          }
+
+          border-radius: 50%;
+
+        }
       }
 
       #main {
         height: 180px;
       }
 
-      #main2 {
+      #main1 {
         height: 180px;
       }
 
       p:first-child {
-        color: #ffffff;
         font-size: 14px;
-        text-align: left;
       }
 
       p:last-child {
-        text-align: left;
         font-weight: 600;
-        color: #00e4ff;
-        font-size: 40px;
+        font-size: 20px;
       }
     }
 
@@ -1309,6 +1354,91 @@ onMounted(() => {
       right: 0;
       top: 0;
     }
+  }
+}
+
+/* 定义关键帧动画 */
+@keyframes zoom-up-and-down {
+  0% {
+    transform: scale(1) translateY(0);
+  }
+
+  50% {
+    transform: scale(1.2) translateY(-10px);
+  }
+
+  100% {
+    transform: scale(1) translateY(0);
+  }
+}
+
+@keyframes zoom-down {
+  0% {
+    transform: scale(1) translateY(0);
+  }
+
+  50% {
+    transform: scale(0.8) translateY(10px);
+  }
+
+  100% {
+    transform: scale(1) translateY(0);
+  }
+}
+
+// top
+.chartsContent {
+  display: flex;
+  flex-direction: column;
+  color: #fff;
+
+  &>div {
+    display: flex;
+    gap: 15px;
+    height: 30px;
+    line-height: 30px;
+
+    .chartsContentSerial {
+      width: 30px;
+      text-align: center;
+      background: #008497;
+    }
+
+    .chartsContentText {
+      width: 50px;
+      flex: none;
+    }
+
+    .chartsContentVal {
+      width: 60px;
+      text-align: right;
+    }
+
+    .chartsContentBar {
+      flex-grow: 1;
+      display: flex;
+      align-items: center;
+      position: relative;
+
+      &>div:first-child {
+        height: 10px;
+        border-radius: 10px;
+        background: #00D2FF;
+      }
+
+      &>div:last-child {
+        width: 100%;
+        text-align: center;
+        position: absolute;
+        font-family: PingFang SC;
+        font-weight: bold;
+        font-size: 22px;
+        color: #061222;
+        text-stroke: 1px #11C7DF;
+        -webkit-text-stroke: 1px #11C7DF;
+      }
+    }
+
   }
 }
 </style>
