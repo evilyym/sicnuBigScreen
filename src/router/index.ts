@@ -1,3 +1,8 @@
+/*
+ * @Author: yym
+ * @Date: 2024-03-19 13:20:02
+ * @LastEditTime: 2024-03-19 13:21:07
+ */
 import { createRouter, createWebHistory, RouteRecordRaw } from "vue-router";
 
 //静态路由
@@ -13,7 +18,7 @@ const routes: RouteRecordRaw[] = [
     children: [],
   },
   {
-    path: "/:pathMatch(.*)", //当捕获*所有的路由时,需要使用正则表达式的参数来表示
+    path: "/:pathMatch(.*)",
     name: "*",
     redirect: "/",
   },

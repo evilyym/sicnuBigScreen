@@ -1,7 +1,6 @@
 <template>
   <div class="divBox">
     <div class="title">数据大屏
-      <!-- @click="toFullScreen" -->
       <div style="color: aliceblue;">{{ getDateDay() }} {{ getWeek() }}
         <!-- <i class="iocn clouds"></i> 多云  -->
         丨 <span v-if="!isFull" @click="toFullScreen"><i class="iocn full"></i>全屏</span><span v-else
@@ -321,32 +320,18 @@
       </div>
     </div>
   </div>
-  <!-- <div :style="{backgroundImage: `url( ${currentBg} )`}" class=" bg-cover bg-center h-screen text-white p-2 flex overflow-hidden
-  text-6xl justify-center items-center flex-row">
-    <n-space class="flex flex-row">
-      <span>加载中请稍后</span>
-      <n-spin size="small"  stroke="white"/>
-      <n-spin size="small"  stroke="white"/>
-      <n-spin size="small"  stroke="white"/>
-    </n-space>
-  </div> -->
 </template>
 
 <script setup>
 import * as echarts from 'echarts';
 import autofit from 'autofit.js'
-
-import bg1 from '../assets/imgs/bg-1.jpg';
-
-import { provide, ref, onMounted } from "vue";
+import { ref, onMounted } from "vue";
 import array from "../arr"
 
 const arr = ref(array)
-
-let currentBg = ref(bg1)
-provide('changeBackground', currentBg)
-
 const nav = ref(0)
+const isFull = ref(document.fullscreenElement !== null);
+const date = new Date()
 
 autofit.init()
 
@@ -396,8 +381,25 @@ const goDataDetails = (item) => {
   }
 }
 
-onMounted(() => {
 
+const getDateDay = () => {
+  const date = new Date();
+  let nowMonth = date.getMonth() + 1;
+  let strDate = date.getDate();
+  const seperator = "-";
+  if (nowMonth >= 1 && nowMonth <= 9) {
+    nowMonth = "0" + nowMonth;
+  }
+  if (strDate >= 0 && strDate <= 9) {
+    strDate = "0" + strDate;
+  }
+  return date.getFullYear() + "年" + nowMonth + "月" + strDate + "日";
+}
+const getWeek = () => {
+  return '星期' + '日一二三四五六'.charAt(new Date().getDay());
+}
+
+onMounted(() => {
   const chartDom = document.getElementById('main');
   const chartDom1 = document.getElementById('main1');
   const myChart = echarts.init(chartDom);
@@ -420,36 +422,8 @@ onMounted(() => {
   option && myChart.setOption(option);
   option && myChart1.setOption(option);
 
-  // toFullScreen()
-
-  // setInterval(() => {
-  //   nav.value++
-  //   if (nav.value == 5) {
-  //     nav.value = 0
-  //   }
-  // },1000)
 })
 
-const isFull = ref(document.fullscreenElement !== null);
-
-const date = new Date()
-
-const getDateDay = () => {
-  const date = new Date();
-  let nowMonth = date.getMonth() + 1;
-  let strDate = date.getDate();
-  const seperator = "-";
-  if (nowMonth >= 1 && nowMonth <= 9) {
-    nowMonth = "0" + nowMonth;
-  }
-  if (strDate >= 0 && strDate <= 9) {
-    strDate = "0" + strDate;
-  }
-  return date.getFullYear() + "年" + nowMonth + "月" + strDate + "日";
-}
-const getWeek = () => {
-  return '星期' + '日一二三四五六'.charAt(new Date().getDay());
-}
 </script>
 
 <style lang="less" scoped>
@@ -698,8 +672,9 @@ const getWeek = () => {
             .appListInfo {
               margin-top: 5px;
               gap: 20px;
-              .lifeListInfo{
-                h4{
+
+              .lifeListInfo {
+                h4 {
                   margin-top: 5px;
                 }
               }
