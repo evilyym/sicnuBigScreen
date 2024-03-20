@@ -670,7 +670,7 @@ for (let index = 0; index < arrTab.value.length; index++) {
 }
 
 const arr = ref(array);
-const nav = ref(2);
+const nav = ref(0);
 const isFull = ref(document.fullscreenElement !== null);
 const date = new Date();
 
