@@ -262,37 +262,81 @@
             </div>
           </div>
 
-          <div class="SmartIoT" v-show="false">
+          <div class="SmartIoT" v-show="1">
             <div class="itmeTitle">智慧物联</div>
             <div class="appListInfo">
               <div>
                 <h4>能汇通</h4>
-                <p>总充值订单数量： 6532 笔</p>
-                <p>总充值金额： 76326372.21 元</p>
-                <p>日平均耗能量： 2392 度</p>
+                <div>
+                  <div>
+                    <p>总充值订单数量(笔)</p>
+                    <div> 6532 </div>
+                  </div>
+                  <div>
+                    <p>总充值金额(元)</p>
+                    <div><span> 76326372.21</span> </div>
+                  </div>
+                  <div>
+                    <p>日平均耗能量(度)</p>
+                    <div> 2392 </div>
+                  </div>
+                </div>
               </div>
               <div>
                 <h4>充电桩</h4>
-                <p>总网点数量： 542 个</p>
-                <p>总充电次数： 2322123 次</p>
-                <p>总充电时长： 231242 小数</p>
+                <div>
+                  <div>
+                    <p>总网点数量(个)</p>
+                    <div> 542 </div>
+                  </div>
+                  <div>
+                    <p>总充电次数(次)</p>
+                    <div> 2322123 </div>
+                  </div>
+                  <div>
+                    <p>总充电时长(小时)</p>
+                    <div> 231242.32 </div>
+                  </div>
+                </div>
               </div>
               <div>
                 <h4>智能保修</h4>
-                <p>总维修工数： 2312 个</p>
-                <p>总工单数： 12123 单</p>
-                <p>总工单完成率： 98%</p>
+                <div>
+                  <div>
+                    <p>总维修工数(个)</p>
+                    <div> 2312 </div>
+                  </div>
+                  <div>
+                    <p>总工单数(次)</p>
+                    <div> 12123 </div>
+                  </div>
+                  <div>
+                    <p>总工单完成率(%)</p>
+                    <div> 95.32 </div>
+                  </div>
+                </div>
               </div>
               <div>
                 <h4>智能门禁</h4>
-                <p>总设备数： 4321 个</p>
-                <p>总通行记录： 9872123 次</p>
-                <p>总异常人员数： 2312 人</p>
+                <div>
+                  <div>
+                    <p>总设备数(个)</p>
+                    <div> 4321 </div>
+                  </div>
+                  <div>
+                    <p>总通行记录(次)</p>
+                    <div><span>9872123</span></div>
+                  </div>
+                  <div>
+                    <p>总异常人员数(人)</p>
+                    <div> 2312 </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
 
-          <div class="platformPayment" v-show="true">
+          <div class="platformPayment" v-show="false">
             <div class="itmeTitle">支付平台</div>
             <div class="appListInfo">
               <div>
@@ -936,7 +980,8 @@ onMounted(() => {
           flex-direction: column;
           align-items: center;
           justify-content: center;
-          p{
+
+          p {
             color: #00FFFC;
           }
         }
@@ -963,7 +1008,8 @@ onMounted(() => {
           background-image: url(../assets/imgs/apng/泡泡-蓝.png);
           left: 450px;
           top: 60px;
-          p{
+
+          p {
             color: #0090FF;
           }
         }
@@ -974,6 +1020,74 @@ onMounted(() => {
           background-image: url(../assets/imgs/apng/泡泡.png);
           right: 60px;
           top: 40px;
+        }
+      }
+
+    }
+
+    .SmartIoT {
+
+      &>div.appListInfo {
+        width: 200%;
+        gap: 20px;
+        padding: 20px;
+        font-weight: 600;
+        color: #00FFFC;
+
+        &>div {
+          width: 50%;
+          display: flex;
+          flex-direction: column;
+
+          h4 {
+            font-size: 16px;
+            height: 60px;
+            line-height: 60px;
+            padding-left: 20px;
+
+            &::before {
+              height: 45px;
+              vertical-align: middle;
+              width: 40px;
+              display: inline-block;
+              margin: auto;
+              content: url(../assets/imgs/images/菱形.png);
+            }
+          }
+
+          &>div {
+            flex-grow: 1;
+            display: flex;
+            gap: 8px;
+
+            &>div {
+              background-image: url(../assets/imgs/apng/数据展示框6.png);
+              background-size: 100% 100%;
+
+              &>div {
+                flex-grow: 1;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 24px;
+                padding: 0 30px;
+                text-overflow: ellipsis;
+                overflow: hidden;
+                word-break:break-all;
+              }
+
+              p {
+                font-size: 12px;
+                height: 40px;
+                text-align: center;
+                line-height: 40px;
+              }
+
+              width: 130px;
+              display: flex;
+              flex-direction: column;
+            }
+          }
         }
       }
 
