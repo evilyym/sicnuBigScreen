@@ -211,8 +211,56 @@
           grid-row-start: 62;
           grid-row-end: 95;
         ">
-        <div class="itmeTitle">主要应用</div>
-        <div></div>
+        <!-- 更具图标轮播 -->
+        <div class="mainBox">
+          <div class="mainApp" v-show="false">
+            <div class="itmeTitle">主要应用</div>
+            <div>
+              <div>
+                <div></div>
+                <p>能汇通</p>
+              </div>
+              <div>
+                <div></div>
+                <p>充电宝</p>
+              </div>
+              <div>
+                <div></div>
+                <p>基础数据</p>
+              </div>
+              <div>
+                <div></div>
+                <p>智慧餐饮</p>
+              </div>
+              <div>
+                <div></div>
+                <p>智慧商圈</p>
+              </div>
+              <div>
+                <div></div>
+                <p>POS机管理</p>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <div class="itmeTitle">智慧物联</div>
+            <div class="SmartIoT">
+              <template v-for="item in arr">
+                <div v-for="i in item">
+                  <h4>{{ i.title }}</h4>
+                  <div>
+                    <div v-for="j in i.list" style="">
+                      <p style="">{{ j.name }}</p>
+                      {{ j.val }}
+                    </div>
+                  </div>
+                </div>
+              </template>
+
+            </div>
+          </div>
+        </div>
       </div>
       <!-- 维修工订单数 -->
       <div class="itmeBox" style="
@@ -677,6 +725,141 @@ onMounted(() => {
     background-size: 100% 3px;
     background-repeat: no-repeat;
     background-position: 0 100%;
+
+    .mainBox {
+      display: flex;
+      height: 100%;
+      width: 400%;
+      gap: 20px;
+
+      &>div {
+        width: 25%;
+        display: flex;
+        flex-direction: column;
+
+        &>div:nth-child(2) {
+          flex-grow: 1;
+          background-image: url(../assets/imgs/images/背景框2.png);
+          background-size: 100% 100%;
+          display: flex;
+        }
+      }
+
+      // 
+      .mainApp {
+        &>div:nth-child(2) {
+          justify-content: space-around;
+
+          &>div {
+            width: 16.6%;
+            height: 110px;
+            background-image: url(../assets/imgs/images/应用背景-默认.png);
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: center;
+
+            &:nth-child(odd) {
+              background-position-y: bottom;
+              align-self: center
+            }
+
+            &>div {
+              margin: auto;
+              width: 100px;
+              height: 65px;
+              background-repeat: no-repeat;
+              background-size: 25%;
+              background-position-x: center;
+              background-position-y: 30px;
+            }
+
+            &:nth-child(1)>div {
+              background-image: url(../assets/imgs/images/icon/应用logo3.png);
+            }
+
+            &:nth-child(2)>div {
+              background-image: url(../assets/imgs/images/icon/应用logo2.png);
+            }
+
+            &:nth-child(3)>div {
+              background-image: url(../assets/imgs/images/icon/应用logo1.png);
+            }
+
+            &:nth-child(4)>div {
+              background-image: url(../assets/imgs/images/icon/应用logo6.png);
+            }
+
+            &:nth-child(5)>div {
+              background-image: url(../assets/imgs/images/icon/应用logo4.png);
+            }
+
+            &:nth-child(6)>div {
+              background-image: url(../assets/imgs/images/icon/应用logo5.png);
+            }
+
+            &>p {
+              text-align: center;
+              color: rgba(0, 246, 252, 1);
+              font-size: 14px;
+            }
+          }
+        }
+      }
+
+      .SmartIoT {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        padding: 10px;
+
+        h4 {
+          width: 120px;
+          height: 70px;
+          font-family: PingFang SC;
+          font-weight: 600;
+          font-size: 16px;
+          color: #FFFFFF;
+          line-height: 7px;
+          text-align: center;
+          line-height: 70px;
+          background-image: url(../assets/imgs/images/数据展示框3.png);
+          background-repeat: no-repeat;
+          background-size: 100% 100%;
+        }
+
+        &>div {
+          width: 100%;
+          display: flex;
+
+          &>div {
+            flex-grow: 1;
+            display: flex;
+            color: #FFFFFF;
+            align-items: center;
+
+            &>div {
+              width: 33%;
+              // height: 40px;
+              padding: 10px 20px;
+              font-size: 20px;
+              font-weight: 600;
+              display: flex;
+              flex-direction: column-reverse;
+              background-image: url(../assets/imgs/images/数据展示框2.png);
+              background-repeat: no-repeat;
+              background-size: 100% 100%;
+
+              p {
+                font-weight: 400;
+                font-size: 12px;
+                color: #00FFFC;
+              }
+            }
+          }
+
+        }
+      }
+    }
 
     &>div:nth-child(2) {
       flex-grow: 1;
