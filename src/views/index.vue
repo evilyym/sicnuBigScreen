@@ -392,6 +392,37 @@
                 </div>
               </div>
 
+              <div>
+                <div class="appListTitle">智慧超市</div>
+                <div>
+                  <div>
+                    <p>超市数量(个)</p>
+                    <span v-for="i in '4'">{{ i }}</span>
+                    <p>门市数量(个)</p>
+                    <span v-for="i in '24'">{{ i }}</span>
+                  </div>
+
+                  <div>
+                    <div>
+                      <p>今日交易笔数(笔)</p>
+                      882
+                    </div>
+                    <div>
+                      <p>今日交易金额(元)</p>
+                      283,293
+                    </div>
+                    <div>
+                      <p>订单总笔数(万笔)</p>
+                      24.32
+                    </div>
+                    <div>
+                      <p>订单总金额</p>
+                      33526373.43
+                    </div>
+                  </div>
+
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -670,7 +701,7 @@ for (let index = 0; index < arrTab.value.length; index++) {
 }
 
 const arr = ref(array);
-const nav = ref(0);
+const nav = ref(2);
 const isFull = ref(document.fullscreenElement !== null);
 const date = new Date();
 
@@ -944,6 +975,7 @@ onMounted(() => {
       }
 
       .SmartLife {
+        animation: animationSmartLife 10s linear(0 0%, 0.22 2.1%, 0.86 6.5%, 1.11 8.6%, 1.3 10.7%, 1.35 11.8%, 1.37 12.9%, 1.37 13.7%, 1.36 14.5%, 1.32 16.2%, 1.03 21.8%, 0.94 24%, 0.89 25.9%, 0.88 26.85%, 0.87 27.8%, 0.87 29.25%, 0.88 30.7%, 0.91 32.4%, 0.98 36.4%, 1.01 38.3%, 1.04 40.5%, 1.05 42.7%, 1.05 44.1%, 1.04 45.7%, 1 53.3%, 0.99 55.4%, 0.98 57.5%, 0.99 60.7%, 1 68.1%, 1.01 72.2%, 1 86.7%, 1 100%) infinite;
         display: flex;
         flex-direction: column;
         gap: 20px;
@@ -1096,6 +1128,7 @@ onMounted(() => {
         color: #00fffc;
 
         &>div {
+          animation: animationL_R 10s linear(0 0%, 0.22 2.1%, 0.86 6.5%, 1.11 8.6%, 1.3 10.7%, 1.35 11.8%, 1.37 12.9%, 1.37 13.7%, 1.36 14.5%, 1.32 16.2%, 1.03 21.8%, 0.94 24%, 0.89 25.9%, 0.88 26.85%, 0.87 27.8%, 0.87 29.25%, 0.88 30.7%, 0.91 32.4%, 0.98 36.4%, 1.01 38.3%, 1.04 40.5%, 1.05 42.7%, 1.05 44.1%, 1.04 45.7%, 1 53.3%, 0.99 55.4%, 0.98 57.5%, 0.99 60.7%, 1 68.1%, 1.01 72.2%, 1 86.7%, 1 100%) infinite;
           width: 50%;
           display: flex;
           flex-direction: column;
@@ -1160,6 +1193,7 @@ onMounted(() => {
         width: 200%;
 
         &>div {
+          animation: animationL_R 10s linear(0 0%, 0.22 2.1%, 0.86 6.5%, 1.11 8.6%, 1.3 10.7%, 1.35 11.8%, 1.37 12.9%, 1.37 13.7%, 1.36 14.5%, 1.32 16.2%, 1.03 21.8%, 0.94 24%, 0.89 25.9%, 0.88 26.85%, 0.87 27.8%, 0.87 29.25%, 0.88 30.7%, 0.91 32.4%, 0.98 36.4%, 1.01 38.3%, 1.04 40.5%, 1.05 42.7%, 1.05 44.1%, 1.04 45.7%, 1 53.3%, 0.99 55.4%, 0.98 57.5%, 0.99 60.7%, 1 68.1%, 1.01 72.2%, 1 86.7%, 1 100%) infinite;
           width: 50%;
           display: flex;
           flex-direction: column;
@@ -2051,6 +2085,34 @@ onMounted(() => {
 
   to {
     transform: translateY(-100%);
+  }
+}
+
+@keyframes animationSmartLife {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-50%);
+  }
+
+  100% {
+    transform: translateY();
+  }
+}
+
+@keyframes animationL_R {
+  0% {
+    transform: translateX(0);
+  }
+
+  50% {
+    transform: translateX(-850px);
+  }
+
+  100% {
+    transform: translateX();
   }
 }
 
