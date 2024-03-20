@@ -213,6 +213,7 @@
         ">
         <!-- 更具图标轮播 -->
         <div class="mainBox">
+
           <div class="mainApp" v-show="false">
             <div class="itmeTitle">主要应用</div>
             <div>
@@ -243,9 +244,9 @@
             </div>
           </div>
 
-          <div>
-            <div class="itmeTitle">智慧物联</div>
-            <div class="SmartIoT">
+          <div v-show="false">
+            <div class="itmeTitle">智慧生活</div>
+            <div class="SmartLife">
               <template v-for="item in arr">
                 <div v-for="i in item">
                   <h4>{{ i.title }}</h4>
@@ -258,6 +259,60 @@
                 </div>
               </template>
 
+            </div>
+          </div>
+
+          <div class="SmartIoT" v-show="false">
+            <div class="itmeTitle">智慧物联</div>
+            <div class="appListInfo">
+              <div>
+                <h4>能汇通</h4>
+                <p>总充值订单数量： 6532 笔</p>
+                <p>总充值金额： 76326372.21 元</p>
+                <p>日平均耗能量： 2392 度</p>
+              </div>
+              <div>
+                <h4>充电桩</h4>
+                <p>总网点数量： 542 个</p>
+                <p>总充电次数： 2322123 次</p>
+                <p>总充电时长： 231242 小数</p>
+              </div>
+              <div>
+                <h4>智能保修</h4>
+                <p>总维修工数： 2312 个</p>
+                <p>总工单数： 12123 单</p>
+                <p>总工单完成率： 98%</p>
+              </div>
+              <div>
+                <h4>智能门禁</h4>
+                <p>总设备数： 4321 个</p>
+                <p>总通行记录： 9872123 次</p>
+                <p>总异常人员数： 2312 人</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="platformPayment" v-show="true">
+            <div class="itmeTitle">支付平台</div>
+            <div class="appListInfo">
+              <div>
+                <div>
+                  <p>总交易金额(元)</p>
+                  63526373.43
+                </div>
+                <div>
+                  <p>总交易笔数(笔)</p>
+                  543235
+                </div>
+                <div>
+                  <p>总支付场景数量</p>
+                  25个
+                </div>
+                <div>
+                  <p>总支付渠道</p>
+                  3个
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -806,7 +861,7 @@ onMounted(() => {
         }
       }
 
-      .SmartIoT {
+      .SmartLife {
         display: flex;
         flex-direction: column;
         gap: 20px;
@@ -859,6 +914,69 @@ onMounted(() => {
 
         }
       }
+    }
+
+    .platformPayment {
+      &>div.appListInfo>div {
+        background-image: url(../assets/imgs/apng/波形.png);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position-y: bottom;
+        width: 100%;
+        height: 100%;
+        padding: 10px;
+        position: relative;
+
+        &>div {
+          position: absolute;
+          display: flex;
+          background-repeat: no-repeat;
+          background-size: contain;
+          color: #fff;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          p{
+            color: #00FFFC;
+          }
+        }
+
+        &>div:nth-child(1) {
+          width: 120px;
+          height: 120px;
+          background-image: url(../assets/imgs/apng/泡泡.png);
+          left: 50px;
+          bottom: 40px;
+        }
+
+        &>div:nth-child(2) {
+          width: 164px;
+          height: 164px;
+          background-image: url(../assets/imgs/apng/泡泡-绿.png);
+          left: 220px;
+          top: 40px;
+        }
+
+        &>div:nth-child(3) {
+          width: 172px;
+          height: 172px;
+          background-image: url(../assets/imgs/apng/泡泡-蓝.png);
+          left: 450px;
+          top: 60px;
+          p{
+            color: #0090FF;
+          }
+        }
+
+        &>div:nth-child(4) {
+          width: 120px;
+          height: 120px;
+          background-image: url(../assets/imgs/apng/泡泡.png);
+          right: 60px;
+          top: 40px;
+        }
+      }
+
     }
 
     &>div:nth-child(2) {
