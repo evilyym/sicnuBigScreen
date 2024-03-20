@@ -39,7 +39,6 @@
             <p>3469</p>
           </div>
         </div>
-
       </div>
       <!-- 四大图标 -->
       <div class="navList" style="
@@ -107,7 +106,7 @@
           grid-row-end: 46;
         ">
         <div class="itmeTitle">微生活用户数据</div>
-        <div style="padding: 20px;">
+        <div style="padding: 20px">
           <!-- <div class="peopleTitle">在校师生人数(人)</div> -->
           <div class="numBox">
             <div class="title"></div>
@@ -194,7 +193,7 @@
           <div class="payChannel"></div>
           <!-- top5排行 -->
           <div class="chartsContent">
-            <div v-for="(itme, index) in arrTab[1].list[1].list" style="margin-top: 0px;">
+            <div v-for="(itme, index) in arrTab[1].list[1].list" style="margin-top: 0px">
               <div class="chartsContentText">{{ itme.name }}</div>
               <div class="chartsContentBar">
                 <div :style="{ width: itme.balance / 20 + '%' }"></div>
@@ -213,8 +212,7 @@
         ">
         <!-- 更具图标轮播 -->
         <div class="mainBox">
-
-          <div class="mainApp" v-show="false">
+          <div class="mainApp" v-show="nav == 0">
             <div class="itmeTitle">主要应用</div>
             <div>
               <div>
@@ -244,7 +242,7 @@
             </div>
           </div>
 
-          <div v-show="false">
+          <div v-show="nav == 2">
             <div class="itmeTitle">智慧生活</div>
             <div class="SmartLife">
               <template v-for="item in arr">
@@ -258,11 +256,10 @@
                   </div>
                 </div>
               </template>
-
             </div>
           </div>
 
-          <div class="SmartIoT" v-show="1">
+          <div class="SmartIoT" v-show="nav == 3">
             <div class="itmeTitle">智慧物联</div>
             <div class="appListInfo">
               <div>
@@ -270,15 +267,15 @@
                 <div>
                   <div>
                     <p>总充值订单数量(笔)</p>
-                    <div> 6532 </div>
+                    <div>6532</div>
                   </div>
                   <div>
                     <p>总充值金额(元)</p>
-                    <div><span> 76326372.21</span> </div>
+                    <div><span> 76326372.21</span></div>
                   </div>
                   <div>
                     <p>日平均耗能量(度)</p>
-                    <div> 2392 </div>
+                    <div>2392</div>
                   </div>
                 </div>
               </div>
@@ -287,15 +284,15 @@
                 <div>
                   <div>
                     <p>总网点数量(个)</p>
-                    <div> 542 </div>
+                    <div>542</div>
                   </div>
                   <div>
                     <p>总充电次数(次)</p>
-                    <div> 2322123 </div>
+                    <div>2322123</div>
                   </div>
                   <div>
                     <p>总充电时长(小时)</p>
-                    <div> 231242.32 </div>
+                    <div>231242.32</div>
                   </div>
                 </div>
               </div>
@@ -304,15 +301,15 @@
                 <div>
                   <div>
                     <p>总维修工数(个)</p>
-                    <div> 2312 </div>
+                    <div>2312</div>
                   </div>
                   <div>
                     <p>总工单数(次)</p>
-                    <div> 12123 </div>
+                    <div>12123</div>
                   </div>
                   <div>
                     <p>总工单完成率(%)</p>
-                    <div> 95.32 </div>
+                    <div>95.32</div>
                   </div>
                 </div>
               </div>
@@ -321,7 +318,7 @@
                 <div>
                   <div>
                     <p>总设备数(个)</p>
-                    <div> 4321 </div>
+                    <div>4321</div>
                   </div>
                   <div>
                     <p>总通行记录(次)</p>
@@ -329,14 +326,14 @@
                   </div>
                   <div>
                     <p>总异常人员数(人)</p>
-                    <div> 2312 </div>
+                    <div>2312</div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
 
-          <div class="platformPayment" v-show="false">
+          <div class="platformPayment" v-show="nav == 4">
             <div class="itmeTitle">支付平台</div>
             <div class="appListInfo">
               <div>
@@ -359,6 +356,44 @@
               </div>
             </div>
           </div>
+
+          <div class="supermarketSmart" v-show="nav == 1">
+            <div class="itmeTitle">智慧商超</div>
+            <div class="appListInfo">
+              <div>
+                <div class="appListTitle">智慧餐饮</div>
+                <div>
+                  <div>
+                    <p>食堂数量(个)</p>
+                    <span v-for="i in '4'">{{ i }}</span>
+                    <p>档口数量(个)</p>
+                    <span v-for="i in '24'">{{ i }}</span>
+                  </div>
+
+                  <div>
+                    <div>
+                      <p>今日交易笔数(笔)</p>
+                      882
+                    </div>
+                    <div>
+                      <p>今日交易金额(元)</p>
+                      283,293
+                    </div>
+                    <div>
+                      <p>订单总笔数(万笔)</p>
+                      24.32
+                    </div>
+                    <div>
+                      <p>订单总金额</p>
+                      33526373.43
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+
+            </div>
+          </div>
         </div>
       </div>
       <!-- 维修工订单数 -->
@@ -376,19 +411,23 @@
             <div>订单数量</div>
             <div>完成数</div>
           </div>
-          <div style="overflow: hidden;">
+          <div style="overflow: hidden">
             <div class="repairTable transformBox">
-              <div class="repairTableItem"
-                v-for="itme in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]">
+              <div class="repairTableItem" v-for="itme in [
+          1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18,
+          19, 20,
+        ]">
                 <div>姓名</div>
                 <div>分类</div>
                 <div>{{ itme }}</div>
                 <div>完成数</div>
               </div>
             </div>
-            <div style="margin-top: 5px;" class="repairTable transformBox">
-              <div class="repairTableItem"
-                v-for="itme in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]">
+            <div style="margin-top: 5px" class="repairTable transformBox">
+              <div class="repairTableItem" v-for="itme in [
+          1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18,
+          19, 20,
+        ]">
                 <div>姓名</div>
                 <div>分类</div>
                 <div>{{ itme }}</div>
@@ -616,24 +655,22 @@ import autofit from "autofit.js";
 import { ref, onMounted } from "vue";
 import array from "../arr";
 
-import array1 from "../arrTab"
+import array1 from "../arrTab";
 
-const arrTab = ref(array1)
+const arrTab = ref(array1);
 
 const sortVal = (val1, val2) => {
-  return val2.balance - val1.balance
-}
+  return val2.balance - val1.balance;
+};
 
 for (let index = 0; index < arrTab.value.length; index++) {
   for (let j = 0; j < arrTab.value[index].list.length; j++) {
-    arrTab.value[index].list[j].list.sort(sortVal)
+    arrTab.value[index].list[j].list.sort(sortVal);
   }
 }
 
-
-
 const arr = ref(array);
-const nav = ref(0);
+const nav = ref(2);
 const isFull = ref(document.fullscreenElement !== null);
 const date = new Date();
 
@@ -770,7 +807,8 @@ onMounted(() => {
 
 .title {
   position: relative;
-  background-image: url(../assets/imgs/images/文字标题.png), url(../assets/imgs/apng/头部标题栏.png);
+  background-image: url(../assets/imgs/images/文字标题.png),
+    url(../assets/imgs/apng/头部标题栏.png);
   background-size: 320px 60px, 100% 100%;
   background-repeat: no-repeat;
   background-position: center top, center;
@@ -844,7 +882,7 @@ onMounted(() => {
         }
       }
 
-      // 
+      //
       .mainApp {
         &>div:nth-child(2) {
           justify-content: space-around;
@@ -859,7 +897,7 @@ onMounted(() => {
 
             &:nth-child(odd) {
               background-position-y: bottom;
-              align-self: center
+              align-self: center;
             }
 
             &>div {
@@ -917,11 +955,11 @@ onMounted(() => {
           font-family: PingFang SC;
           font-weight: 600;
           font-size: 16px;
-          color: #FFFFFF;
+          color: #ffffff;
           line-height: 7px;
           text-align: center;
           line-height: 70px;
-          background-image: url(../assets/imgs/images/数据展示框3.png);
+          background-image: url(../assets/imgs/apng/数据展示框5.png);
           background-repeat: no-repeat;
           background-size: 100% 100%;
         }
@@ -933,7 +971,7 @@ onMounted(() => {
           &>div {
             flex-grow: 1;
             display: flex;
-            color: #FFFFFF;
+            color: #ffffff;
             align-items: center;
 
             &>div {
@@ -944,18 +982,43 @@ onMounted(() => {
               font-weight: 600;
               display: flex;
               flex-direction: column-reverse;
-              background-image: url(../assets/imgs/images/数据展示框2.png);
+              background-image: url(../assets/imgs/images/数据展示框3.png);
               background-repeat: no-repeat;
               background-size: 100% 100%;
+
+              &:nth-child(2) {
+                position: relative;
+
+                &::before {
+                  position: absolute;
+                  left: 0;
+                  content: ' ';
+                  height: 35px;
+                  vertical-align: middle;
+                  display: inline-block;
+                  margin: auto;
+                  border-left: 1px solid #11c7df;
+                }
+
+                &::after {
+                  position: absolute;
+                  right: 0;
+                  content: ' ';
+                  height: 35px;
+                  vertical-align: middle;
+                  display: inline-block;
+                  margin: auto;
+                  border-left: 1px solid #11c7df;
+                }
+              }
 
               p {
                 font-weight: 400;
                 font-size: 12px;
-                color: #00FFFC;
+                color: #00fffc;
               }
             }
           }
-
         }
       }
     }
@@ -982,7 +1045,7 @@ onMounted(() => {
           justify-content: center;
 
           p {
-            color: #00FFFC;
+            color: #00fffc;
           }
         }
 
@@ -1010,7 +1073,7 @@ onMounted(() => {
           top: 60px;
 
           p {
-            color: #0090FF;
+            color: #0090ff;
           }
         }
 
@@ -1022,17 +1085,15 @@ onMounted(() => {
           top: 40px;
         }
       }
-
     }
 
     .SmartIoT {
-
       &>div.appListInfo {
         width: 200%;
         gap: 20px;
         padding: 20px;
         font-weight: 600;
-        color: #00FFFC;
+        color: #00fffc;
 
         &>div {
           width: 50%;
@@ -1073,7 +1134,7 @@ onMounted(() => {
                 padding: 0 30px;
                 text-overflow: ellipsis;
                 overflow: hidden;
-                word-break:break-all;
+                word-break: break-all;
               }
 
               p {
@@ -1090,7 +1151,103 @@ onMounted(() => {
           }
         }
       }
+    }
 
+    .supermarketSmart {
+      .appListInfo {
+        padding: 20px;
+        gap: 20px;
+        width: 200%;
+
+        &>div {
+          width: 50%;
+          display: flex;
+          flex-direction: column;
+          color: rgba(0, 255, 252, 1);
+
+          .appListTitle {
+            font-size: 16px;
+            height: 50px;
+            line-height: 50px;
+            padding-left: 20px;
+
+            &::before {
+              height: 45px;
+              vertical-align: middle;
+              width: 40px;
+              display: inline-block;
+              margin: auto;
+              content: url(../assets/imgs/images/菱形.png);
+            }
+          }
+
+          &>div:nth-child(2) {
+            display: flex;
+            gap: 20px;
+
+            &>div:nth-child(1) {
+              width: 230px;
+
+              p {
+                background-image: url(../assets/imgs/apng/小标题背景.png);
+                padding: 0 10px;
+                margin-bottom: 10px;
+              }
+
+              span {
+                width: 36px;
+                height: 53px;
+                display: inline-block;
+                background-image: url(../assets/imgs/images/数据展示框2.png);
+                background-size: 100% 100%;
+                font-weight: 600;
+                font-size: 30px;
+                color: #FFFFFF;
+                text-align: center;
+                line-height: 53px;
+                margin-bottom: 10px;
+                margin-left: 10px;
+
+              }
+            }
+
+            &>div:nth-child(2) {
+              flex-grow: 1;
+              display: grid;
+              gap: 10px;
+              grid-template-columns: 280px 280px;
+              grid-template-rows: 68px 120px;
+              text-align: center;
+              align-items: center;
+
+              &>div {
+                display: flex;
+                align-items: center;
+                flex-direction: column-reverse;
+                justify-content: center;
+                color: #fff;
+                font-size: 18px;
+
+                height: 100%;
+                background-image: url(../assets/imgs/apng/数据展示框5.png);
+                background-size: 100% 100%;
+
+                p {
+                  color: rgba(0, 255, 252, 1);
+                  font-size: 14px;
+                }
+              }
+
+              &>div:nth-child(-n+2) {
+                height: 100%;
+                background-image: url(../assets/imgs/apng/数据展示框4-宽.png);
+                background-size: 100% 100%;
+              }
+            }
+
+          }
+        }
+      }
     }
 
     &>div:nth-child(2) {
@@ -1321,7 +1478,7 @@ onMounted(() => {
         background-image: url(../assets/imgs/apng/板块标题栏-right.png);
 
         &::before {
-          content: '';
+          content: "";
         }
 
         &::after {
@@ -1419,11 +1576,11 @@ onMounted(() => {
       }
 
       div.textBox {
-        color: #00FFFC;
+        color: #00fffc;
         font-size: 12px;
 
         &>p:last-child {
-          color: #FFFFFF;
+          color: #ffffff;
           font-weight: 600;
           font-size: 20px;
         }
@@ -1448,7 +1605,7 @@ onMounted(() => {
         // background-image: url(../assets/imgs/数据框-六边形.png);
 
         p:first-child {
-          color: #00FFFC;
+          color: #00fffc;
           font-size: 12px;
           padding: 0 10px;
           text-align: center;
@@ -1459,7 +1616,7 @@ onMounted(() => {
           text-align: center;
           line-height: 60px;
           font-weight: 600;
-          color: #FFFFFFFF;
+          color: #ffffffff;
           font-size: 24px;
           background-image: url(../assets/imgs/images/数据展示框.png);
           background-size: 100% 100%;
@@ -1472,7 +1629,7 @@ onMounted(() => {
       display: flex;
       flex-wrap: wrap;
       padding: 10px 40px;
-      background-image: url('/src/assets/imgs/images/背景框2.png'),
+      background-image: url("/src/assets/imgs/images/背景框2.png"),
         url(../assets/imgs/images/楼宇背景.png) !important;
       background-size: 100% 100%, 100% 220px !important;
       background-repeat: no-repeat;
@@ -1481,12 +1638,12 @@ onMounted(() => {
 
       &>div {
         width: 50%;
-        color: #FFFFFF;
+        color: #ffffff;
         text-align: left;
         padding: 16px;
         gap: 10px;
 
-        &:nth-child(-n+4) {
+        &:nth-child(-n + 4) {
           animation-duration: 3s;
           animation-timing-function: ease-in-out;
           animation-iteration-count: infinite;
@@ -1532,7 +1689,6 @@ onMounted(() => {
           }
 
           border-radius: 50%;
-
         }
       }
 
@@ -1575,7 +1731,7 @@ onMounted(() => {
             font-family: PingFang SC;
             font-weight: 600;
             font-size: 30px;
-            color: #FEFEFE;
+            color: #fefefe;
             background-image: url(../assets/imgs/apng/基座.png);
             // background-size: 100% 100%;
             background-position: center;
@@ -1585,7 +1741,7 @@ onMounted(() => {
             font-family: PingFang SC;
             font-weight: 600;
             font-size: 14px;
-            color: #00FFFC;
+            color: #00fffc;
           }
         }
       }
@@ -1630,7 +1786,7 @@ onMounted(() => {
           font-family: PingFang SC;
           font-weight: 600;
           font-size: 16px;
-          color: #00FFFC;
+          color: #00fffc;
         }
       }
     }
@@ -1664,15 +1820,14 @@ onMounted(() => {
             font-family: PingFang SC;
             font-weight: 600;
             font-size: 20px;
-            color: #FEFEFE;
-
+            color: #fefefe;
           }
 
           .foodTitle {
             font-family: PingFang SC;
             font-weight: 600;
             font-size: 14px;
-            color: #00FFFC;
+            color: #00fffc;
           }
         }
       }
@@ -1717,7 +1872,7 @@ onMounted(() => {
           font-family: PingFang SC;
           font-weight: 600;
           font-size: 16px;
-          color: #00FFFC;
+          color: #00fffc;
         }
       }
     }
@@ -1736,13 +1891,13 @@ onMounted(() => {
         font-family: PingFang SC;
         font-weight: 400;
         font-size: 14px;
-        color: #00FFFC;
+        color: #00fffc;
         text-align: center;
 
         >div {
           width: 111px;
           height: 24px;
-          background: rgba(0, 129, 144, .2);
+          background: rgba(0, 129, 144, 0.2);
           // opacity: 0.2;
         }
       }
@@ -1772,11 +1927,10 @@ onMounted(() => {
           >div {
             width: 111px;
             height: 24px;
-            background: rgba(0, 129, 144, .2);
+            background: rgba(0, 129, 144, 0.2);
             // opacity: 0.2;
           }
         }
-
       }
     }
   }
@@ -1937,7 +2091,7 @@ onMounted(() => {
       &>div:first-child {
         height: 10px;
         border-radius: 10px;
-        background: #00D2FF;
+        background: #00d2ff;
       }
 
       &>div:last-child {
@@ -1948,11 +2102,10 @@ onMounted(() => {
         font-weight: bold;
         font-size: 22px;
         color: #061222;
-        text-stroke: 1px #11C7DF;
-        -webkit-text-stroke: 1px #11C7DF;
+        text-stroke: 1px #11c7df;
+        -webkit-text-stroke: 1px #11c7df;
       }
     }
-
   }
 }
 </style>
