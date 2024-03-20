@@ -222,7 +222,34 @@
           grid-row-end: 95;
         ">
         <div class="itmeTitle right">维修工订单数</div>
-        <div></div>
+        <div class="repairBox">
+          <div class="repairTitle">
+            <div>姓名</div>
+            <div>分类</div>
+            <div>订单数量</div>
+            <div>完成数</div>
+          </div>
+          <div style="overflow: hidden;">
+            <div class="repairTable transformBox">
+              <div class="repairTableItem"
+                v-for="itme in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]">
+                <div>姓名</div>
+                <div>分类</div>
+                <div>{{ itme }}</div>
+                <div>完成数</div>
+              </div>
+            </div>
+            <div style="margin-top: 5px;" class="repairTable transformBox">
+              <div class="repairTableItem"
+                v-for="itme in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]">
+                <div>姓名</div>
+                <div>分类</div>
+                <div>{{ itme }}</div>
+                <div>完成数</div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
 
       <div class="itmeBox itmeBoxWidth" v-if="false" style="grid-column-start: 2; grid-column-end: 4">
@@ -1279,12 +1306,74 @@ onMounted(() => {
         }
       }
     }
+
+    // 维修订单
+    .repairBox {
+      padding: 10px;
+      display: flex;
+      row-gap: 5px;
+      column-gap: 5px;
+      flex-direction: column;
+
+      &>.repairTitle {
+        display: flex;
+        column-gap: 5px;
+        font-family: PingFang SC;
+        font-weight: 400;
+        font-size: 14px;
+        color: #00FFFC;
+        text-align: center;
+
+        >div {
+          width: 111px;
+          height: 24px;
+          background: rgba(0, 129, 144, .2);
+          // opacity: 0.2;
+        }
+      }
+
+      overflow: hidden;
+
+      & .repairTable {
+        flex-grow: 1;
+        display: flex;
+        row-gap: 5px;
+        flex-direction: column;
+
+        &.transformBox {
+          animation: scrollHorizontally 10s linear infinite;
+        }
+
+        .repairTableItem {
+          width: 100%;
+          display: flex;
+          column-gap: 5px;
+          font-family: PingFang SC;
+          font-weight: 400;
+          font-size: 14px;
+          color: #fff;
+          text-align: center;
+
+          >div {
+            width: 111px;
+            height: 24px;
+            background: rgba(0, 129, 144, .2);
+            // opacity: 0.2;
+          }
+        }
+
+      }
+    }
   }
 
   .navList {
     position: relative;
     background-image: url(../assets/imgs/apng/模型底.png);
-    background-size: 100% 100%;
+    // background-size: 100% 100%;
+    background-size: cover;
+    background-position: center;
+    background-position-y: 32px;
+    background-repeat: no-repeat;
 
     &>div {
       margin: auto;
@@ -1383,6 +1472,16 @@ onMounted(() => {
 
   100% {
     transform: scale(1) translateY(0);
+  }
+}
+
+@keyframes scrollHorizontally {
+  from {
+    transform: translateY(0);
+  }
+
+  to {
+    transform: translateY(-100%);
   }
 }
 
