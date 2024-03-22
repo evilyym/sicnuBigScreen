@@ -243,7 +243,7 @@
           </div>
 
           <div v-show="nav == 3">
-            <div class="itmeTitle">智能保修</div>
+            <div class="itmeTitle">智能报修</div>
             <div class="SmartLife">
               <template v-for="item in arr">
                 <div v-for="i in item">
@@ -297,7 +297,7 @@
                 </div>
               </div>
               <div>
-                <h4>智能保修</h4>
+                <h4>智能报修</h4>
                 <div>
                   <div>
                     <p>总维修工数(个)</p>
@@ -640,7 +640,7 @@
                   <p>总充电时长： 231242 小数</p>
                 </div>
                 <div>
-                  <h4>智能保修</h4>
+                  <h4>智能报修</h4>
                   <p>总维修工数： 2312 个</p>
                   <p>总工单数： 12123 单</p>
                   <p>总工单完成率： 98%</p>
