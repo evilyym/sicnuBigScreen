@@ -48,9 +48,9 @@
           grid-row-end: 60;
         ">
         <div>
-          <div class="things" @mouseover="nav = 2" @click="goDataDetails" @mouseout="nav = 0"></div>
-          <div class="life" @mouseover="nav = 1" @click="goDataDetails" @mouseout="nav = 0"></div>
-          <div class="supermarket" @mouseover="nav = 3" @click="goDataDetails" @mouseout="nav = 0"></div>
+          <div class="things" @mouseover="nav = 1" @click="goDataDetails" @mouseout="nav = 0"></div>
+          <div class="life" @mouseover="nav = 3" @click="goDataDetails" @mouseout="nav = 0"></div>
+          <div class="supermarket" @mouseover="nav = 2" @click="goDataDetails" @mouseout="nav = 0"></div>
           <div class="pay" @mouseover="nav = 4" @click="goDataDetails" @mouseout="nav = 0"></div>
         </div>
       </div>
@@ -144,7 +144,7 @@
           grid-row-start: 48;
           grid-row-end: 95;
         ">
-        <div class="itmeTitle">智慧楼宇</div>
+        <div class="itmeTitle">智慧公寓</div>
         <div class="dataBox">
           <div>
             <p>总楼幢数量(幢)</p>
@@ -213,15 +213,15 @@
         <!-- 更具图标轮播 -->
         <div class="mainBox">
           <div class="mainApp" v-show="nav == 0">
-            <div class="itmeTitle">主要应用</div>
+            <div class="itmeTitle">业务系统</div>
             <div>
               <div>
                 <div></div>
-                <p>能汇通</p>
+                <p>智能用电</p>
               </div>
               <div>
                 <div></div>
-                <p>充电宝</p>
+                <p>电瓶车充电</p>
               </div>
               <div>
                 <div></div>
@@ -242,8 +242,8 @@
             </div>
           </div>
 
-          <div v-show="nav == 2">
-            <div class="itmeTitle">智慧生活</div>
+          <div v-show="nav == 3">
+            <div class="itmeTitle">智能保修</div>
             <div class="SmartLife">
               <template v-for="item in arr">
                 <div v-for="i in item">
@@ -259,8 +259,8 @@
             </div>
           </div>
 
-          <div class="SmartIoT" v-show="nav == 3">
-            <div class="itmeTitle">智慧物联</div>
+          <div class="SmartIoT" v-show="nav == 1">
+            <div class="itmeTitle">智慧公寓</div>
             <div class="appListInfo">
               <div>
                 <h4>能汇通</h4>
@@ -357,8 +357,8 @@
             </div>
           </div>
 
-          <div class="supermarketSmart" v-show="nav == 1">
-            <div class="itmeTitle">智慧商超</div>
+          <div class="supermarketSmart" v-show="nav == 2">
+            <div class="itmeTitle">智慧餐饮</div>
             <div class="appListInfo">
               <div>
                 <div class="appListTitle">智慧餐饮</div>
@@ -459,10 +459,10 @@
           1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18,
           19, 20,
         ]">
-                <div>姓名</div>
-                <div>分类</div>
+                <div>姓名{{ itme }}</div>
+                <div>分类{{ itme }}</div>
                 <div>{{ itme }}</div>
-                <div>完成数</div>
+                <div>{{ itme*5 }}</div>
               </div>
             </div>
           </div>
@@ -701,7 +701,7 @@ for (let index = 0; index < arrTab.value.length; index++) {
 }
 
 const arr = ref(array);
-const nav = ref(2);
+const nav = ref(0);
 const isFull = ref(document.fullscreenElement !== null);
 const date = new Date();
 
@@ -925,10 +925,12 @@ onMounted(() => {
             background-repeat: no-repeat;
             background-size: contain;
             background-position: center;
-            &:nth-child(odd){
+
+            &:nth-child(odd) {
               animation: animationT_B 10s linear(0 0%, 0.22 2.1%, 0.86 6.5%, 1.11 8.6%, 1.3 10.7%, 1.35 11.8%, 1.37 12.9%, 1.37 13.7%, 1.36 14.5%, 1.32 16.2%, 1.03 21.8%, 0.94 24%, 0.89 25.9%, 0.88 26.85%, 0.87 27.8%, 0.87 29.25%, 0.88 30.7%, 0.91 32.4%, 0.98 36.4%, 1.01 38.3%, 1.04 40.5%, 1.05 42.7%, 1.05 44.1%, 1.04 45.7%, 1 53.3%, 0.99 55.4%, 0.98 57.5%, 0.99 60.7%, 1 68.1%, 1.01 72.2%, 1 86.7%, 1 100%) infinite;
             }
-            &:nth-child(even){
+
+            &:nth-child(even) {
               animation: animationB_T 10s linear(0 0%, 0.22 2.1%, 0.86 6.5%, 1.11 8.6%, 1.3 10.7%, 1.35 11.8%, 1.37 12.9%, 1.37 13.7%, 1.36 14.5%, 1.32 16.2%, 1.03 21.8%, 0.94 24%, 0.89 25.9%, 0.88 26.85%, 0.87 27.8%, 0.87 29.25%, 0.88 30.7%, 0.91 32.4%, 0.98 36.4%, 1.01 38.3%, 1.04 40.5%, 1.05 42.7%, 1.05 44.1%, 1.04 45.7%, 1 53.3%, 0.99 55.4%, 0.98 57.5%, 0.99 60.7%, 1 68.1%, 1.01 72.2%, 1 86.7%, 1 100%) infinite;
             }
 
@@ -2121,6 +2123,7 @@ onMounted(() => {
     transform: translateX();
   }
 }
+
 @keyframes animationT_B {
   0% {
     transform: translateY(0);
@@ -2134,6 +2137,7 @@ onMounted(() => {
     transform: translateY();
   }
 }
+
 @keyframes animationB_T {
   0% {
     transform: translateY(0);
@@ -2196,7 +2200,6 @@ onMounted(() => {
         font-weight: bold;
         font-size: 22px;
         color: #061222;
-        text-stroke: 1px #11c7df;
         -webkit-text-stroke: 1px #11c7df;
       }
     }
