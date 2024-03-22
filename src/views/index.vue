@@ -2200,7 +2200,6 @@ onMounted(() => {
         font-weight: bold;
         font-size: 22px;
         color: #061222;
-        text-stroke: 1px #11c7df;
         -webkit-text-stroke: 1px #11c7df;
       }
     }
