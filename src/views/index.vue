@@ -40,7 +40,7 @@
           </div>
         </div>
       </div>
-      <!-- 四大图标 -->
+      <!-- 四大图标 + 1 -->
       <div class="navList" style="
           grid-column-start: 2;
           grid-column-end: 3;
@@ -52,6 +52,7 @@
           <div class="life" @mouseover="nav = 3" @click="goDataDetails" @mouseout="nav = 0"></div>
           <div class="supermarket" @mouseover="nav = 2" @click="goDataDetails" @mouseout="nav = 0"></div>
           <div class="pay" @mouseover="nav = 4" @click="goDataDetails" @mouseout="nav = 0"></div>
+          <div class="foodSafety" @click="goDataDetails"></div>
         </div>
       </div>
       <!-- 数字化应用功能分布 -->
@@ -214,36 +215,148 @@
         <div class="mainBox">
           <div class="mainApp" v-show="nav == 0">
             <div class="itmeTitle">业务系统</div>
-            <div>
+            <div class="appList">
+
               <div>
-                <div></div>
-                <p>智能用电</p>
+                <div>
+                  <div></div>
+                  <p>智慧餐饮</p>
+                </div>
+                <div>
+                  <div></div>
+                  <p>教工餐厅就餐</p>
+                </div>
+                <div>
+                  <div></div>
+                  <p>订单配送</p>
+                </div>
+                <div>
+                  <div></div>
+                  <p>云餐厅</p>
+                </div>
+                <div>
+                  <div></div>
+                  <p>POS管理</p>
+                </div>
               </div>
+
               <div>
-                <div></div>
-                <p>电瓶车充电</p>
+                <div>
+                  <div></div>
+                  <p>智能用电</p>
+                </div>
+                <div>
+                  <div></div>
+                  <p>电瓶车充电</p>
+                </div>
+                <div>
+                  <div></div>
+                  <p>智慧公寓</p>
+                </div>
+                <div>
+                  <div></div>
+                  <p>卫生检查</p>
+                </div>
+                <div>
+                  <div></div>
+                  <p>智慧巡检</p>
+                </div>
+                <div>
+                  <div></div>
+                  <p>智慧门禁</p>
+                </div>
+                <div>
+                  <div></div>
+                  <p>辅导员系统</p>
+                </div>
               </div>
+
               <div>
-                <div></div>
-                <p>基础数据</p>
+                <div>
+                  <div></div>
+                  <p>我要吐槽</p>
+                </div>
+                <div>
+                  <div></div>
+                  <p>新闻公告</p>
+                </div>
+                <div>
+                  <div></div>
+                  <p>智慧商圈</p>
+                </div>
+                <div>
+                  <div></div>
+                  <p>电子钱包</p>
+                </div>
+                <div>
+                  <div></div>
+                  <p>问卷调查</p>
+                </div>
+                <div>
+                  <div></div>
+                  <p>聚合收款码</p>
+                </div>
+                <div>
+                  <div></div>
+                  <p>自习室预约</p>
+                </div>
+                <div>
+                  <div></div>
+                  <p>智能云印</p>
+                </div>
               </div>
+
               <div>
-                <div></div>
-                <p>智慧餐饮</p>
+                <div>
+                  <div></div>
+                  <p>支付平台</p>
+                </div>
+                <div>
+                  <div></div>
+                  <p>用车管理</p>
+                </div>
+                <div>
+                  <div></div>
+                  <p>智慧报修</p>
+                </div>
+                <div>
+                  <div></div>
+                  <p>失物招领</p>
+                </div>
+                <div>
+                  <div></div>
+                  <p>跳蚤市场</p>
+                </div>
               </div>
+
               <div>
-                <div></div>
-                <p>智慧商圈</p>
+                <div>
+                  <div></div>
+                  <p>用户中心</p>
+                </div>
+                <div>
+                  <div></div>
+                  <p>基础数据</p>
+                </div>
+                <div>
+                  <div></div>
+                  <p>权限管理</p>
+                </div>
+                <div>
+                  <div></div>
+                  <p>消息中心</p>
+                </div>
+                <div>
+                  <div></div>
+                  <p>审批中心</p>
+                </div>
               </div>
-              <div>
-                <div></div>
-                <p>POS机管理</p>
-              </div>
+
             </div>
           </div>
 
           <div v-show="nav == 3">
-            <div class="itmeTitle">智能保修</div>
+            <div class="itmeTitle">智能报修</div>
             <div class="SmartLife">
               <template v-for="item in arr">
                 <div v-for="i in item">
@@ -297,7 +410,7 @@
                 </div>
               </div>
               <div>
-                <h4>智能保修</h4>
+                <h4>智能报修</h4>
                 <div>
                   <div>
                     <p>总维修工数(个)</p>
@@ -462,7 +575,7 @@
                 <div>姓名{{ itme }}</div>
                 <div>分类{{ itme }}</div>
                 <div>{{ itme }}</div>
-                <div>{{ itme*5 }}</div>
+                <div>{{ itme * 5 }}</div>
               </div>
             </div>
           </div>
@@ -640,7 +753,7 @@
                   <p>总充电时长： 231242 小数</p>
                 </div>
                 <div>
-                  <h4>智能保修</h4>
+                  <h4>智能报修</h4>
                   <p>总维修工数： 2312 个</p>
                   <p>总工单数： 12123 单</p>
                   <p>总工单完成率： 98%</p>
@@ -749,6 +862,9 @@ const goDataDetails = (item) => {
     case "pay":
       location.href = "http://101.69.251.102:28186/link/I9LI2gMx";
       break;
+    case "foodSafety":
+      location.href = "http://logisticssystem.sicnu.edu.cn/BlueData/Index.html";
+      break;
   }
 };
 
@@ -840,7 +956,7 @@ onMounted(() => {
   position: relative;
   background-image: url(../assets/imgs/images/文字标题.png),
     url(../assets/imgs/apng/头部标题栏.png);
-  background-size: 320px 60px, 100% 100%;
+  background-size: 680px 60px, 100% 100%;
   background-repeat: no-repeat;
   background-position: center top, center;
   width: 100%;
@@ -915,10 +1031,43 @@ onMounted(() => {
 
       //
       .mainApp {
-        &>div:nth-child(2) {
+        &>div.appList:nth-child(2) {
           justify-content: space-around;
+          position: relative;
+          overflow: hidden;
 
           &>div {
+            justify-content: space-around;
+            display: flex;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            animation: zoom-iocn 15s linear infinite;
+
+            &:nth-child(1) {
+              left: 0;
+            }
+
+            &:nth-child(2) {
+              left: 100%;
+            }
+
+            &:nth-child(3) {
+              left: 200%;
+            }
+
+            &:nth-child(4) {
+              left: 300%;
+            }
+
+            &:nth-child(5) {
+              left: 400%;
+            }
+          }
+
+          &>div>div {
             width: 16.6%;
             height: 110px;
             background-image: url(../assets/imgs/images/应用背景-默认.png);
@@ -927,11 +1076,11 @@ onMounted(() => {
             background-position: center;
 
             &:nth-child(odd) {
-              animation: animationT_B 10s linear(0 0%, 0.22 2.1%, 0.86 6.5%, 1.11 8.6%, 1.3 10.7%, 1.35 11.8%, 1.37 12.9%, 1.37 13.7%, 1.36 14.5%, 1.32 16.2%, 1.03 21.8%, 0.94 24%, 0.89 25.9%, 0.88 26.85%, 0.87 27.8%, 0.87 29.25%, 0.88 30.7%, 0.91 32.4%, 0.98 36.4%, 1.01 38.3%, 1.04 40.5%, 1.05 42.7%, 1.05 44.1%, 1.04 45.7%, 1 53.3%, 0.99 55.4%, 0.98 57.5%, 0.99 60.7%, 1 68.1%, 1.01 72.2%, 1 86.7%, 1 100%) infinite;
+              animation: animationT_B 3s linear infinite;
             }
 
             &:nth-child(even) {
-              animation: animationB_T 10s linear(0 0%, 0.22 2.1%, 0.86 6.5%, 1.11 8.6%, 1.3 10.7%, 1.35 11.8%, 1.37 12.9%, 1.37 13.7%, 1.36 14.5%, 1.32 16.2%, 1.03 21.8%, 0.94 24%, 0.89 25.9%, 0.88 26.85%, 0.87 27.8%, 0.87 29.25%, 0.88 30.7%, 0.91 32.4%, 0.98 36.4%, 1.01 38.3%, 1.04 40.5%, 1.05 42.7%, 1.05 44.1%, 1.04 45.7%, 1 53.3%, 0.99 55.4%, 0.98 57.5%, 0.99 60.7%, 1 68.1%, 1.01 72.2%, 1 86.7%, 1 100%) infinite;
+              animation: animationB_T 3s linear infinite;
             }
 
             &:nth-child(odd) {
@@ -949,35 +1098,152 @@ onMounted(() => {
               background-position-y: 30px;
             }
 
-            &:nth-child(1)>div {
-              background-image: url(../assets/imgs/images/icon/应用logo3.png);
-            }
-
-            &:nth-child(2)>div {
-              background-image: url(../assets/imgs/images/icon/应用logo2.png);
-            }
-
-            &:nth-child(3)>div {
-              background-image: url(../assets/imgs/images/icon/应用logo1.png);
-            }
-
-            &:nth-child(4)>div {
-              background-image: url(../assets/imgs/images/icon/应用logo6.png);
-            }
-
-            &:nth-child(5)>div {
-              background-image: url(../assets/imgs/images/icon/应用logo4.png);
-            }
-
-            &:nth-child(6)>div {
-              background-image: url(../assets/imgs/images/icon/应用logo5.png);
-            }
-
             &>p {
               text-align: center;
               color: rgba(0, 246, 252, 1);
               font-size: 14px;
             }
+          }
+
+          // 图标烦恼
+          &>div:nth-child(1)>div {
+
+            &:nth-child(1)>div {
+              background-image: url(../assets/imgs/images/icon/智慧餐饮.png);
+            }
+
+            &:nth-child(2)>div {
+              background-image: url(../assets/imgs/images/icon/教职工餐厅就餐.png);
+            }
+
+            &:nth-child(3)>div {
+              background-image: url(../assets/imgs/images/icon/订单配送.png);
+            }
+
+            &:nth-child(4)>div {
+              background-image: url(../assets/imgs/images/icon/云餐厅.png);
+            }
+
+            &:nth-child(5)>div {
+              background-image: url(../assets/imgs/images/icon/POS管理.png);
+            }
+
+          }
+
+          &>div:nth-child(2)>div {
+
+            &:nth-child(1)>div {
+              background-image: url(../assets/imgs/images/icon/智能用电.png);
+            }
+
+            &:nth-child(2)>div {
+              background-image: url(../assets/imgs/images/icon/电瓶车充电.png);
+            }
+
+            &:nth-child(3)>div {
+              background-image: url(../assets/imgs/images/icon/智慧公寓.png);
+            }
+
+            &:nth-child(4)>div {
+              background-image: url(../assets/imgs/images/icon/卫生检查.png);
+            }
+
+            &:nth-child(5)>div {
+              background-image: url(../assets/imgs/images/icon/智慧巡检.png);
+            }
+
+            &:nth-child(6)>div {
+              background-image: url(../assets/imgs/images/icon/智慧门禁.png);
+            }
+
+            &:nth-child(7)>div {
+              background-image: url(../assets/imgs/images/icon/辅导员系统.png);
+            }
+
+          }
+
+          &>div:nth-child(3)>div {
+
+            &:nth-child(1)>div {
+              background-image: url(../assets/imgs/images/icon/我要吐槽.png);
+            }
+
+            &:nth-child(2)>div {
+              background-image: url(../assets/imgs/images/icon/新闻公告.png);
+            }
+
+            &:nth-child(3)>div {
+              background-image: url(../assets/imgs/images/icon/智慧商圈.png);
+            }
+
+            &:nth-child(4)>div {
+              background-image: url(../assets/imgs/images/icon/电子钱包.png);
+            }
+
+            &:nth-child(5)>div {
+              background-image: url(../assets/imgs/images/icon/问卷调查.png);
+            }
+
+            &:nth-child(6)>div {
+              background-image: url(../assets/imgs/images/icon/聚合收款码.png);
+            }
+
+            &:nth-child(7)>div {
+              background-image: url(../assets/imgs/images/icon/自习室预约.png);
+            }
+
+            &:nth-child(8)>div {
+              background-image: url(../assets/imgs/images/icon/智能云印.png);
+            }
+
+          }
+
+          &>div:nth-child(5)>div {
+
+            &:nth-child(1)>div {
+              background-image: url(../assets/imgs/images/icon/用户中心.png);
+            }
+
+            &:nth-child(2)>div {
+              background-image: url(../assets/imgs/images/icon/基础数据.png);
+            }
+
+            &:nth-child(3)>div {
+              background-image: url(../assets/imgs/images/icon/权限管理.png);
+            }
+
+            &:nth-child(4)>div {
+              background-image: url(../assets/imgs/images/icon/消息中心.png);
+            }
+
+            &:nth-child(5)>div {
+              background-image: url(../assets/imgs/images/icon/审批中心.png);
+            }
+
+          }
+
+          &>div:nth-child(4)>div {
+
+            &:nth-child(1)>div {
+              background-image: url(../assets/imgs/images/icon/支付平台.png);
+            }
+
+            &:nth-child(2)>div {
+              background-image: url(../assets/imgs/images/icon/用车管理.png);
+            }
+
+            &:nth-child(3)>div {
+              background-image: url(../assets/imgs/images/icon/智慧报修.png);
+            }
+
+            &:nth-child(4)>div {
+              background-image: url(../assets/imgs/images/icon/失物招领.png);
+            }
+
+            &:nth-child(5)>div {
+              background-image: url(../assets/imgs/images/icon/跳蚤市场.png);
+            }
+
           }
         }
       }
@@ -2005,28 +2271,40 @@ onMounted(() => {
 
       // border: #fff solid 1px;
 
+      &.pay {
+        left: 310px;
+        height: 215px;
+        z-index: 1;
+        top: 185px;
+        background-image: url(../assets/imgs/apng/支付平台.png);
+      }
+
       &.things {
-        left: 80px;
+        z-index: 2;
+        left: 30px;
         top: 180px;
         background-image: url(../assets/imgs/apng/智慧物联.png);
       }
 
       &.life {
+        z-index: 2;
         left: 310px;
         height: 230px;
-        top: 310px;
+        top: 340px;
         background-image: url(../assets/imgs/apng/智慧生活.png);
       }
 
       &.supermarket {
+        z-index: 1;
         left: 310px;
         height: 265px;
-        top: 20px;
+        top: 0;
         background-image: url(../assets/imgs/apng/餐饮商超.png);
       }
 
-      &.pay {
-        left: 550px;
+      &.foodSafety {
+        left: 610px;
+        z-index: 2;
         height: 225px;
         top: 170px;
         background-image: url(../assets/imgs/apng/支付平台.png);
@@ -2149,6 +2427,52 @@ onMounted(() => {
 
   100% {
     transform: translateY();
+  }
+}
+
+@keyframes zoom-iocn {
+  0% {
+    transform: translateX(0);
+  }
+
+  15% {
+    transform: translateX(0);
+  }
+
+  20% {
+    transform: translateX(-100%);
+  }
+
+  35% {
+    transform: translateX(-100%);
+  }
+
+  40% {
+    transform: translateX(-200%);
+  }
+
+  55% {
+    transform: translateX(-200%);
+  }
+
+  60% {
+    transform: translateX(-300%);
+  }
+
+  75% {
+    transform: translateX(-300%);
+  }
+
+  80% {
+    transform: translateX(-400%);
+  }
+
+  95% {
+    transform: translateX(-400%);
+  }
+
+  100% {
+    transform: translateX(0);
   }
 }
 
