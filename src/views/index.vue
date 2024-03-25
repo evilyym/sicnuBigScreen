@@ -2307,7 +2307,7 @@ onMounted(() => {
         z-index: 2;
         height: 225px;
         top: 170px;
-        background-image: url(../assets/imgs/apng/支付平台.png);
+        background-image: url(../assets/imgs/apng/食安平台.png);
       }
     }
 
