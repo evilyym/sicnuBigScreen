@@ -356,7 +356,7 @@
           </div>
 
           <div v-show="nav == 3">
-            <div class="itmeTitle">智能报修</div>
+            <div class="itmeTitle">智慧生活</div>
             <div class="SmartLife">
               <template v-for="item in arr">
                 <div v-for="i in item">
@@ -902,8 +902,8 @@ onMounted(() => {
           color: "#fff",
         },
         data: [
-          { value: 80, name: "入住率" },
-          { value: 20, name: "未入住率" },
+          { value: 80, name: "成龙校区房间" },
+          { value: 20, name: "狮子山校区" },
         ],
       },
     ],
