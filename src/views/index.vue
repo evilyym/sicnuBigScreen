@@ -894,6 +894,24 @@ onMounted(() => {
     series: [
       {
         type: "pie",
+        radius: ["10%", "35%"],
+        avoidLabelOverlap: false,
+        label: {
+          formatter: "{b}\n{c}%",
+          textBorderColor: "none",
+          color: "#fff",
+        },
+        data: [
+          { value: 66, name: "狮子山\n校区房\n间比例" },
+          { value: 34, name: "成龙校\n区房间\n比例" },
+        ],
+      },
+    ],
+  };
+  const option2 = {
+    series: [
+      {
+        type: "pie",
         radius: ["20%", "45%"],
         avoidLabelOverlap: false,
         label: {
@@ -902,14 +920,14 @@ onMounted(() => {
           color: "#fff",
         },
         data: [
-          { value: 80, name: "成龙校区房间" },
-          { value: 20, name: "狮子山校区" },
+          { value: 80, name: "未入住\n率" },
+          { value: 20, name: "入住率" },
         ],
       },
     ],
   };
 
-  option && myChart.setOption(option);
+  option && myChart.setOption(option2);
   option && myChart1.setOption(option);
 });
 </script>
@@ -1948,7 +1966,7 @@ onMounted(() => {
         width: 50%;
         color: #ffffff;
         text-align: left;
-        padding: 16px;
+        //padding: 16px;
         gap: 10px;
 
         &:nth-child(-n + 4) {
