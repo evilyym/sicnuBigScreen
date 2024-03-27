@@ -107,7 +107,7 @@
           grid-row-end: 46;
         ">
         <div class="itmeTitle">微生活用户数据</div>
-        <div style="padding: 20px">
+        <div class="userData" style="padding: 20px">
           <!-- <div class="peopleTitle">在校师生人数(人)</div> -->
           <div class="numBox">
             <div class="title"></div>
@@ -1041,7 +1041,7 @@ onMounted(() => {
 
         &>div:nth-child(2) {
           flex-grow: 1;
-          background-image: url(../assets/imgs/images/背景框2.png);
+          // background-image: url(../assets/imgs/images/背景框2.png);
           background-size: 100% 100%;
           display: flex;
         }
@@ -1578,7 +1578,7 @@ onMounted(() => {
 
     &>div:nth-child(2) {
       flex-grow: 1;
-      background-image: url(../assets/imgs/images/背景框2.png);
+      // background-image: url(../assets/imgs/images/背景框2.png);
       background-size: 100% 100%;
     }
 
@@ -1603,6 +1603,8 @@ onMounted(() => {
       color: #d8feff;
       font-size: 18px;
       gap: 10px;
+      background-image: url('../assets/imgs/apng/板块背景-中下.png');
+
     }
 
     .appListTitle {
@@ -1921,6 +1923,7 @@ onMounted(() => {
       justify-content: space-around;
       flex-wrap: wrap;
       gap: 10px;
+      background-image: url('../assets/imgs/apng/板块背景-左上.png');
       // background-image: url(../assets/imgs/);
 
       div {
@@ -1955,7 +1958,7 @@ onMounted(() => {
       display: flex;
       flex-wrap: wrap;
       padding: 10px 40px;
-      background-image: url("/src/assets/imgs/images/背景框2.png"),
+      background-image: url("/src/assets/imgs/apng/板块背景-左下.png"),
         url(../assets/imgs/images/楼宇背景.png) !important;
       background-size: 100% 100%, 100% 220px !important;
       background-repeat: no-repeat;
@@ -2041,6 +2044,7 @@ onMounted(() => {
       display: flex;
       flex-direction: column;
       padding: 18px;
+      background-image: url('../assets/imgs/apng/板块背景-右上.png');
 
       .appNum {
         display: flex;
@@ -2122,6 +2126,7 @@ onMounted(() => {
       display: flex;
       flex-direction: column;
       padding: 18px;
+      background-image: url('../assets/imgs/apng/板块背景-右中.png');
 
       .foodData {
         display: flex;
@@ -2202,7 +2207,9 @@ onMounted(() => {
         }
       }
     }
-
+    .userData{
+      background-image: url('../assets/imgs/apng/板块背景-左中.png');
+    }
     // 维修订单
     .repairBox {
       padding: 10px;
@@ -2210,6 +2217,7 @@ onMounted(() => {
       row-gap: 5px;
       column-gap: 5px;
       flex-direction: column;
+      background-image: url('../assets/imgs/apng/板块背景-右下.png');
 
       &>.repairTitle {
         display: flex;
