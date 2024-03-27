@@ -18,7 +18,7 @@
           grid-column-start: 1;
           grid-column-end: 2;
           grid-row-start: 1;
-          grid-row-end: 18;
+          grid-row-end: 19;
         ">
         <div class="itmeTitle">人事数据</div>
         <div class="dataList">
@@ -60,7 +60,7 @@
           grid-column-start: 3;
           grid-column-end: 4;
           grid-row-start: 1;
-          grid-row-end: 26;
+          grid-row-end: 27;
         ">
         <div class="itmeTitle right">数字化应用功能分布</div>
         <div class="applications">
@@ -103,8 +103,8 @@
       <div class="itmeBox" style="
           grid-column-start: 1;
           grid-column-end: 2;
-          grid-row-start: 20;
-          grid-row-end: 46;
+          grid-row-start: 21;
+          grid-row-end: 47;
         ">
         <div class="itmeTitle">微生活用户数据</div>
         <div class="userData" style="padding: 20px">
@@ -142,8 +142,8 @@
       <div class="itmeBox" style="
           grid-column-start: 1;
           grid-column-end: 2;
-          grid-row-start: 48;
-          grid-row-end: 95;
+          grid-row-start: 49;
+          grid-row-end: 96;
         ">
         <div class="itmeTitle">智慧公寓</div>
         <div class="dataBox">
@@ -172,8 +172,8 @@
       <div class="itmeBox" style="
           grid-column-start: 3;
           grid-column-end: 4;
-          grid-row-start: 28;
-          grid-row-end: 60;
+          grid-row-start: 29;
+          grid-row-end: 61;
         ">
         <div class="itmeTitle right">智慧餐饮7日汇总</div>
         <div class="foodBox">
@@ -194,7 +194,7 @@
           <div class="payChannel"></div>
           <!-- top5排行 -->
           <div class="chartsContent">
-            <div v-for="(itme, index) in arrTab[1].list[1].list" style="margin-top: 0px">
+            <div v-for="(itme, index) in arrTab" style="margin-top: 0px">
               <div class="chartsContentText">{{ itme.name }}</div>
               <div class="chartsContentBar">
                 <div :style="{ width: itme.balance / 20 + '%' }"></div>
@@ -208,8 +208,8 @@
       <div class="itmeBox itmeBoxWidth" style="
           grid-column-start: 2;
           grid-column-end: 3;
-          grid-row-start: 62;
-          grid-row-end: 95;
+          grid-row-start: 63;
+          grid-row-end: 96;
         ">
         <!-- 更具图标轮播 -->
         <div class="mainBox">
@@ -544,8 +544,8 @@
       <div class="itmeBox" style="
           grid-column-start: 3;
           grid-column-end: 4;
-          grid-row-start: 62;
-          grid-row-end: 95;
+          grid-row-start: 63;
+          grid-row-end: 96;
         ">
         <div class="itmeTitle right">维修工订单数</div>
         <div class="repairBox">
@@ -801,17 +801,17 @@ import array from "../arr";
 
 import array1 from "../arrTab";
 
-const arrTab = ref(array1);
+const arrTab = ref(array1[1].list[1].list.splice(0,5));
 
 const sortVal = (val1, val2) => {
   return val2.balance - val1.balance;
 };
 
-for (let index = 0; index < arrTab.value.length; index++) {
-  for (let j = 0; j < arrTab.value[index].list.length; j++) {
-    arrTab.value[index].list[j].list.sort(sortVal);
-  }
-}
+// for (let index = 0; index < arrTab.value.length && index < 5; index++) {
+//   for (let j = 0; j < arrTab.value[index].list.length; j++) {
+    arrTab.value.sort(sortVal);
+//   }
+// }
 
 const arr = ref(array);
 const nav = ref(0);
@@ -1043,6 +1043,7 @@ onMounted(() => {
           flex-grow: 1;
           // background-image: url(../assets/imgs/images/背景框2.png);
           background-size: 100% 100%;
+          box-sizing: content-box;
           display: flex;
         }
       }
@@ -2125,7 +2126,7 @@ onMounted(() => {
     .foodBox {
       display: flex;
       flex-direction: column;
-      padding: 18px;
+      padding: 18px 18px 0 18px;
       background-image: url('../assets/imgs/apng/板块背景-右中.png');
 
       .foodData {
@@ -2165,7 +2166,7 @@ onMounted(() => {
 
       .payChannel {
         border-bottom: 2px solid #00f6fc;
-        margin: 15px 0;
+        margin: 10px 0;
       }
 
       .payItme {
@@ -2207,9 +2208,11 @@ onMounted(() => {
         }
       }
     }
-    .userData{
+
+    .userData {
       background-image: url('../assets/imgs/apng/板块背景-左中.png');
     }
+
     // 维修订单
     .repairBox {
       padding: 10px;
