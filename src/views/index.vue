@@ -1788,7 +1788,22 @@ onMounted(() => {
       }
     }
 
+    @font-face {
+      font-family: 'HYk2gj';
+      src: url('../assets/font/阿里妈妈数黑体 Bold 1.004_zitidi.com.ttf');
+    }
+
     .itmeTitle {
+      font-family: HYk2gj;
+      height: 48px;
+      line-height: 48px;
+      font-size: 18px;
+      font-weight: 400;
+      color: #d7feff;
+      text-align: left;
+      margin-bottom: 2px;
+      // font-weight: bold;
+      font-size: 20px;
       padding-left: 100px;
       background-image: url(../assets/imgs/apng/板块标题栏-left.png);
 
@@ -1819,14 +1834,6 @@ onMounted(() => {
           content: url(../assets/imgs/images/菱形.png);
         }
       }
-
-      height: 48px;
-      line-height: 48px;
-      font-size: 18px;
-      font-weight: 400;
-      color: #d7feff;
-      text-align: left;
-      margin-bottom: 2px;
     }
 
     .peopleTitle {
@@ -2295,7 +2302,7 @@ onMounted(() => {
       transition: all 1s;
 
       &:hover {
-        transform: scale(1.2);
+        // transform: scale(1.2);
         z-index: 6;
 
         &::before {
