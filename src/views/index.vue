@@ -1268,7 +1268,7 @@ onMounted(() => {
       }
 
       .SmartLife {
-        animation: animationSmartLife 10s linear(0 0%, 0.22 2.1%, 0.86 6.5%, 1.11 8.6%, 1.3 10.7%, 1.35 11.8%, 1.37 12.9%, 1.37 13.7%, 1.36 14.5%, 1.32 16.2%, 1.03 21.8%, 0.94 24%, 0.89 25.9%, 0.88 26.85%, 0.87 27.8%, 0.87 29.25%, 0.88 30.7%, 0.91 32.4%, 0.98 36.4%, 1.01 38.3%, 1.04 40.5%, 1.05 42.7%, 1.05 44.1%, 1.04 45.7%, 1 53.3%, 0.99 55.4%, 0.98 57.5%, 0.99 60.7%, 1 68.1%, 1.01 72.2%, 1 86.7%, 1 100%) infinite;
+        animation: animationSmartLife 20s linear(0 0%, 0.22 2.1%, 0.86 6.5%, 1.11 8.6%, 1.3 10.7%, 1.35 11.8%, 1.37 12.9%, 1.37 13.7%, 1.36 14.5%, 1.32 16.2%, 1.03 21.8%, 0.94 24%, 0.89 25.9%, 0.88 26.85%, 0.87 27.8%, 0.87 29.25%, 0.88 30.7%, 0.91 32.4%, 0.98 36.4%, 1.01 38.3%, 1.04 40.5%, 1.05 42.7%, 1.05 44.1%, 1.04 45.7%, 1 53.3%, 0.99 55.4%, 0.98 57.5%, 0.99 60.7%, 1 68.1%, 1.01 72.2%, 1 86.7%, 1 100%) infinite;
         display: flex;
         flex-direction: column;
         gap: 20px;
@@ -1421,7 +1421,7 @@ onMounted(() => {
         color: #00fffc;
 
         &>div {
-          animation: animationL_R 10s linear(0 0%, 0.22 2.1%, 0.86 6.5%, 1.11 8.6%, 1.3 10.7%, 1.35 11.8%, 1.37 12.9%, 1.37 13.7%, 1.36 14.5%, 1.32 16.2%, 1.03 21.8%, 0.94 24%, 0.89 25.9%, 0.88 26.85%, 0.87 27.8%, 0.87 29.25%, 0.88 30.7%, 0.91 32.4%, 0.98 36.4%, 1.01 38.3%, 1.04 40.5%, 1.05 42.7%, 1.05 44.1%, 1.04 45.7%, 1 53.3%, 0.99 55.4%, 0.98 57.5%, 0.99 60.7%, 1 68.1%, 1.01 72.2%, 1 86.7%, 1 100%) infinite;
+          animation: animationL_R 20s linear(0 0%, 0.22 2.1%, 0.86 6.5%, 1.11 8.6%, 1.3 10.7%, 1.35 11.8%, 1.37 12.9%, 1.37 13.7%, 1.36 14.5%, 1.32 16.2%, 1.03 21.8%, 0.94 24%, 0.89 25.9%, 0.88 26.85%, 0.87 27.8%, 0.87 29.25%, 0.88 30.7%, 0.91 32.4%, 0.98 36.4%, 1.01 38.3%, 1.04 40.5%, 1.05 42.7%, 1.05 44.1%, 1.04 45.7%, 1 53.3%, 0.99 55.4%, 0.98 57.5%, 0.99 60.7%, 1 68.1%, 1.01 72.2%, 1 86.7%, 1 100%) infinite;
           width: 50%;
           display: flex;
           flex-direction: column;
@@ -1486,7 +1486,7 @@ onMounted(() => {
         width: 200%;
 
         &>div {
-          animation: animationL_R 10s linear(0 0%, 0.22 2.1%, 0.86 6.5%, 1.11 8.6%, 1.3 10.7%, 1.35 11.8%, 1.37 12.9%, 1.37 13.7%, 1.36 14.5%, 1.32 16.2%, 1.03 21.8%, 0.94 24%, 0.89 25.9%, 0.88 26.85%, 0.87 27.8%, 0.87 29.25%, 0.88 30.7%, 0.91 32.4%, 0.98 36.4%, 1.01 38.3%, 1.04 40.5%, 1.05 42.7%, 1.05 44.1%, 1.04 45.7%, 1 53.3%, 0.99 55.4%, 0.98 57.5%, 0.99 60.7%, 1 68.1%, 1.01 72.2%, 1 86.7%, 1 100%) infinite;
+          animation: animationL_R 20s linear(0 0%, 0.22 2.1%, 0.86 6.5%, 1.11 8.6%, 1.3 10.7%, 1.35 11.8%, 1.37 12.9%, 1.37 13.7%, 1.36 14.5%, 1.32 16.2%, 1.03 21.8%, 0.94 24%, 0.89 25.9%, 0.88 26.85%, 0.87 27.8%, 0.87 29.25%, 0.88 30.7%, 0.91 32.4%, 0.98 36.4%, 1.01 38.3%, 1.04 40.5%, 1.05 42.7%, 1.05 44.1%, 1.04 45.7%, 1 53.3%, 0.99 55.4%, 0.98 57.5%, 0.99 60.7%, 1 68.1%, 1.01 72.2%, 1 86.7%, 1 100%) infinite;
           width: 50%;
           display: flex;
           flex-direction: column;
@@ -2275,7 +2275,7 @@ onMounted(() => {
   .navList {
     position: relative;
     background-image: url(../assets/imgs/apng/路中线.png);
-    background-size: 80% 80%;
+    background-size: 100% 100%;
     // background-size: cover;
     background-position: center;
     // background-position-y: 32px;
@@ -2296,6 +2296,7 @@ onMounted(() => {
 
       &:hover {
         transform: scale(1.2);
+        z-index: 6;
 
         &::before {
           content: ' ';
@@ -2314,41 +2315,47 @@ onMounted(() => {
       // border: #fff solid 1px;
 
       &.pay {
-        left: 310px;
-        height: 215px;
-        z-index: 1;
-        top: 185px;
+        width: 292px;
+        height: 282px;
+        z-index: 3;
+        left: 50px;
+        top: 170px;
         background-image: url(../assets/imgs/apng/支付平台.png);
       }
 
       &.things {
         z-index: 2;
-        left: 30px;
-        top: 180px;
+        width: 243px;
+        height: 238px;
+        top: -10px;
+        left: 180px;
         background-image: url(../assets/imgs/apng/智慧公寓.png);
       }
 
       &.life {
         z-index: 2;
-        left: 310px;
-        height: 230px;
-        top: 340px;
+        left: 380px;
+        width: 289px;
+        height: 289px;
+        top: 40px;
         background-image: url(../assets/imgs/apng/智能报修.png);
       }
 
       &.supermarket {
-        z-index: 1;
-        left: 310px;
-        height: 265px;
-        top: 0;
+        z-index: 3;
+        left: 280px;
+        width: 307px;
+        height: 329px;
+        top: 280px;
         background-image: url(../assets/imgs/apng/智慧餐饮.png);
       }
 
       &.foodSafety {
-        left: 610px;
+        left: 550px;
         z-index: 2;
-        height: 225px;
-        top: 170px;
+        width: 274px;
+        height: 306px;
+        top: 140px;
         background-image: url(../assets/imgs/apng/食安平台.png);
       }
     }
