@@ -356,7 +356,7 @@
           </div>
 
           <div v-show="nav == 3">
-            <div class="itmeTitle">智慧生活</div>
+            <div class="itmeTitle">智能报修</div>
             <div class="SmartLife">
               <template v-for="item in arr">
                 <div v-for="i in item">
@@ -801,7 +801,7 @@ import array from "../arr";
 
 import array1 from "../arrTab";
 
-const arrTab = ref(array1[1].list[1].list.splice(0,5));
+const arrTab = ref(array1[1].list[1].list.splice(0, 5));
 
 const sortVal = (val1, val2) => {
   return val2.balance - val1.balance;
@@ -809,7 +809,7 @@ const sortVal = (val1, val2) => {
 
 // for (let index = 0; index < arrTab.value.length && index < 5; index++) {
 //   for (let j = 0; j < arrTab.value[index].list.length; j++) {
-    arrTab.value.sort(sortVal);
+arrTab.value.sort(sortVal);
 //   }
 // }
 
@@ -2274,11 +2274,11 @@ onMounted(() => {
 
   .navList {
     position: relative;
-    background-image: url(../assets/imgs/apng/模型底.png);
-    // background-size: 100% 100%;
-    background-size: cover;
+    background-image: url(../assets/imgs/apng/路中线.png);
+    background-size: 80% 80%;
+    // background-size: cover;
     background-position: center;
-    background-position-y: 32px;
+    // background-position-y: 32px;
     background-repeat: no-repeat;
 
     &>div {
@@ -2296,6 +2296,19 @@ onMounted(() => {
 
       &:hover {
         transform: scale(1.2);
+
+        &::before {
+          content: ' ';
+          width: 100px;
+          height: 120px;
+          position: absolute;
+          top: -20px;
+          left: calc(50% - 50px);
+          background-image: url(../assets/imgs/apng/箭头.png);
+          transform: rotate(90deg);
+          background-size: 100%;
+          background-repeat: no-repeat;
+        }
       }
 
       // border: #fff solid 1px;
@@ -2312,7 +2325,7 @@ onMounted(() => {
         z-index: 2;
         left: 30px;
         top: 180px;
-        background-image: url(../assets/imgs/apng/智慧物联.png);
+        background-image: url(../assets/imgs/apng/智慧公寓.png);
       }
 
       &.life {
@@ -2320,7 +2333,7 @@ onMounted(() => {
         left: 310px;
         height: 230px;
         top: 340px;
-        background-image: url(../assets/imgs/apng/智慧生活.png);
+        background-image: url(../assets/imgs/apng/智能报修.png);
       }
 
       &.supermarket {
@@ -2328,7 +2341,7 @@ onMounted(() => {
         left: 310px;
         height: 265px;
         top: 0;
-        background-image: url(../assets/imgs/apng/餐饮商超.png);
+        background-image: url(../assets/imgs/apng/智慧餐饮.png);
       }
 
       &.foodSafety {
