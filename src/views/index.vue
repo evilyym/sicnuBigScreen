@@ -506,12 +506,12 @@
               </div>
 
               <div>
-                <div class="appListTitle">智慧超市</div>
+                <div class="appListTitle">智慧餐厅</div>
                 <div>
                   <div>
-                    <p>超市数量(个)</p>
+                    <p>餐厅数量(个)</p>
                     <span v-for="i in '4'">{{ i }}</span>
-                    <p>门市数量(个)</p>
+                    <p>窗口数量(个)</p>
                     <span v-for="i in '24'">{{ i }}</span>
                   </div>
 
@@ -2302,7 +2302,7 @@ onMounted(() => {
       transition: all 1s;
 
       &:hover {
-        // transform: scale(1.2);
+        transform: scale(1.08);
         z-index: 6;
 
         &::before {
