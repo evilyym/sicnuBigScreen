@@ -511,7 +511,7 @@
                   <div>
                     <p>餐厅数量(个)</p>
                     <span v-for="i in '4'">{{ i }}</span>
-                    <p>门市数量(个)</p>
+                    <p>档口数量(个)</p>
                     <span v-for="i in '24'">{{ i }}</span>
                   </div>
 
