@@ -2255,7 +2255,7 @@ onMounted(() => {
         flex-direction: column;
 
         &.transformBox {
-          animation: scrollHorizontally 10s linear infinite;
+          animation: scrollHorizontally 20s linear infinite;
         }
 
         .repairTableItem {
@@ -2299,7 +2299,7 @@ onMounted(() => {
       width: 220px;
       height: 220px;
       background-size: 100% 100%;
-      transition: all 1s;
+      transition: all .5s;
 
       &:hover {
         transform: scale(1.08);
