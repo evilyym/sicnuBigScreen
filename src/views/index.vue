@@ -66,19 +66,19 @@
         <div class="applications">
           <div class="appNum">
             <div>
-              <div class="appNumNum">31</div>
+              <div class="appNumNum"><countTo :end='31' :autoPlay="true" :useEasing="false" :repeat="true" :repeatTime="3000" :duration='1000'/></div>
               <div class="appNumTitle">应用总数</div>
             </div>
             <div>
-              <div class="appNumNum">25</div>
+              <div class="appNumNum"><countTo :end='25' :autoPlay="true" :useEasing="false" :repeat="true" :repeatTime="3000" :duration='1000'/></div>
               <div class="appNumTitle">场景总数</div>
             </div>
             <div>
-              <div class="appNumNum">4</div>
+              <div class="appNumNum"><countTo :end='4' :autoPlay="true" :useEasing="false" :repeat="true" :repeatTime="3000" :duration='1000'/></div>
               <div class="appNumTitle">平台数量</div>
             </div>
             <div>
-              <div class="appNumNum">29</div>
+              <div class="appNumNum"><countTo :end='29' :autoPlay="true" :useEasing="false" :repeat="true" :repeatTime="3000" :duration='1000'/></div>
               <div class="appNumTitle">SaaS应用数</div>
             </div>
           </div>
@@ -111,7 +111,9 @@
           <!-- <div class="peopleTitle">在校师生人数(人)</div> -->
           <div class="numBox">
             <div class="title"></div>
-            <div v-for="(item, index) in '105992'" ><countTo :end='item' :autoPlay="true" :useEasing="false" :repeat="true" :repeatTime="3000" :duration='1000'/></div>
+            <div v-for="(item, index) in '105992'" >
+              <countTo :end='item' :autoPlay="true" :useEasing="false" :repeat="true" :repeatTime="3000" :duration='1000'/>
+            </div>
             <!-- <div>0</div>
             <div>5</div>
             <div>9</div>
@@ -894,7 +896,8 @@ onMounted(() => {
     series: [
       {
         type: "pie",
-        radius: ["10%", "35%"],
+        color:['#F0A900', '#00B24B'],
+        radius: ["30%", "45%"],
         avoidLabelOverlap: false,
         label: {
           formatter: "{b}\n{c}%",
@@ -902,8 +905,8 @@ onMounted(() => {
           color: "#fff",
         },
         data: [
-          { value: 66, name: "狮子山\n校区房\n间比例" },
           { value: 34, name: "成龙校\n区房间\n比例" },
+          { value: 66, name: "狮子山\n校区房\n间比例" },
         ],
       },
     ],
@@ -912,7 +915,8 @@ onMounted(() => {
     series: [
       {
         type: "pie",
-        radius: ["20%", "45%"],
+        color:['#1758DE', '#00DEDB'],
+        radius: ["30%", "45%"],
         avoidLabelOverlap: false,
         label: {
           formatter: "{b}\n{c}%",
@@ -920,8 +924,8 @@ onMounted(() => {
           color: "#fff",
         },
         data: [
-          { value: 80, name: "未入住\n率" },
           { value: 20, name: "入住率" },
+          { value: 80, name: "未入住\n率" },
         ],
       },
     ],
