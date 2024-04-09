@@ -7,7 +7,10 @@ import { createApp } from "vue";
 import router from "@/router";
 import "./style.css";
 import App from "./App.vue";
+import countTo from './components/countTo.vue'
 
 const app = createApp(App);
+app.component('countTo', countTo)
+app.use(countTo);
 app.use(router);
 app.mount("#app");

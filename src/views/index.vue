@@ -24,21 +24,21 @@
         <div class="dataList">
           <div>
             <p>在编校聘人员(人)</p>
-            <p>5982</p>
+            <p><countTo :end='5982' :autoPlay="true" :repeat="true" :duration='3000'/></p>
           </div>
           <div>
             <p>后勤自聘人员(人)</p>
-            <p>3791</p>
+            <p><countTo :end='3791' :autoPlay="true" :repeat="true" :duration='3000'/></p>
           </div>
           <div>
             <p>本科及以上学历人员(人)</p>
-            <p>4155</p>
+            <p><countTo :end='4155' :autoPlay="true" :repeat="true" :duration='3000'/></p>
           </div>
           <div>
             <p>中级职称及以上(人)</p>
-            <p>3469</p>
+            <p><countTo :end='3469' :autoPlay="true" :repeat="true" :duration='3000'/></p>
           </div>
-        </div>
+        </div>``
       </div>
       <!-- 四大图标 + 1 -->
       <div class="navList" style="
@@ -111,12 +111,12 @@
           <!-- <div class="peopleTitle">在校师生人数(人)</div> -->
           <div class="numBox">
             <div class="title"></div>
-            <div>1</div>
-            <div>0</div>
+            <div v-for="(item, index) in '105992'" ><countTo :end='item' :autoPlay="true" :useEasing="false" :repeat="true" :duration='3000'/></div>
+            <!-- <div>0</div>
             <div>5</div>
             <div>9</div>
             <div>9</div>
-            <div>2</div>
+            <div>2</div> -->
           </div>
           <div class="applicationList">
             <div class="textBox">
