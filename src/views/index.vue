@@ -2567,6 +2567,28 @@ onMounted(() => {
     width: revert-layer;
   }
 }
+
+@keyframes text-show {
+  0% {
+    display: none;
+  }
+
+  25% {
+    display: none;
+  }
+
+  30% {
+    display: none;
+  }
+
+  40% {
+    display: block;
+  }
+
+  100% {
+    display: block;
+  }
+}
 // top
 .chartsContent {
   display: flex;
@@ -2595,6 +2617,7 @@ onMounted(() => {
     .chartsContentVal {
       width: 60px;
       text-align: right;
+      animation: text-show 5s linear infinite;
     }
 
     .chartsContentBar {
@@ -2607,7 +2630,7 @@ onMounted(() => {
         height: 10px;
         border-radius: 10px;
         background: #00d2ff;
-        animation: width-x 5s linear infinite;
+        animation: top-x 2.5s cubic-bezier(0.36, -0.11, 0.48, 1.22) infinite;
       }
 
       &>div:last-child {
@@ -2619,6 +2642,7 @@ onMounted(() => {
         font-size: 22px;
         color: #061222;
         -webkit-text-stroke: 1px #11c7df;
+        text-shadow: 0 2px #11c7df, 2px 0 #11c7df, -2px 0 #11c7df, 0 -2px #11c7df;
       }
     }
   }
