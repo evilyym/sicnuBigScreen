@@ -111,7 +111,7 @@
           <!-- <div class="peopleTitle">在校师生人数(人)</div> -->
           <div class="numBox">
             <div class="title"></div>
-            <div v-for="(item, index) in '105992'" ><countTo :end='item' :autoPlay="true" :useEasing="false" :repeat="true" :duration='3000'/></div>
+            <div v-for="(item, index) in '105992'" ><countTo :end='item' :autoPlay="true" :useEasing="false" :repeat="true" :repeatTime="3000" :duration='1000'/></div>
             <!-- <div>0</div>
             <div>5</div>
             <div>9</div>
@@ -2562,9 +2562,11 @@ onMounted(() => {
   40% {
     width: revert-layer;
   }
-
-  100% {
+  90% {
     width: revert-layer;
+  }
+  100% {
+    width: 0;
   }
 }
 
@@ -2581,7 +2583,7 @@ onMounted(() => {
     display: none;
   }
 
-  40% {
+  35% {
     display: block;
   }
 
@@ -2601,7 +2603,7 @@ onMounted(() => {
     height: 30px;
     line-height: 30px;
 
-    animation: top-x 5s linear infinite;
+    animation: top-x 5s cubic-bezier(0.36, -0.11, 0.48, 1.22) infinite;
 
     .chartsContentSerial {
       width: 30px;
@@ -2630,7 +2632,7 @@ onMounted(() => {
         height: 10px;
         border-radius: 10px;
         background: #00d2ff;
-        animation: top-x 2.5s cubic-bezier(0.36, -0.11, 0.48, 1.22) infinite;
+        animation: width-x 5s linear infinite;
       }
 
       &>div:last-child {
