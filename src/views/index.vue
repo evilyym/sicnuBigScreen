@@ -2532,6 +2532,41 @@ onMounted(() => {
   }
 }
 
+@keyframes top-x {
+  0% {
+    transform: translateX(-100%);
+  }
+
+  20% {
+    transform: translateX(0);
+  }
+
+  80% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes width-x {
+  0% {
+    width: 0;
+  }
+
+  25% {
+    width: 0;
+  }
+
+  40% {
+    width: revert-layer;
+  }
+
+  100% {
+    width: revert-layer;
+  }
+}
 // top
 .chartsContent {
   display: flex;
@@ -2543,6 +2578,8 @@ onMounted(() => {
     gap: 15px;
     height: 30px;
     line-height: 30px;
+
+    animation: top-x 5s linear infinite;
 
     .chartsContentSerial {
       width: 30px;
@@ -2570,6 +2607,7 @@ onMounted(() => {
         height: 10px;
         border-radius: 10px;
         background: #00d2ff;
+        animation: width-x 5s linear infinite;
       }
 
       &>div:last-child {
