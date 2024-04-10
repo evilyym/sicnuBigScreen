@@ -223,22 +223,27 @@
                 <div>
                   <div></div>
                   <p>智慧餐饮</p>
+                  <p>2024.04.03上线</p>
                 </div>
                 <div>
                   <div></div>
                   <p>教工餐厅就餐</p>
+                  <p>2024.04.03上线</p>
                 </div>
                 <div>
                   <div></div>
                   <p>订单配送</p>
+                  <p>2024.04.03上线</p>
                 </div>
                 <div>
                   <div></div>
                   <p>云餐厅</p>
+                  <p>2024.04.03上线</p>
                 </div>
                 <div>
                   <div></div>
                   <p>POS管理</p>
+                  <p>2024.04.03上线</p>
                 </div>
               </div>
 
@@ -246,88 +251,108 @@
                 <div>
                   <div></div>
                   <p>智能用电</p>
+                  <p>2024.04.03上线</p>
                 </div>
                 <div>
                   <div></div>
                   <p>电瓶车充电</p>
+                  <p>2024.04.03上线</p>
                 </div>
                 <div>
                   <div></div>
                   <p>智慧公寓</p>
+                  <p>2024.04.03上线</p>
                 </div>
                 <div>
                   <div></div>
                   <p>卫生检查</p>
+                  <p>2024.04.03上线</p>
                 </div>
                 <div>
                   <div></div>
                   <p>智慧巡检</p>
+                  <p>2024.04.03上线</p>
                 </div>
                 <div>
                   <div></div>
                   <p>智慧门禁</p>
+                  <p>2024.04.03上线</p>
                 </div>
-                <div>
+                <!-- <div>
                   <div></div>
                   <p>辅导员系统</p>
-                </div>
+                  <p>2024.04.03上线</p>
+                </div> -->
               </div>
 
               <div>
                 <div>
                   <div></div>
                   <p>我要吐槽</p>
+                  <p>2024.04.03上线</p>
                 </div>
                 <div>
                   <div></div>
                   <p>新闻公告</p>
+                  <p>2024.04.03上线</p>
                 </div>
                 <div>
                   <div></div>
                   <p>智慧商圈</p>
+                  <p>2024.04.03上线</p>
                 </div>
                 <div>
                   <div></div>
                   <p>电子钱包</p>
+                  <p>2024.04.03上线</p>
                 </div>
                 <div>
                   <div></div>
                   <p>问卷调查</p>
+                  <p>2024.04.03上线</p>
                 </div>
                 <div>
                   <div></div>
                   <p>聚合收款码</p>
+                  <p>2024.04.03上线</p>
                 </div>
-                <div>
+                <!-- <div>
                   <div></div>
                   <p>自习室预约</p>
+                  <p>2024.04.03上线</p>
                 </div>
                 <div>
                   <div></div>
                   <p>智能云印</p>
-                </div>
+                  <p>2024.04.03上线</p>
+                </div> -->
               </div>
 
               <div>
                 <div>
                   <div></div>
                   <p>支付平台</p>
+                  <p>2024.04.03上线</p>
                 </div>
                 <div>
                   <div></div>
                   <p>用车管理</p>
+                  <p>2024.04.03上线</p>
                 </div>
                 <div>
                   <div></div>
                   <p>智慧报修</p>
+                  <p>2024.04.03上线</p>
                 </div>
                 <div>
                   <div></div>
                   <p>失物招领</p>
+                  <p>2024.04.03上线</p>
                 </div>
                 <div>
                   <div></div>
                   <p>跳蚤市场</p>
+                  <p>2024.04.03上线</p>
                 </div>
               </div>
 
@@ -335,22 +360,27 @@
                 <div>
                   <div></div>
                   <p>用户中心</p>
+                  <p>2024.04.03上线</p>
                 </div>
                 <div>
                   <div></div>
                   <p>基础数据</p>
+                  <p>2024.04.03上线</p>
                 </div>
                 <div>
                   <div></div>
                   <p>权限管理</p>
+                  <p>2024.04.03上线</p>
                 </div>
                 <div>
                   <div></div>
                   <p>消息中心</p>
+                  <p>2024.04.03上线</p>
                 </div>
                 <div>
                   <div></div>
                   <p>审批中心</p>
+                  <p>2024.04.03上线</p>
                 </div>
               </div>
 
@@ -1065,7 +1095,7 @@ onMounted(() => {
             width: 100%;
             height: 100%;
             position: absolute;
-            top: 0;
+            top: 50px;
             left: 0;
             animation: zoom-iocn 15s linear infinite;
 
@@ -1092,7 +1122,7 @@ onMounted(() => {
 
           &>div>div {
             width: 16.6%;
-            height: 110px;
+            height: 120px;
             background-image: url(../assets/imgs/images/应用背景-默认.png);
             background-repeat: no-repeat;
             background-size: contain;
