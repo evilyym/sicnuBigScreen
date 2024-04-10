@@ -2,7 +2,7 @@
   <div class="divBox">
     <video src="../assets/imgs/images/背景.mp4" autoplay="autoplay" loop="loop" muted="muted"></video>
     <div class="title">
-      <button v-for="(item,index) in 5" :key="index" @click="nav=index">{{item}}状态</button>
+      <button v-if="route.query?.ym==7" v-for="(item,index) in 5" :key="index" @click="nav=index">{{item}}状态</button>
       <!-- 数据大屏 -->
       <!-- <video src="../assets/imgs/images/背景.mp4" autoplay="autoplay" loop="loop" muted="muted"></video> -->
       <div style="color: aliceblue">
@@ -857,6 +857,10 @@ import array from "../arr";
 
 import array1 from "../arrTab";
 
+import { useRoute } from 'vue-router';
+
+const route = useRoute()
+
 const arrTab = ref(array1[1].list[1].list.splice(0, 5));
 
 const sortVal = (val1, val2) => {
@@ -1342,7 +1346,7 @@ onMounted(() => {
         background-size: 100% 100%;
         box-sizing: content-box;
         display: flex;
-        animation: animationSmartLife 20s linear(0 0%, 0.22 2.1%, 0.86 6.5%, 1.11 8.6%, 1.3 10.7%, 1.35 11.8%, 1.37 12.9%, 1.37 13.7%, 1.36 14.5%, 1.32 16.2%, 1.03 21.8%, 0.94 24%, 0.89 25.9%, 0.88 26.85%, 0.87 27.8%, 0.87 29.25%, 0.88 30.7%, 0.91 32.4%, 0.98 36.4%, 1.01 38.3%, 1.04 40.5%, 1.05 42.7%, 1.05 44.1%, 1.04 45.7%, 1 53.3%, 0.99 55.4%, 0.98 57.5%, 0.99 60.7%, 1 68.1%, 1.01 72.2%, 1 86.7%, 1 100%) infinite;
+        animation: animationSmartLife 20s linear(0 0%, 0.7 5.74%, 1.03 7.75%, 1 26.25%, 1.07 50.6%, 1 68.72%, 1.01 72.2%, 1 86.7%, 1 100%)  infinite;
         flex-direction: column;
         gap: 20px;
         padding: 10px;
@@ -1494,7 +1498,7 @@ onMounted(() => {
         color: #00fffc;
 
         &>div {
-          animation: animationL_R 20s linear(0 0%, 0.22 2.1%, 0.86 6.5%, 1.11 8.6%, 1.3 10.7%, 1.35 11.8%, 1.37 12.9%, 1.37 13.7%, 1.36 14.5%, 1.32 16.2%, 1.03 21.8%, 0.94 24%, 0.89 25.9%, 0.88 26.85%, 0.87 27.8%, 0.87 29.25%, 0.88 30.7%, 0.91 32.4%, 0.98 36.4%, 1.01 38.3%, 1.04 40.5%, 1.05 42.7%, 1.05 44.1%, 1.04 45.7%, 1 53.3%, 0.99 55.4%, 0.98 57.5%, 0.99 60.7%, 1 68.1%, 1.01 72.2%, 1 86.7%, 1 100%) infinite;
+          animation: animationL_R 10s linear infinite;
           width: 50%;
           padding: 0 10px;
           display: flex;
@@ -1559,7 +1563,7 @@ onMounted(() => {
         width: 200%;
 
         &>div {
-          animation: animationL_R 20s linear(0 0%, 0.22 2.1%, 0.86 6.5%, 1.11 8.6%, 1.3 10.7%, 1.35 11.8%, 1.37 12.9%, 1.37 13.7%, 1.36 14.5%, 1.32 16.2%, 1.03 21.8%, 0.94 24%, 0.89 25.9%, 0.88 26.85%, 0.87 27.8%, 0.87 29.25%, 0.88 30.7%, 0.91 32.4%, 0.98 36.4%, 1.01 38.3%, 1.04 40.5%, 1.05 42.7%, 1.05 44.1%, 1.04 45.7%, 1 53.3%, 0.99 55.4%, 0.98 57.5%, 0.99 60.7%, 1 68.1%, 1.01 72.2%, 1 86.7%, 1 100%) infinite;
+          animation: animationL_R2 10s linear infinite;
           width: 50%;
           padding: 0 10px;
           display: flex;
@@ -2524,11 +2528,34 @@ onMounted(() => {
   0% {
     transform: translateX(0);
   }
-
+  40% {
+    transform: translateX(0);
+  }
   50% {
     transform: translateX(-200%);
   }
+  90% {
+    transform: translateX(-200%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
 
+@keyframes animationL_R2 {
+  0% {
+    transform: translateX(0);
+  }
+
+  40% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(-100%);
+  }
+  90% {
+    transform: translateX(-100%);
+  }
   100% {
     transform: translateX(0);
   }
