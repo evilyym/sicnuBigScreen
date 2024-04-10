@@ -2,6 +2,7 @@
   <div class="divBox">
     <video src="../assets/imgs/images/背景.mp4" autoplay="autoplay" loop="loop" muted="muted"></video>
     <div class="title">
+      <button v-for="(item,index) in 5" :key="index" @click="nav=index">{{item}}状态</button>
       <!-- 数据大屏 -->
       <!-- <video src="../assets/imgs/images/背景.mp4" autoplay="autoplay" loop="loop" muted="muted"></video> -->
       <div style="color: aliceblue">
@@ -24,19 +25,27 @@
         <div class="dataList">
           <div>
             <p>在编校聘人员(人)</p>
-            <p><countTo :end='5982' :autoPlay="true" :repeat="true" :duration='3000'/></p>
+            <p>
+              <countTo :end='5982' :autoPlay="true" :repeat="true" :duration='3000' />
+            </p>
           </div>
           <div>
             <p>后勤自聘人员(人)</p>
-            <p><countTo :end='3791' :autoPlay="true" :repeat="true" :duration='3000'/></p>
+            <p>
+              <countTo :end='3791' :autoPlay="true" :repeat="true" :duration='3000' />
+            </p>
           </div>
           <div>
             <p>本科及以上学历人员(人)</p>
-            <p><countTo :end='4155' :autoPlay="true" :repeat="true" :duration='3000'/></p>
+            <p>
+              <countTo :end='4155' :autoPlay="true" :repeat="true" :duration='3000' />
+            </p>
           </div>
           <div>
             <p>中级职称及以上(人)</p>
-            <p><countTo :end='3469' :autoPlay="true" :repeat="true" :duration='3000'/></p>
+            <p>
+              <countTo :end='3469' :autoPlay="true" :repeat="true" :duration='3000' />
+            </p>
           </div>
         </div>``
       </div>
@@ -66,19 +75,31 @@
         <div class="applications">
           <div class="appNum">
             <div>
-              <div class="appNumNum"><countTo :end='31' :autoPlay="true" :useEasing="false" :repeat="true" :repeatTime="3000" :duration='1000'/></div>
+              <div class="appNumNum">
+                <countTo :end='31' :autoPlay="true" :useEasing="false" :repeat="true" :repeatTime="3000"
+                  :duration='1000' />
+              </div>
               <div class="appNumTitle">应用总数</div>
             </div>
             <div>
-              <div class="appNumNum"><countTo :end='25' :autoPlay="true" :useEasing="false" :repeat="true" :repeatTime="3000" :duration='1000'/></div>
+              <div class="appNumNum">
+                <countTo :end='25' :autoPlay="true" :useEasing="false" :repeat="true" :repeatTime="3000"
+                  :duration='1000' />
+              </div>
               <div class="appNumTitle">场景总数</div>
             </div>
             <div>
-              <div class="appNumNum"><countTo :end='4' :autoPlay="true" :useEasing="false" :repeat="true" :repeatTime="3000" :duration='1000'/></div>
+              <div class="appNumNum">
+                <countTo :end='4' :autoPlay="true" :useEasing="false" :repeat="true" :repeatTime="3000"
+                  :duration='1000' />
+              </div>
               <div class="appNumTitle">平台数量</div>
             </div>
             <div>
-              <div class="appNumNum"><countTo :end='29' :autoPlay="true" :useEasing="false" :repeat="true" :repeatTime="3000" :duration='1000'/></div>
+              <div class="appNumNum">
+                <countTo :end='29' :autoPlay="true" :useEasing="false" :repeat="true" :repeatTime="3000"
+                  :duration='1000' />
+              </div>
               <div class="appNumTitle">SaaS应用数</div>
             </div>
           </div>
@@ -111,8 +132,9 @@
           <!-- <div class="peopleTitle">在校师生人数(人)</div> -->
           <div class="numBox">
             <div class="title"></div>
-            <div v-for="(item, index) in '105992'" >
-              <countTo :end='item' :autoPlay="true" :useEasing="false" :repeat="true" :repeatTime="3000" :duration='1000'/>
+            <div v-for="(item, index) in '105992'">
+              <countTo :end='item' :autoPlay="true" :useEasing="false" :repeat="true" :repeatTime="3000"
+                :duration='1000' />
             </div>
             <!-- <div>0</div>
             <div>5</div>
@@ -390,17 +412,19 @@
           <div v-show="nav == 3">
             <div class="itmeTitle">智能报修</div>
             <div class="SmartLife">
-              <template v-for="item in arr">
-                <div v-for="i in item">
-                  <h4>{{ i.title }}</h4>
-                  <div>
-                    <div v-for="j in i.list" style="">
-                      <p style="">{{ j.name }}</p>
-                      {{ j.val }}
+              <div>
+                <template v-for="item in arr">
+                  <div v-for="i in item">
+                    <h4>{{ i.title }}</h4>
+                    <div>
+                      <div v-for="j in i.list" style="">
+                        <p style="">{{ j.name }}</p>
+                        {{ j.val }}
+                      </div>
                     </div>
                   </div>
-                </div>
-              </template>
+                </template>
+              </div>
             </div>
           </div>
 
@@ -590,9 +614,9 @@
           <div style="overflow: hidden">
             <div class="repairTable transformBox">
               <div class="repairTableItem" v-for="itme in [
-          1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18,
-          19, 20,
-        ]">
+                1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18,
+                19, 20,
+              ]">
                 <div>姓名</div>
                 <div>分类</div>
                 <div>{{ itme }}</div>
@@ -601,9 +625,9 @@
             </div>
             <div style="margin-top: 5px" class="repairTable transformBox">
               <div class="repairTableItem" v-for="itme in [
-          1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18,
-          19, 20,
-        ]">
+                1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18,
+                19, 20,
+              ]">
                 <div>姓名{{ itme }}</div>
                 <div>分类{{ itme }}</div>
                 <div>{{ itme }}</div>
@@ -926,7 +950,7 @@ onMounted(() => {
     series: [
       {
         type: "pie",
-        color:['#F0A900', '#00B24B'],
+        color: ['#F0A900', '#00B24B'],
         radius: ["30%", "45%"],
         avoidLabelOverlap: false,
         label: {
@@ -945,7 +969,7 @@ onMounted(() => {
     series: [
       {
         type: "pie",
-        color:['#1758DE', '#00DEDB'],
+        color: ['#1758DE', '#00DEDB'],
         radius: ["30%", "45%"],
         avoidLabelOverlap: false,
         label: {
@@ -1005,6 +1029,11 @@ onMounted(() => {
 }
 
 .title {
+  button{
+    margin-right: 10px;
+    background-color: #f8a000;
+
+  }
   position: relative;
   background-image: url(../assets/imgs/images/文字标题.png),
     url(../assets/imgs/apng/头部标题栏.png);
@@ -1072,6 +1101,9 @@ onMounted(() => {
         width: 25%;
         display: flex;
         flex-direction: column;
+        background-image: url('/src/assets/imgs/apng/板块背景-中下.png');
+        background-position: bottom;
+        background-repeat: no-repeat;
 
         &>div:nth-child(2) {
           flex-grow: 1;
@@ -1122,7 +1154,7 @@ onMounted(() => {
 
           &>div>div {
             width: 16.6%;
-            height: 120px;
+            height: 132px;
             background-image: url(../assets/imgs/images/应用背景-默认.png);
             background-repeat: no-repeat;
             background-size: contain;
@@ -1302,8 +1334,15 @@ onMounted(() => {
       }
 
       .SmartLife {
-        animation: animationSmartLife 20s linear(0 0%, 0.22 2.1%, 0.86 6.5%, 1.11 8.6%, 1.3 10.7%, 1.35 11.8%, 1.37 12.9%, 1.37 13.7%, 1.36 14.5%, 1.32 16.2%, 1.03 21.8%, 0.94 24%, 0.89 25.9%, 0.88 26.85%, 0.87 27.8%, 0.87 29.25%, 0.88 30.7%, 0.91 32.4%, 0.98 36.4%, 1.01 38.3%, 1.04 40.5%, 1.05 42.7%, 1.05 44.1%, 1.04 45.7%, 1 53.3%, 0.99 55.4%, 0.98 57.5%, 0.99 60.7%, 1 68.1%, 1.01 72.2%, 1 86.7%, 1 100%) infinite;
+        overflow: hidden;
+      }
+
+      .SmartLife>div {
+        flex-grow: 1;
+        background-size: 100% 100%;
+        box-sizing: content-box;
         display: flex;
+        animation: animationSmartLife 20s linear(0 0%, 0.22 2.1%, 0.86 6.5%, 1.11 8.6%, 1.3 10.7%, 1.35 11.8%, 1.37 12.9%, 1.37 13.7%, 1.36 14.5%, 1.32 16.2%, 1.03 21.8%, 0.94 24%, 0.89 25.9%, 0.88 26.85%, 0.87 27.8%, 0.87 29.25%, 0.88 30.7%, 0.91 32.4%, 0.98 36.4%, 1.01 38.3%, 1.04 40.5%, 1.05 42.7%, 1.05 44.1%, 1.04 45.7%, 1 53.3%, 0.99 55.4%, 0.98 57.5%, 0.99 60.7%, 1 68.1%, 1.01 72.2%, 1 86.7%, 1 100%) infinite;
         flex-direction: column;
         gap: 20px;
         padding: 10px;
@@ -1449,14 +1488,15 @@ onMounted(() => {
     .SmartIoT {
       &>div.appListInfo {
         width: 200%;
-        gap: 20px;
-        padding: 20px;
+        // gap: 20px;
+        padding: 20px 0;
         font-weight: 600;
         color: #00fffc;
 
         &>div {
           animation: animationL_R 20s linear(0 0%, 0.22 2.1%, 0.86 6.5%, 1.11 8.6%, 1.3 10.7%, 1.35 11.8%, 1.37 12.9%, 1.37 13.7%, 1.36 14.5%, 1.32 16.2%, 1.03 21.8%, 0.94 24%, 0.89 25.9%, 0.88 26.85%, 0.87 27.8%, 0.87 29.25%, 0.88 30.7%, 0.91 32.4%, 0.98 36.4%, 1.01 38.3%, 1.04 40.5%, 1.05 42.7%, 1.05 44.1%, 1.04 45.7%, 1 53.3%, 0.99 55.4%, 0.98 57.5%, 0.99 60.7%, 1 68.1%, 1.01 72.2%, 1 86.7%, 1 100%) infinite;
           width: 50%;
+          padding: 0 10px;
           display: flex;
           flex-direction: column;
 
@@ -1515,13 +1555,13 @@ onMounted(() => {
 
     .supermarketSmart {
       .appListInfo {
-        padding: 20px;
-        gap: 20px;
+        padding: 20px 0;
         width: 200%;
 
         &>div {
           animation: animationL_R 20s linear(0 0%, 0.22 2.1%, 0.86 6.5%, 1.11 8.6%, 1.3 10.7%, 1.35 11.8%, 1.37 12.9%, 1.37 13.7%, 1.36 14.5%, 1.32 16.2%, 1.03 21.8%, 0.94 24%, 0.89 25.9%, 0.88 26.85%, 0.87 27.8%, 0.87 29.25%, 0.88 30.7%, 0.91 32.4%, 0.98 36.4%, 1.01 38.3%, 1.04 40.5%, 1.05 42.7%, 1.05 44.1%, 1.04 45.7%, 1 53.3%, 0.99 55.4%, 0.98 57.5%, 0.99 60.7%, 1 68.1%, 1.01 72.2%, 1 86.7%, 1 100%) infinite;
           width: 50%;
+          padding: 0 10px;
           display: flex;
           flex-direction: column;
           color: rgba(0, 255, 252, 1);
@@ -1638,7 +1678,7 @@ onMounted(() => {
       color: #d8feff;
       font-size: 18px;
       gap: 10px;
-      background-image: url('../assets/imgs/apng/板块背景-中下.png');
+      // background-image: url('../assets/imgs/apng/板块背景-中下.png');
 
     }
 
@@ -1922,10 +1962,11 @@ onMounted(() => {
         font-size: 50px;
         font-family: PingFang SC;
         font-weight: 600;
-        color: #0ffbd6;
+        color: #fff;
         line-height: 50px;
         line-height: 80px;
         text-align: center;
+        text-shadow: 0 0 2px #00fffc, 0 0 2px #00fffc, 0 0 20px #00fffc, 0 0 20px #00fffc;
       }
     }
 
@@ -1991,6 +2032,7 @@ onMounted(() => {
           font-size: 24px;
           background-image: url(../assets/imgs/images/数据展示框.png);
           background-size: 100% 100%;
+          text-shadow: 0 0 4px #00fffc, 0 0 20px #00fffc, 0 0 30px #00fffc, 0 0 40px #00fffc;
         }
       }
     }
@@ -2470,7 +2512,7 @@ onMounted(() => {
   }
 
   50% {
-    transform: translateY(-50%);
+    transform: translateY(-95%);
   }
 
   100% {
@@ -2484,11 +2526,11 @@ onMounted(() => {
   }
 
   50% {
-    transform: translateX(-850px);
+    transform: translateX(-200%);
   }
 
   100% {
-    transform: translateX();
+    transform: translateX(0);
   }
 }
 
@@ -2596,9 +2638,11 @@ onMounted(() => {
   40% {
     width: revert-layer;
   }
+
   90% {
     width: revert-layer;
   }
+
   100% {
     width: 0;
   }
@@ -2625,6 +2669,7 @@ onMounted(() => {
     display: block;
   }
 }
+
 // top
 .chartsContent {
   display: flex;
