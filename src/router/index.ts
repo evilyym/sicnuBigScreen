@@ -18,6 +18,11 @@ const routes: RouteRecordRaw[] = [
     children: [],
   },
   {
+    path: "/gpTetris",
+    component: () => import("@/views/tetr.vue"),
+    children: [],
+  },
+  {
     path: "/:pathMatch(.*)",
     name: "*",
     redirect: "/",

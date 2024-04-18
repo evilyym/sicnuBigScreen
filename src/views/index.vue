@@ -2,7 +2,7 @@
   <div class="divBox">
     <video src="../assets/imgs/images/背景.mp4" autoplay="autoplay" loop="loop" muted="muted"></video>
     <div class="title">
-      <button v-if="route.query?.ym==7" v-for="(item,index) in 5" :key="index" @click="nav=index">{{item}}状态</button>
+      <button v-if="route.query?.ym == 7" v-for="(item, index) in 5" :key="index" @click="nav = index">{{ item }}状态</button>
       <!-- 数据大屏 -->
       <!-- <video src="../assets/imgs/images/背景.mp4" autoplay="autoplay" loop="loop" muted="muted"></video> -->
       <div style="color: aliceblue">
@@ -876,7 +876,8 @@ arrTab.value.sort(sortVal);
 const arr = ref(array);
 const nav = ref(0);
 const isFull = ref(document.fullscreenElement !== null);
-const date = new Date();
+
+setInterval(()=>{nav.value++ && nav.value == 5 && (nav.value = 0)}, 20000)
 
 autofit.init();
 
@@ -1033,17 +1034,20 @@ onMounted(() => {
 }
 
 .title {
-  button{
+  button {
     margin-right: 10px;
     background-color: #f8a000;
 
   }
+
   position: relative;
   background-image: url(../assets/imgs/images/文字标题.png),
-    url(../assets/imgs/apng/头部标题栏.png);
-  background-size: 680px 60px, 100% 100%;
+  url(../assets/imgs/apng/头部标题栏.png);
+  background-size: 680px 60px,
+  100% 100%;
   background-repeat: no-repeat;
-  background-position: center top, center;
+  background-position: center top,
+  center;
   width: 100%;
   height: 80px;
   line-height: 72px;
@@ -1126,14 +1130,23 @@ onMounted(() => {
           overflow: hidden;
 
           &>div {
+            &::before {
+              content: ' ';
+              position: absolute;
+              width: 90%;
+              height: 2px;
+              background-color: #11C7DF;
+              align-self: center;
+            }
+
             justify-content: space-around;
             display: flex;
             width: 100%;
-            height: 100%;
+            height: 90%;
             position: absolute;
-            top: 50px;
+            // top: 50px;
             left: 0;
-            animation: zoom-iocn 15s linear infinite;
+            animation: zoom-iocn 20s linear infinite;
 
             &:nth-child(1) {
               left: 0;
@@ -1158,23 +1171,51 @@ onMounted(() => {
 
           &>div>div {
             width: 16.6%;
-            height: 132px;
+            height: 110px;
             background-image: url(../assets/imgs/images/应用背景-默认.png);
             background-repeat: no-repeat;
             background-size: contain;
             background-position: center;
+            position: relative;
 
-            &:nth-child(odd) {
-              animation: animationT_B 3s linear infinite;
+            &::before {
+              content: ' ';
+              position: absolute;
+              width: 10px;
+              height: 10px;
+              background-color: #11C7DF;
+              border-radius: 5px;
+              left: 48%;
             }
 
             &:nth-child(even) {
-              animation: animationB_T 3s linear infinite;
+              &::before {
+                bottom: -20px;
+              }
+              &>p:nth-child(3){
+                position: absolute;
+                bottom: -60px;
+                width: 100%;
+                text-align: center;
+              }
+              
+              // animation: animationB_T 3s linear infinite;
+
             }
 
             &:nth-child(odd) {
               background-position-y: bottom;
-              align-self: center;
+              align-self: flex-end;
+              &::before {
+                top: -20px;
+              }
+              &>p:nth-child(3){
+                position: absolute;
+                top: -60px;
+                width: 100%;
+                text-align: center;
+              }
+              // animation: animationT_B 3s linear infinite;
             }
 
             &>div {
@@ -1346,7 +1387,7 @@ onMounted(() => {
         background-size: 100% 100%;
         box-sizing: content-box;
         display: flex;
-        animation: animationSmartLife 20s linear(0 0%, 0.7 5.74%, 1.03 7.75%, 1 26.25%, 1.07 50.6%, 1 68.72%, 1.01 72.2%, 1 86.7%, 1 100%)  infinite;
+        animation: animationSmartLife 20s linear(0 0%, 0.7 5.74%, 1.03 7.75%, 1 26.25%, 1.07 50.6%, 1 68.72%, 1.01 72.2%, 1 86.7%, 1 100%) infinite;
         flex-direction: column;
         gap: 20px;
         padding: 10px;
@@ -1682,6 +1723,7 @@ onMounted(() => {
       color: #d8feff;
       font-size: 18px;
       gap: 10px;
+      position: relative;
       // background-image: url('../assets/imgs/apng/板块背景-中下.png');
 
     }
@@ -2076,23 +2118,24 @@ onMounted(() => {
           &:nth-child(1) {
             align-self: flex-start;
             animation-name: zoom-down;
-            background-color: rgba(0, 178, 75, 1);
+            background-color: #00B6FF; //rgba(0, 178, 75, 1);
             transform: scale(0.8);
           }
 
           &:nth-child(2) {
-            background-color: rgba(0, 222, 219, 1);
+            background-color: #0077EE; //rgba(0, 222, 219, 1);
           }
 
           &:nth-child(3) {
             align-self: flex-start;
             animation-name: zoom-down;
-            background-color: rgba(0, 38, 178, 1);
+            background-color: #0026B2; //rgba(0, 38, 178, 1);
             transform: scale(0.8);
           }
 
           &:nth-child(4) {
-            background-color: rgba(158, 0, 240, 1);
+            background-color: #0077EE; // rgba(158, 0, 240, 1);
+            
           }
 
           width: 104px;
@@ -2528,15 +2571,19 @@ onMounted(() => {
   0% {
     transform: translateX(0);
   }
+
   40% {
     transform: translateX(0);
   }
+
   50% {
     transform: translateX(-200%);
   }
+
   90% {
     transform: translateX(-200%);
   }
+
   100% {
     transform: translateX(0);
   }
@@ -2550,12 +2597,15 @@ onMounted(() => {
   40% {
     transform: translateX(0);
   }
+
   50% {
     transform: translateX(-100%);
   }
+
   90% {
     transform: translateX(-100%);
   }
+
   100% {
     transform: translateX(0);
   }
