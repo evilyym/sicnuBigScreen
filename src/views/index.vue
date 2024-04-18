@@ -2088,7 +2088,7 @@ onMounted(() => {
     .dataBox {
       display: flex;
       flex-wrap: wrap;
-      padding: 10px 40px;
+      padding: 10px 10px;
       background-image: url("/src/assets/imgs/apng/板块背景-左下.png"),
         url(../assets/imgs/images/楼宇背景.png) !important;
       background-size: 100% 100%, 100% 220px !important;
@@ -2139,14 +2139,14 @@ onMounted(() => {
             
           }
 
-          width: 104px;
-          height: 104px;
+          width: 110px;
+          height: 110px;
 
           &:nth-child(2n) {
             align-self: flex-end;
             animation-name: zoom-up-and-down;
-            width: 84px;
-            height: 84px;
+            width: 94px;
+            height: 94px;
           }
 
           border-radius: 50%;
