@@ -57,10 +57,10 @@
           grid-row-end: 60;
         ">
         <div>
-          <div class="things" @mouseover="nav = 1" @click="goDataDetails" @mouseout="nav = 0"></div>
-          <div class="life" @mouseover="nav = 3" @click="goDataDetails" @mouseout="nav = 0"></div>
-          <div class="supermarket" @mouseover="nav = 2" @click="goDataDetails" @mouseout="nav = 0"></div>
-          <div class="pay" @mouseover="nav = 4" @click="goDataDetails" @mouseout="nav = 0"></div>
+          <div class="things" @mouseover="nav = 1,navStart=false" @click="goDataDetails" @mouseout="nav = 0,navStart=true"></div>
+          <div class="life" @mouseover="nav = 3,navStart=false" @click="goDataDetails" @mouseout="nav = 0,navStart=true"></div>
+          <div class="supermarket" @mouseover="nav = 2,navStart=false" @click="goDataDetails" @mouseout="nav = 0,navStart=true"></div>
+          <div class="pay" @mouseover="nav = 4,navStart=false" @click="goDataDetails" @mouseout="nav = 0,navStart=true"></div>
           <div class="foodSafety" @click="goDataDetails"></div>
         </div>
       </div>
@@ -875,9 +875,10 @@ arrTab.value.sort(sortVal);
 
 const arr = ref(array);
 const nav = ref(0);
+const navStart = ref(true);
 const isFull = ref(document.fullscreenElement !== null);
 
-setInterval(()=>{nav.value++ && nav.value == 5 && (nav.value = 0)}, 20000)
+setInterval(()=>{navStart.value && nav.value++ && nav.value == 5 && (nav.value = 0)}, 20000)
 
 autofit.init();
 
