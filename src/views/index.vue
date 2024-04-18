@@ -957,7 +957,7 @@ onMounted(() => {
       {
         type: "pie",
         color: ['#F0A900', '#00B24B'],
-        radius: ["30%", "45%"],
+        radius: ["25%", "50%"],
         avoidLabelOverlap: false,
         label: {
           formatter: "{b}\n{c}%",
@@ -976,7 +976,7 @@ onMounted(() => {
       {
         type: "pie",
         color: ['#1758DE', '#00DEDB'],
-        radius: ["30%", "45%"],
+        radius: ["25%", "50%"],
         avoidLabelOverlap: false,
         label: {
           formatter: "{b}\n{c}%",
@@ -2101,7 +2101,7 @@ onMounted(() => {
         color: #ffffff;
         text-align: left;
         //padding: 16px;
-        gap: 10px;
+        // gap: 10px;
 
         &:nth-child(-n + 4) {
           animation-duration: 3s;
@@ -2115,28 +2115,35 @@ onMounted(() => {
           align-items: center;
           justify-content: center;
           transition: all 3s;
+          background-repeat: no-repeat;
+          background-size: contain;
 
           &:nth-child(1) {
             align-self: flex-start;
             animation-name: zoom-down;
-            background-color: #00B6FF; //rgba(0, 178, 75, 1);
-            transform: scale(0.8);
+            background-image: url(../assets/imgs/apng/泡泡.png);
+            // background-color: #00B6FF; //rgba(0, 178, 75, 1);
+            transform: scale(1);
           }
 
           &:nth-child(2) {
-            background-color: #0077EE; //rgba(0, 222, 219, 1);
+            background-image: url(../assets/imgs/apng/泡泡-绿.png);
+            // background-color: #0077EE; //rgba(0, 222, 219, 1);
+            transform: scale(1.1);
           }
 
           &:nth-child(3) {
             align-self: flex-start;
             animation-name: zoom-down;
-            background-color: #0026B2; //rgba(0, 38, 178, 1);
-            transform: scale(0.8);
+            background-image: url(../assets/imgs/apng/泡泡-蓝.png);
+            // background-color: #0026B2; //rgba(0, 38, 178, 1);
+            transform: scale(1);
           }
 
           &:nth-child(4) {
-            background-color: #0077EE; // rgba(158, 0, 240, 1);
-            
+            transform: scale(1.1);
+            background-image: url(../assets/imgs/apng/泡泡.png);
+            // background-color: #0077EE; // rgba(158, 0, 240, 1);
           }
 
           width: 110px;
@@ -2162,12 +2169,12 @@ onMounted(() => {
       }
 
       p:first-child {
-        font-size: 14px;
+        font-size: 10px;
       }
 
       p:last-child {
         font-weight: 600;
-        font-size: 20px;
+        font-size: 16px;
       }
     }
 
@@ -2532,15 +2539,15 @@ onMounted(() => {
 
 @keyframes zoom-down {
   0% {
-    transform: scale(1) translateY(0);
+    transform: scale(1.1) translateY(0);
   }
 
   50% {
-    transform: scale(0.8) translateY(10px);
+    transform: scale(1) translateY(10px);
   }
 
   100% {
-    transform: scale(1) translateY(0);
+    transform: scale(1.1) translateY(0);
   }
 }
 
