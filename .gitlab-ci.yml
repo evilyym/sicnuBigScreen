@@ -2,6 +2,30 @@ stages:
   - sonarqube-check
   - develop
 
+cache:
+  paths:
+    - node_modules/
+
+install:
+  stage: install
+  tags: 
+    - deploy
+  only:
+    changes:
+      - package.json
+  script:
+    yarn
+
+build:
+  stage: build 
+  tags: 
+    - deploy
+  script: 
+    - yarn build
+  artifacts: 
+    paths:
+        - dist/
+
 variables:
   GIT_CLEAN_FLAGS: none
 

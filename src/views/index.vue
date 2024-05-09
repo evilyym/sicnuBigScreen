@@ -2,7 +2,8 @@
   <div class="divBox">
     <video src="../assets/imgs/images/背景.mp4" autoplay="autoplay" loop="loop" muted="muted"></video>
     <div class="title">
-      <button v-if="route.query?.ym == 7" v-for="(item, index) in 5" :key="index" @click="nav = index">{{ item }}状态</button>
+      <button v-if="route.query?.ym == 7" v-for="(item, index) in 5" :key="index" @click="nav = index">{{ item
+        }}状态</button>
       <!-- 数据大屏 -->
       <!-- <video src="../assets/imgs/images/背景.mp4" autoplay="autoplay" loop="loop" muted="muted"></video> -->
       <div style="color: aliceblue">
@@ -57,10 +58,11 @@
           grid-row-end: 60;
         ">
         <div>
-          <div class="things" @mouseover="nav = 1,navStart=false" @click="goDataDetails" @mouseout="nav = 0,navStart=true"></div>
-          <div class="life" @mouseover="nav = 3,navStart=false" @click="goDataDetails" @mouseout="nav = 0,navStart=true"></div>
-          <div class="supermarket" @mouseover="nav = 2,navStart=false" @click="goDataDetails" @mouseout="nav = 0,navStart=true"></div>
-          <div class="pay" @mouseover="nav = 4,navStart=false" @click="goDataDetails" @mouseout="nav = 0,navStart=true"></div>
+          <!-- @mouseover="nav = 3,navStart=false" @mouseout="nav = 0, navStart = true" -->
+          <div class="things" @click="goDataDetails"></div>
+          <div class="life" @click="goDataDetails"></div>
+          <div class="supermarket" @click="goDataDetails"></div>
+          <div class="pay" @click="goDataDetails"></div>
           <div class="foodSafety" @click="goDataDetails"></div>
         </div>
       </div>
@@ -878,7 +880,7 @@ const nav = ref(0);
 const navStart = ref(true);
 const isFull = ref(document.fullscreenElement !== null);
 
-setInterval(()=>{navStart.value && nav.value++ && nav.value == 5 && (nav.value = 0)}, 20000)
+setInterval(() => { navStart.value && nav.value++ && nav.value == 5 && (nav.value = 0) }, 20000)
 
 autofit.init();
 
@@ -909,11 +911,11 @@ const toWindowScreen = () => {
 
 const goDataDetails = (item) => {
   switch (item.target.className) {
-    case "things":
+    case "life":
       location.href = "http://101.69.251.102:28186/link/VADnTOvW";
       break;
 
-    case "life":
+    case "things":
       location.href = "http://101.69.251.102:28186/link/DFMTrnXd";
       break;
 
@@ -995,6 +997,11 @@ onMounted(() => {
   option && myChart1.setOption(option);
 });
 </script>
+<style lang="less">
+:root {
+  --color: red;
+}
+</style>
 
 <style lang="less" scoped>
 .iocn {
@@ -1038,6 +1045,7 @@ onMounted(() => {
   button {
     margin-right: 10px;
     background-color: #f8a000;
+    background-color: var(--color);
 
   }
 
@@ -1193,13 +1201,14 @@ onMounted(() => {
               &::before {
                 bottom: -20px;
               }
-              &>p:nth-child(3){
+
+              &>p:nth-child(3) {
                 position: absolute;
                 bottom: -60px;
                 width: 100%;
                 text-align: center;
               }
-              
+
               // animation: animationB_T 3s linear infinite;
 
             }
@@ -1207,15 +1216,18 @@ onMounted(() => {
             &:nth-child(odd) {
               background-position-y: bottom;
               align-self: flex-end;
+
               &::before {
                 top: -20px;
               }
-              &>p:nth-child(3){
+
+              &>p:nth-child(3) {
                 position: absolute;
                 top: -60px;
                 width: 100%;
                 text-align: center;
               }
+
               // animation: animationT_B 3s linear infinite;
             }
 

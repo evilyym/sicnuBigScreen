@@ -23,3 +23,11 @@ dist-ssr
 *.sln
 *.sw?
 .yaml
+
+src/views/canvas.js
+src/views/minoes.js
+src/views/style.less
+src/views/test.js
+src/views/tetr.vue
+src/views/Timeline.vue
+tsconfig.json
