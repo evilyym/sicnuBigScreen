@@ -880,7 +880,7 @@ const nav = ref(0);
 const navStart = ref(true);
 const isFull = ref(document.fullscreenElement !== null);
 
-setInterval(() => { navStart.value && nav.value++ && nav.value == 5 && (nav.value = 0) }, 10000)
+setInterval(() => { navStart.value && nav.value++ && nav.value == 5 && (nav.value = 0) }, 15000)
 
 autofit.init();
 
@@ -1147,7 +1147,7 @@ onMounted(() => {
               background-color: #11C7DF;
               align-self: center;
               left: 5%;
-              animation: lift-right 10s linear infinite;
+              animation: lift-right 15s linear infinite;
             }
 
             @keyframes lift-right {
@@ -1284,23 +1284,23 @@ onMounted(() => {
             }
 
             &:nth-child(1) {
-              animation: icon-top1 10s linear infinite;
+              animation: icon-top1 15s linear infinite;
             }
 
             &:nth-child(2) {
-              animation: icon-top2 10s linear infinite;
+              animation: icon-top2 15s linear infinite;
             }
 
             &:nth-child(3) {
-              animation: icon-top3 10s linear infinite;
+              animation: icon-top3 15s linear infinite;
             }
 
             &:nth-child(4) {
-              animation: icon-top4 10s linear infinite;
+              animation: icon-top4 15s linear infinite;
             }
 
             &:nth-child(5) {
-              animation: icon-top5 10s linear infinite;
+              animation: icon-top5 15s linear infinite;
             }
 
             @keyframes icon-top1 {
