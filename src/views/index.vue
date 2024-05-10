@@ -880,7 +880,7 @@ const nav = ref(0);
 const navStart = ref(true);
 const isFull = ref(document.fullscreenElement !== null);
 
-setInterval(() => { navStart.value && nav.value++ && nav.value == 5 && (nav.value = 0) }, 20000)
+setInterval(() => { navStart.value && nav.value++ && nav.value == 5 && (nav.value = 0) }, 10000)
 
 autofit.init();
 
@@ -1146,6 +1146,58 @@ onMounted(() => {
               height: 2px;
               background-color: #11C7DF;
               align-self: center;
+              left: 5%;
+              animation: lift-right 10s linear infinite;
+            }
+
+            @keyframes lift-right {
+              0% {
+                width: 0%;
+              }
+
+              5% {
+                width: 5%;
+              }
+
+              15% {
+                width: 5%;
+              }
+
+              20% {
+                width: 25%;
+              }
+
+              35% {
+                width: 25%;
+              }
+
+              40% {
+                width: 45%;
+              }
+
+              55% {
+                width: 45%;
+              }
+
+              60% {
+                width: 65%;
+              }
+
+              75% {
+                width: 65%;
+              }
+
+              80% {
+                width: 85%;
+              }
+
+              95% {
+                width: 85%;
+              }
+
+              100% {
+                width: 90%;
+              }
             }
 
             justify-content: space-around;
@@ -1155,7 +1207,7 @@ onMounted(() => {
             position: absolute;
             // top: 50px;
             left: 0;
-            animation: zoom-iocn 20s linear infinite;
+            // animation: zoom-iocn 50s linear infinite;
 
             &:nth-child(1) {
               left: 0;
@@ -1229,6 +1281,197 @@ onMounted(() => {
               }
 
               // animation: animationT_B 3s linear infinite;
+            }
+
+            &:nth-child(1) {
+              animation: icon-top1 10s linear infinite;
+            }
+
+            &:nth-child(2) {
+              animation: icon-top2 10s linear infinite;
+            }
+
+            &:nth-child(3) {
+              animation: icon-top3 10s linear infinite;
+            }
+
+            &:nth-child(4) {
+              animation: icon-top4 10s linear infinite;
+            }
+
+            &:nth-child(5) {
+              animation: icon-top5 10s linear infinite;
+            }
+
+            @keyframes icon-top1 {
+              0% {
+                opacity: 0;
+              }
+
+              5% {
+                opacity: 0;
+                transform: translateY(-100%)
+              }
+
+              15% {
+                opacity: 1;
+                transform: scale(1);
+                transform: translateY(0)
+              }
+
+              20% {}
+
+              35% {}
+
+              40% {}
+
+              55% {}
+
+              60% {}
+
+              75% {}
+
+              80% {}
+
+              95% {}
+
+              100% {}
+            }
+
+            @keyframes icon-top2 {
+              0% {
+                opacity: 0;
+              }
+
+              5% {}
+
+              15% {}
+
+              20% {
+                opacity: 0;
+                transform: translateY(100%)
+              }
+
+              35% {
+                opacity: 1;
+                transform: scale(1);
+                transform: translateY(0)
+              }
+
+              40% {}
+
+              55% {}
+
+              60% {}
+
+              75% {}
+
+              80% {}
+
+              95% {}
+
+              100% {}
+            }
+
+            @keyframes icon-top3 {
+              0% {
+                opacity: 0;
+              }
+
+              40% {
+                opacity: 0;
+                transform: translateY(-100%)
+              }
+
+              55% {
+                opacity: 1;
+                transform: scale(1);
+                transform: translateY(0)
+              }
+
+              60% {}
+
+              75% {}
+
+              80% {}
+
+              95% {}
+
+              100% {}
+            }
+
+            @keyframes icon-top4 {
+              0% {
+                opacity: 0;
+              }
+
+              5% {
+
+              }
+
+              15% {
+
+              }
+
+              20% {}
+
+              35% {}
+
+              40% {}
+
+              55% {}
+
+              60% {
+                opacity: 0;
+                transform: translateY(100%)
+              }
+
+              75% {
+                opacity: 1;
+                transform: scale(1);
+                transform: translateY(0)
+              }
+
+              80% {}
+
+              95% {}
+
+              100% {}
+            }
+
+            @keyframes icon-top5 {
+              0% {
+                opacity: 0;
+              }
+
+              5% {}
+
+              15% {}
+
+              20% {}
+
+              35% {}
+
+              40% {}
+
+              55% {}
+
+              60% {}
+
+              75% {}
+
+              80% {
+                opacity: 0;
+                transform: translateY(-100%)
+              }
+
+              95% {
+                opacity: 1;
+                transform: scale(1);
+                transform: translateY(0)
+              }
+
+              100% {}
             }
 
             &>div {
