@@ -946,30 +946,13 @@ const getWeek = () => {
   return "星期" + "日一二三四五六".charAt(new Date().getDay());
 };
 const allData = ref({
-  life_user_situation: [],
-  life_user_situation: [],
-  life_user_situation: [],
-  life_user_situation: [],
+  life_user_situation: {},
+  logistics_info_construction: {},
+  logistics_personnel: {},
+  kettle_apartment_data: {},
 })
-// #用于前端验签
-// KEY = eb4420b70c4eb9722d78400d8f817c42
-// SECRET = 64a6dd7185c0539a6a2f217ea340c91b
-fetch("https://dev-sicnu-data-screen.goliveplus.cn/data_screen/api/all/data/", {
-  headers: {
-    appKey: 'eb4420b70c4eb9722d78400d8f817c42',
-    sign: 'e00183440d3fc51ee4598718ca395373',
-    timestamp: '1718777708',
-    // timestamp: new Date().getTime(),
-    randStr: '1sqrct3UyeFRI8dl',
-  }
-})
-  .then((response) => response.json())
-  .then((data) => {
-    allData.value = data.data.data;
-    console.log(data.data.data);
-  });
 
-onMounted(() => {
+const bodyMounted = () => {
   const chartDom = document.getElementById("main");
   const chartDom1 = document.getElementById("main1");
   const myChart = echarts.init(chartDom);
@@ -1016,7 +999,26 @@ onMounted(() => {
 
   option && myChart.setOption(option2);
   option && myChart1.setOption(option);
-});
+};
+
+// #用于前端验签
+// KEY = eb4420b70c4eb9722d78400d8f817c42
+// SECRET = 64a6dd7185c0539a6a2f217ea340c91b
+fetch("/data_screen/api/all/data/", {
+  headers: {
+    appKey: 'eb4420b70c4eb9722d78400d8f817c42',
+    sign: 'e00183440d3fc51ee4598718ca395373',
+    timestamp: '1718777708',
+    // timestamp: new Date().getTime(),
+    randStr: '1sqrct3UyeFRI8dl',
+  }
+})
+  .then((response) => response.json())
+  .then((data) => {
+    allData.value = data.data.data;
+    bodyMounted();
+  });
+
 </script>
 <style lang="less">
 :root {
