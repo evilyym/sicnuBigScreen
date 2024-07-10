@@ -22,15 +22,15 @@ const routes: RouteRecordRaw[] = [
     component: () => import("@/views/tetr.vue"),
     children: [],
   },
-  {
-    path: "/:pathMatch(.*)",
-    name: "*",
-    redirect: "/",
-  },
+  // {
+  //   path: "/:pathMatch(.*)",
+  //   name: "*",
+  //   redirect: "/",
+  // },
 ];
 
 const router = createRouter({
-  history: createWebHistory("/"),
+  history: createWebHistory("/dataease_screen"),
   routes,
 });
 

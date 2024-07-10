@@ -5,7 +5,7 @@ import { resolve } from "path";
 
 // https://vitejs.dev/config/
 const buildConfig = {
-  outDir: "dist/sicnuCockpitBigScreen",
+  outDir: "dist/dataease_screen",
   terserOptions: {
     compress: {
       drop_console: true, // 生产环境移除console
@@ -22,7 +22,7 @@ const buildConfig = {
 };
 export default defineConfig({
   plugins: [vue()],
-  base: "/",
+  base: "/dataease_screen/",
   resolve: {
     alias: [
       // 配置 @ 指代 src
