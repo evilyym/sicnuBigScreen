@@ -1004,7 +1004,7 @@ const bodyMounted = () => {
 // #用于前端验签
 // KEY = eb4420b70c4eb9722d78400d8f817c42
 // SECRET = 64a6dd7185c0539a6a2f217ea340c91b
-fetch("/data_screen/api/all/data/", {
+fetch("https://dev-sicnu-data-screen.goliveplus.cn/data_screen/api/all/data/", {
   headers: {
     appKey: 'eb4420b70c4eb9722d78400d8f817c42',
     sign: 'e00183440d3fc51ee4598718ca395373',
