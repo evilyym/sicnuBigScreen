@@ -910,34 +910,37 @@ const toWindowScreen = () => {
   isFull.value = false;
 };
 
-let jumpAddress, hpptAddress;
-  if (/dev-/.test(location.hostname)) {
-    jumpAddress = 'http://101.69.251.102:28186';
-    hpptAddress = 'https://dev-sicnu-data-screen.goliveplus.cn';
-  }else if (/.edu.cn/.test(location.hostname)) {
-    jumpAddress = 'https://dataease.sicnu.edu.cn';
-    hpptAddress = 'https://sicnu-data-screen.goliveplus.cn';
-  }else{
-    jumpAddress = 'http://172.24.65.43';
-    hpptAddress = 'http://172.24.65.43';
-  }
+let jumpAddress, hpptAddress, typeAddress;
+if (/dev-/.test(location.hostname)) {
+  typeAddress = 1
+  jumpAddress = 'http://101.69.251.102:28186';
+  hpptAddress = 'https://dev-sicnu-data-screen.goliveplus.cn';
+} else if (/.edu.cn/.test(location.hostname)) {
+  typeAddress = 2
+  jumpAddress = 'https://dataease.sicnu.edu.cn';
+  hpptAddress = 'https://sicnu-data-screen.goliveplus.cn';
+} else {
+  typeAddress = 3
+  jumpAddress = 'http://172.24.65.43';
+  hpptAddress = 'http://172.24.65.43';
+}
 
 const goDataDetails = (item) => {
   switch (item.target.className) {
     case "life":
-      location.href = jumpAddress + "/link/VADnTOvW";
+      location.href = jumpAddress + "/link/" + (typeAddress) == 1 ? 'VADnTOvW' : 'JZgQEs47';
       break;
 
     case "things":
-      location.href = jumpAddress + "/link/DFMTrnXd";
+      location.href = jumpAddress + "/link/" + (typeAddress) == 1 ? 'DFMTrnXd' : 'EoyaJFBm';
       break;
 
     case "supermarket":
-      location.href = jumpAddress + "/link/QbsJOgQh";
+      location.href = jumpAddress + "/link/" + (typeAddress) == 1 ? 'QbsJOgQh' : '9cPFh5Fg';
       break;
 
     case "pay":
-      location.href = jumpAddress + "/link/I9LI2gMx";
+      location.href = jumpAddress + "/link/" + (typeAddress) == 1 ? 'I9LI2gMx' : 'YZvQ4Y2p';
       break;
     case "foodSafety":
       location.href = "http://logisticssystem.sicnu.edu.cn/BlueData/Index.html";
