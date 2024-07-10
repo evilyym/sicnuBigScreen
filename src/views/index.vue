@@ -27,25 +27,29 @@
           <div>
             <p>在编校聘人员(人)</p>
             <p>
-              <countTo :end='allData.logistics_personnel.recruiting_staff_amount' :autoPlay="true" :repeat="true" :duration='3000' />
+              <countTo :end='allData.logistics_personnel.recruiting_staff_amount' :autoPlay="true" :repeat="true"
+                :duration='3000' />
             </p>
           </div>
           <div>
             <p>后勤自聘人员(人)</p>
             <p>
-              <countTo :end='allData.logistics_personnel.self_employed_logistically' :autoPlay="true" :repeat="true" :duration='3000' />
+              <countTo :end='allData.logistics_personnel.self_employed_logistically' :autoPlay="true" :repeat="true"
+                :duration='3000' />
             </p>
           </div>
           <div>
             <p>本科及以上学历人员(人)</p>
             <p>
-              <countTo :end='allData.logistics_personnel.bachelor_degree' :autoPlay="true" :repeat="true" :duration='3000' />
+              <countTo :end='allData.logistics_personnel.bachelor_degree' :autoPlay="true" :repeat="true"
+                :duration='3000' />
             </p>
           </div>
           <div>
             <p>中级职称及以上(人)</p>
             <p>
-              <countTo :end='allData.logistics_personnel.intermediate_above_titles' :autoPlay="true" :repeat="true" :duration='3000' />
+              <countTo :end='allData.logistics_personnel.intermediate_above_titles' :autoPlay="true" :repeat="true"
+                :duration='3000' />
             </p>
           </div>
         </div>
@@ -78,29 +82,29 @@
           <div class="appNum">
             <div>
               <div class="appNumNum">
-                <countTo :end='allData.logistics_info_construction.application_count' :autoPlay="true" :useEasing="false" :repeat="true" :repeatTime="3000"
-                  :duration='1000' />
+                <countTo :end='allData.logistics_info_construction.application_count' :autoPlay="true"
+                  :useEasing="false" :repeat="true" :repeatTime="3000" :duration='1000' />
               </div>
               <div class="appNumTitle">应用总数</div>
             </div>
             <div>
               <div class="appNumNum">
-                <countTo :end='allData.logistics_info_construction.scene_count' :autoPlay="true" :useEasing="false" :repeat="true" :repeatTime="3000"
-                  :duration='1000' />
+                <countTo :end='allData.logistics_info_construction.scene_count' :autoPlay="true" :useEasing="false"
+                  :repeat="true" :repeatTime="3000" :duration='1000' />
               </div>
               <div class="appNumTitle">场景总数</div>
             </div>
             <div>
               <div class="appNumNum">
-                <countTo :end='allData.logistics_info_construction.platforms_count' :autoPlay="true" :useEasing="false" :repeat="true" :repeatTime="3000"
-                  :duration='1000' />
+                <countTo :end='allData.logistics_info_construction.platforms_count' :autoPlay="true" :useEasing="false"
+                  :repeat="true" :repeatTime="3000" :duration='1000' />
               </div>
               <div class="appNumTitle">平台数量</div>
             </div>
             <div>
               <div class="appNumNum">
-                <countTo :end='allData.logistics_info_construction.business_applications_count' :autoPlay="true" :useEasing="false" :repeat="true" :repeatTime="3000"
-                  :duration='1000' />
+                <countTo :end='allData.logistics_info_construction.business_applications_count' :autoPlay="true"
+                  :useEasing="false" :repeat="true" :repeatTime="3000" :duration='1000' />
               </div>
               <div class="appNumTitle">SaaS应用数</div>
             </div>
@@ -147,7 +151,7 @@
           <div class="applicationList">
             <div class="textBox">
               <p>校区数量(个)</p>
-              <p>{{allData.life_user_situation.campuses_count}}</p>
+              <p>{{ allData.life_user_situation.campuses_count }}</p>
             </div>
             <div class="textBox">
               <p>部门数量(个)</p>
@@ -906,22 +910,34 @@ const toWindowScreen = () => {
   isFull.value = false;
 };
 
+let jumpAddress, hpptAddress;
+  if (/dev-/.test(location.hostname)) {
+    jumpAddress = 'http://101.69.251.102:28186';
+    hpptAddress = 'https://dev-sicnu-data-screen.goliveplus.cn';
+  }else if (/.edu.cn/.test(location.hostname)) {
+    jumpAddress = 'https://dataease.sicnu.edu.cn';
+    hpptAddress = 'https://sicnu-data-screen.goliveplus.cn';
+  }else{
+    jumpAddress = 'http://172.24.65.43';
+    hpptAddress = 'http://172.24.65.43';
+  }
+
 const goDataDetails = (item) => {
   switch (item.target.className) {
     case "life":
-      location.href = "http://101.69.251.102:28186/link/VADnTOvW";
+      location.href = jumpAddress + "/link/VADnTOvW";
       break;
 
     case "things":
-      location.href = "http://101.69.251.102:28186/link/DFMTrnXd";
+      location.href = jumpAddress + "/link/DFMTrnXd";
       break;
 
     case "supermarket":
-      location.href = "http://101.69.251.102:28186/link/QbsJOgQh";
+      location.href = jumpAddress + "/link/QbsJOgQh";
       break;
 
     case "pay":
-      location.href = "http://101.69.251.102:28186/link/I9LI2gMx";
+      location.href = jumpAddress + "/link/I9LI2gMx";
       break;
     case "foodSafety":
       location.href = "http://logisticssystem.sicnu.edu.cn/BlueData/Index.html";
@@ -976,7 +992,7 @@ const bodyMounted = () => {
       },
     ],
   };
-  const occupancyRate = allData.value.kettle_apartment_data.zfjsl/allData.value.kettle_apartment_data.yrzfjs || 20
+  const occupancyRate = allData.value.kettle_apartment_data.zfjsl / allData.value.kettle_apartment_data.yrzfjs || 20
   const option2 = {
     series: [
       {
@@ -1004,7 +1020,8 @@ const bodyMounted = () => {
 // #用于前端验签
 // KEY = eb4420b70c4eb9722d78400d8f817c42
 // SECRET = 64a6dd7185c0539a6a2f217ea340c91b
-fetch("https://dev-sicnu-data-screen.goliveplus.cn/data_screen/api/all/data/", {
+
+fetch(hpptAddress + "/data_screen/api/all/data/", {
   headers: {
     appKey: 'eb4420b70c4eb9722d78400d8f817c42',
     sign: 'e00183440d3fc51ee4598718ca395373',
