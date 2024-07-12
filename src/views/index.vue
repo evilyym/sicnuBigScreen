@@ -918,7 +918,7 @@ if (/dev-/.test(location.hostname)) {
 } else if (/.edu.cn/.test(location.hostname)) {
   typeAddress = 2
   jumpAddress = 'https://dataease.sicnu.edu.cn';
-  hpptAddress = 'https://sicnu-data-screen.goliveplus.cn';
+  hpptAddress = 'https://dataease.sicnu.edu.cn'
 } else {
   typeAddress = 3
   jumpAddress = 'http://172.24.65.43';
