@@ -928,19 +928,19 @@ if (/dev-/.test(location.hostname)) {
 const goDataDetails = (item) => {
   switch (item.target.className) {
     case "life":
-      location.href = jumpAddress + "/link/" + (typeAddress) == 1 ? 'VADnTOvW' : 'JZgQEs47';
+      location.href = jumpAddress + "/link/" + ((typeAddress) == 1 ? 'VADnTOvW' : 'JZgQEs47');
       break;
 
     case "things":
-      location.href = jumpAddress + "/link/" + (typeAddress) == 1 ? 'DFMTrnXd' : 'EoyaJFBm';
+      location.href = jumpAddress + "/link/" + ((typeAddress) == 1 ? 'DFMTrnXd' : 'EoyaJFBm');
       break;
 
     case "supermarket":
-      location.href = jumpAddress + "/link/" + (typeAddress) == 1 ? 'QbsJOgQh' : '9cPFh5Fg';
+      location.href = jumpAddress + "/link/" + ((typeAddress) == 1 ? 'QbsJOgQh' : '9cPFh5Fg');
       break;
 
     case "pay":
-      location.href = jumpAddress + "/link/" + (typeAddress) == 1 ? 'I9LI2gMx' : 'YZvQ4Y2p';
+      location.href = jumpAddress + "/link/" + ((typeAddress) == 1 ? 'I9LI2gMx' : 'YZvQ4Y2p');
       break;
     case "foodSafety":
       location.href = "http://logisticssystem.sicnu.edu.cn/BlueData/Index.html";
