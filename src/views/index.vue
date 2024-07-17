@@ -246,169 +246,143 @@
           <div class="mainApp" v-show="nav == 0">
             <div class="itmeTitle">业务系统</div>
             <div class="appList">
-
               <div>
-                <div>
-                  <div></div>
-                  <p>智慧餐饮</p>
-                  <p>2024.04.03上线</p>
-                </div>
-                <div>
-                  <div></div>
-                  <p>教工餐厅就餐</p>
-                  <p>2024.04.03上线</p>
-                </div>
-                <div>
-                  <div></div>
-                  <p>订单配送</p>
-                  <p>2024.04.03上线</p>
-                </div>
-                <div>
-                  <div></div>
-                  <p>云餐厅</p>
-                  <p>2024.04.03上线</p>
-                </div>
-                <div>
-                  <div></div>
-                  <p>POS管理</p>
-                  <p>2024.04.03上线</p>
-                </div>
-              </div>
-
-              <div>
-                <div>
-                  <div></div>
-                  <p>智能用电</p>
-                  <p>2024.04.03上线</p>
-                </div>
-                <div>
-                  <div></div>
-                  <p>电瓶车充电</p>
-                  <p>2024.04.03上线</p>
-                </div>
-                <div>
-                  <div></div>
-                  <p>智慧公寓</p>
-                  <p>2024.04.03上线</p>
-                </div>
-                <div>
-                  <div></div>
-                  <p>卫生检查</p>
-                  <p>2024.04.03上线</p>
-                </div>
-                <div>
-                  <div></div>
-                  <p>智慧巡检</p>
-                  <p>2024.04.03上线</p>
-                </div>
-                <div>
-                  <div></div>
-                  <p>智慧门禁</p>
-                  <p>2024.04.03上线</p>
-                </div>
-                <!-- <div>
-                  <div></div>
-                  <p>辅导员系统</p>
-                  <p>2024.04.03上线</p>
-                </div> -->
-              </div>
-
-              <div>
-                <div>
-                  <div></div>
-                  <p>我要吐槽</p>
-                  <p>2024.04.03上线</p>
-                </div>
-                <div>
-                  <div></div>
-                  <p>新闻公告</p>
-                  <p>2024.04.03上线</p>
-                </div>
                 <div>
                   <div></div>
                   <p>智慧商圈</p>
-                  <p>2024.04.03上线</p>
+                  <p>2020年11月</p>
                 </div>
                 <div>
                   <div></div>
-                  <p>电子钱包</p>
-                  <p>2024.04.03上线</p>
-                </div>
-                <div>
-                  <div></div>
-                  <p>问卷调查</p>
-                  <p>2024.04.03上线</p>
-                </div>
-                <div>
-                  <div></div>
-                  <p>聚合收款码</p>
-                  <p>2024.04.03上线</p>
-                </div>
-                <!-- <div>
-                  <div></div>
-                  <p>自习室预约</p>
-                  <p>2024.04.03上线</p>
-                </div>
-                <div>
-                  <div></div>
-                  <p>智能云印</p>
-                  <p>2024.04.03上线</p>
-                </div> -->
-              </div>
-
-              <div>
-                <div>
-                  <div></div>
-                  <p>支付平台</p>
-                  <p>2024.04.03上线</p>
-                </div>
-                <div>
-                  <div></div>
-                  <p>用车管理</p>
-                  <p>2024.04.03上线</p>
-                </div>
-                <div>
-                  <div></div>
-                  <p>智慧报修</p>
-                  <p>2024.04.03上线</p>
-                </div>
-                <div>
-                  <div></div>
-                  <p>失物招领</p>
-                  <p>2024.04.03上线</p>
+                  <p>智能报修</p>
+                  <p>2021年4月</p>
                 </div>
                 <div>
                   <div></div>
                   <p>跳蚤市场</p>
-                  <p>2024.04.03上线</p>
+                  <p>2021年5月</p>
+                </div>
+                <div>
+                  <div></div>
+                  <p>服务监督</p>
+                  <p>2021年6月</p>
+                </div>
+                <div>
+                  <div></div>
+                  <p>公车出行</p>
+                  <p>2021年6月</p>
                 </div>
               </div>
 
               <div>
                 <div>
                   <div></div>
+                  <p>能慧通</p>
+                  <p>2021年6月</p>
+                </div>
+                <div>
+                  <div></div>
+                  <p>电瓶车充电</p>
+                  <p>2021年7月</p>
+                </div>
+                <div>
+                  <div></div>
+                  <p>聚合收款码</p>
+                  <p>2021年8月</p>
+                </div>
+                <div>
+                  <div></div>
+                  <p>智慧餐饮</p>
+                  <p>2021年11月</p>
+                </div>
+                <div>
+                  <div></div>
+                  <p>智能云印</p>
+                  <p>2021年12月</p>
+                </div>
+              </div>
+
+              <div>
+                <div>
+                  <div></div>
+                  <p>自习室预约</p>
+                  <p>2022年4月</p>
+                </div>
+                <div>
+                  <div></div>
+                  <p>教工餐厅就餐</p>
+                  <p>2022年10月</p>
+                </div>
+                <div>
+                  <div></div>
+                  <p>POS管理系统</p>
+                  <p>2022年11月</p>
+                </div>
+                <div>
+                  <div></div>
+                  <p>消息推送</p>
+                  <p>2023年2月</p>
+                </div>
+                <div>
+                  <div></div>
+                  <p>食品安全监管系统</p>
+                  <p>2023年3月</p>
+                </div>
+                <div>
+                  <div></div>
+                  <p>新一卡通系统</p>
+                  <p>2023年6月</p>
+                </div>
+              </div>
+
+              <div>
+                <div>
+                  <div></div>
+                  <p>物流采购系统</p>
+                  <p>2023年6月</p>
+                </div>
+                <div>
+                  <div></div>
+                  <p>智慧门禁</p>
+                  <p>2023年9月</p>
+                </div>
+                <div>
+                  <div></div>
+                  <p>智慧巡检</p>
+                  <p>2023年12月</p>
+                </div>
+                <div>
+                  <div></div>
+                  <p>数据驾驶舱</p>
+                  <p>2024年7月</p>
+                </div>
+              </div>
+
+              <div v-if="false">
+                <div>
+                  <div></div>
                   <p>用户中心</p>
-                  <p>2024.04.03上线</p>
+                  <p>20216上线</p>
                 </div>
                 <div>
                   <div></div>
                   <p>基础数据</p>
-                  <p>2024.04.03上线</p>
+                  <p>20216上线</p>
                 </div>
                 <div>
                   <div></div>
                   <p>权限管理</p>
-                  <p>2024.04.03上线</p>
+                  <p>20216上线</p>
                 </div>
                 <div>
                   <div></div>
                   <p>消息中心</p>
-                  <p>2024.04.03上线</p>
+                  <p>20216上线</p>
                 </div>
                 <div>
                   <div></div>
                   <p>审批中心</p>
-                  <p>2024.04.03上线</p>
+                  <p>20216上线</p>
                 </div>
               </div>
 
@@ -1023,21 +997,24 @@ const bodyMounted = () => {
 // #用于前端验签
 // KEY = eb4420b70c4eb9722d78400d8f817c42
 // SECRET = 64a6dd7185c0539a6a2f217ea340c91b
+const getAllData = () =>
+  fetch(hpptAddress + "/data_screen/api/all/data/", {
+    headers: {
+      appKey: 'eb4420b70c4eb9722d78400d8f817c42',
+      sign: 'e00183440d3fc51ee4598718ca395373',
+      timestamp: '1718777708',
+      // timestamp: new Date().getTime(),
+      randStr: '1sqrct3UyeFRI8dl',
+    }
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      allData.value = data.data.data;
+      bodyMounted();
+    })
 
-fetch(hpptAddress + "/data_screen/api/all/data/", {
-  headers: {
-    appKey: 'eb4420b70c4eb9722d78400d8f817c42',
-    sign: 'e00183440d3fc51ee4598718ca395373',
-    timestamp: '1718777708',
-    // timestamp: new Date().getTime(),
-    randStr: '1sqrct3UyeFRI8dl',
-  }
-})
-  .then((response) => response.json())
-  .then((data) => {
-    allData.value = data.data.data;
-    bodyMounted();
-  });
+getAllData()
+setInterval(getAllData, 60000)
 
 </script>
 <style lang="less">
