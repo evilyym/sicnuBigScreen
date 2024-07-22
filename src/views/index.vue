@@ -246,7 +246,7 @@
           <div class="mainApp" v-show="nav == 0">
             <div class="itmeTitle">业务系统</div>
             <div class="appList">
-              <div>
+              <div v-show="nav2 == 1" >
                 <div>
                   <div></div>
                   <p>智慧商圈</p>
@@ -274,7 +274,7 @@
                 </div>
               </div>
 
-              <div>
+              <div v-show="nav2 == 2">
                 <div>
                   <div></div>
                   <p>能慧通</p>
@@ -302,7 +302,7 @@
                 </div>
               </div>
 
-              <div>
+              <div v-show="nav2 == 3">
                 <div>
                   <div></div>
                   <p>自习室预约</p>
@@ -328,14 +328,14 @@
                   <p>食品安全监管系统</p>
                   <p>2023年3月</p>
                 </div>
+              </div>
+
+              <div v-show="nav2 == 4">
                 <div>
                   <div></div>
                   <p>新一卡通系统</p>
                   <p>2023年6月</p>
                 </div>
-              </div>
-
-              <div>
                 <div>
                   <div></div>
                   <p>物流采购系统</p>
@@ -852,10 +852,12 @@ arrTab.value.sort(sortVal);
 const arr = ref(array);
 
 const nav = ref(0);
+const nav2 = ref(1);
 const navStart = ref(true);
 const isFull = ref(document.fullscreenElement !== null);
 
-setInterval(() => { navStart.value && nav.value++ && nav.value == 5 && (nav.value = 0) }, 15000)
+// setInterval(() => { navStart.value && nav.value++ && nav.value == 5 && (nav.value = 0) }, 15000)
+setInterval(() => { nav2.value++ && nav2.value == 5 && (nav2.value = 1) }, 15000)
 
 autofit.init();
 
