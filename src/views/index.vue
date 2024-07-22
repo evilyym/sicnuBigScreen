@@ -857,7 +857,7 @@ const navStart = ref(true);
 const isFull = ref(document.fullscreenElement !== null);
 
 // setInterval(() => { navStart.value && nav.value++ && nav.value == 5 && (nav.value = 0) }, 15000)
-// setInterval(() => { nav2.value++ && nav2.value == 5 && (nav2.value = 1) }, 15000)
+setInterval(() => { nav2.value++ && nav2.value == 5 && (nav2.value = 1) }, 15000)
 
 autofit.init();
 
