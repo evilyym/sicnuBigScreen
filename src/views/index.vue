@@ -2,7 +2,7 @@
   <div class="divBox">
     <video src="../assets/imgs/images/背景.mp4" autoplay="autoplay" loop="loop" muted="muted"></video>
     <div class="title">
-      <button v-if="route.query?.ym == 7" v-for="(item, index) in 5" :key="index" @click="nav = index">{{ item
+      <button v-if="route.query?.ym == 7" v-for="(item, index) in 5" :key="index" @click="nav2 = index">{{ item
         }}状态</button>
       <!-- 数据大屏 -->
       <!-- <video src="../assets/imgs/images/背景.mp4" autoplay="autoplay" loop="loop" muted="muted"></video> -->
@@ -244,7 +244,7 @@
         <!-- 更具图标轮播 -->
         <div class="mainBox">
           <div class="mainApp" v-show="nav == 0">
-            <div class="itmeTitle">业务系统</div>
+            <div class="itmeTitle">信息化进程</div>
             <div class="appList">
               <div v-show="nav2 == 1" >
                 <div>
@@ -857,7 +857,7 @@ const navStart = ref(true);
 const isFull = ref(document.fullscreenElement !== null);
 
 // setInterval(() => { navStart.value && nav.value++ && nav.value == 5 && (nav.value = 0) }, 15000)
-setInterval(() => { nav2.value++ && nav2.value == 5 && (nav2.value = 1) }, 15000)
+// setInterval(() => { nav2.value++ && nav2.value == 5 && (nav2.value = 1) }, 15000)
 
 autofit.init();
 
