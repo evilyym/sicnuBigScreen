@@ -246,7 +246,7 @@
           <div class="mainApp" v-show="nav == 0">
             <div class="itmeTitle">信息化进程</div>
             <div class="appList">
-              <div v-show="nav2 == 1" >
+              <div v-show="nav2 == 1">
                 <div>
                   <div></div>
                   <p>智慧商圈</p>
@@ -325,12 +325,17 @@
                 </div>
                 <div>
                   <div></div>
-                  <p>食品安全监管系统</p>
-                  <p>2023年3月</p>
+                  <p>食安监管系统</p>
+                  <p>2023年2月</p>
                 </div>
               </div>
 
               <div v-show="nav2 == 4">
+                <div>
+                  <div></div>
+                  <p>智慧公寓</p>
+                  <p>2023年3月</p>
+                </div>
                 <div>
                   <div></div>
                   <p>新一卡通系统</p>
@@ -351,15 +356,15 @@
                   <p>智慧巡检</p>
                   <p>2023年12月</p>
                 </div>
-                <div>
+              </div>
+
+              <div v-show="nav2 == 5">
+                <div style="margin-left: 20px;" >
                   <div></div>
                   <p>数据驾驶舱</p>
                   <p>2024年7月</p>
                 </div>
-              </div>
-
-              <div v-if="false">
-                <div>
+                <!-- <div>
                   <div></div>
                   <p>用户中心</p>
                   <p>20216上线</p>
@@ -383,7 +388,7 @@
                   <div></div>
                   <p>审批中心</p>
                   <p>20216上线</p>
-                </div>
+                </div> -->
               </div>
 
             </div>
@@ -832,7 +837,7 @@
 <script setup>
 import * as echarts from "echarts";
 import autofit from "autofit.js";
-import { ref, onMounted } from "vue";
+import { ref, watch } from "vue";
 import array from "../arr";
 
 import array1 from "../arrTab";
@@ -857,7 +862,21 @@ const navStart = ref(true);
 const isFull = ref(document.fullscreenElement !== null);
 
 // setInterval(() => { navStart.value && nav.value++ && nav.value == 5 && (nav.value = 0) }, 15000)
-setInterval(() => { nav2.value++ && nav2.value == 5 && (nav2.value = 1) }, 15000)
+setTimeout(() => {
+  nav2.value < 5 ? (nav2.value++) : (nav2.value = 1);
+}, 15000)
+watch(
+  () => nav2.value,
+  () => {
+    let d = 15000;
+    if (nav2.value == 5) {
+      d = 3000;
+    }
+    setTimeout(() => {
+      nav2.value++ && nav2.value == 6 && (nav2.value = 1)
+    }, d)
+  }
+);
 
 autofit.init();
 
@@ -901,6 +920,10 @@ if (/dev-/.test(location.hostname)) {
   hpptAddress = 'http://172.24.65.43';
 }
 
+if (route.query?.ym == 7) {
+  hpptAddress = ''
+}
+
 const goDataDetails = (item) => {
   switch (item.target.className) {
     case "life":
@@ -908,7 +931,7 @@ const goDataDetails = (item) => {
       break;
 
     case "things":
-      location.href = jumpAddress + "/link/" + ((typeAddress) == 1 ? 'DFMTrnXd' : 'EoyaJFBm');
+      location.href = jumpAddress + "/link/" + ((typeAddress) == 1 ? 'DFMTrnXd' : 'jB4r8ALm');
       break;
 
     case "supermarket":
