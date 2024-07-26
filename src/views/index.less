@@ -40,17 +40,14 @@
     margin-right: 10px;
     background-color: #f8a000;
     background-color: var(--color);
-
   }
 
   position: relative;
   background-image: url(../assets/imgs/images/文字标题.png),
-  url(../assets/imgs/apng/头部标题栏.png);
-  background-size: 680px 60px,
-  100% 100%;
+    url(../assets/imgs/apng/头部标题栏.png);
+  background-size: 680px 60px, 100% 100%;
   background-repeat: no-repeat;
-  background-position: center top,
-  center;
+  background-position: center top, center;
   width: 100%;
   height: 80px;
   line-height: 72px;
@@ -58,7 +55,7 @@
   font-size: 32px;
   text-align: center;
 
-  &>div {
+  & > div {
     position: absolute;
     top: 0;
     right: 40px;
@@ -108,15 +105,15 @@
       width: 400%;
       gap: 20px;
 
-      &>div {
+      & > div {
         width: 25%;
         display: flex;
         flex-direction: column;
-        background-image: url('/src/assets/imgs/apng/板块背景-中下.png');
+        background-image: url("/src/assets/imgs/apng/板块背景-中下.png");
         background-position: bottom;
         background-repeat: no-repeat;
 
-        &>div:nth-child(2) {
+        & > div:nth-child(2) {
           flex-grow: 1;
           // background-image: url(../assets/imgs/images/背景框2.png);
           background-size: 100% 100%;
@@ -127,18 +124,18 @@
 
       //
       .mainApp {
-        &>div.appList:nth-child(2) {
+        & > div.appList:nth-child(2) {
           justify-content: space-around;
           position: relative;
           overflow: hidden;
 
-          &>div {
+          & > div {
             &::before {
-              content: ' ';
+              content: " ";
               position: absolute;
               width: 90%;
               height: 2px;
-              background-color: #11C7DF;
+              background-color: #11c7df;
               align-self: center;
               left: 5%;
               animation: lift-right 15s linear infinite;
@@ -195,7 +192,7 @@
             }
 
             justify-content: space-around;
-            &:last-child{
+            &:last-child {
               justify-content: flex-start;
             }
             display: flex;
@@ -227,7 +224,7 @@
             // }
           }
 
-          &>div>div {
+          & > div > div {
             width: 16.6%;
             height: 110px;
             background-image: url(../assets/imgs/images/应用背景-默认.png);
@@ -237,11 +234,11 @@
             position: relative;
 
             &::before {
-              content: ' ';
+              content: " ";
               position: absolute;
               width: 10px;
               height: 10px;
-              background-color: #11C7DF;
+              background-color: #11c7df;
               border-radius: 5px;
               left: 48%;
             }
@@ -251,7 +248,7 @@
                 bottom: -20px;
               }
 
-              &>p:nth-child(3) {
+              & > p:nth-child(3) {
                 position: absolute;
                 bottom: -60px;
                 width: 100%;
@@ -259,7 +256,6 @@
               }
 
               // animation: animationB_T 3s linear infinite;
-
             }
 
             &:nth-child(odd) {
@@ -270,7 +266,7 @@
                 top: -20px;
               }
 
-              &>p:nth-child(3) {
+              & > p:nth-child(3) {
                 position: absolute;
                 top: -60px;
                 width: 100%;
@@ -307,32 +303,41 @@
 
               5% {
                 opacity: 0;
-                transform: translateY(-100%)
+                transform: translateY(-100%);
               }
 
               15% {
                 opacity: 1;
                 transform: scale(1);
-                transform: translateY(0)
+                transform: translateY(0);
               }
 
-              20% {}
+              20% {
+              }
 
-              35% {}
+              35% {
+              }
 
-              40% {}
+              40% {
+              }
 
-              55% {}
+              55% {
+              }
 
-              60% {}
+              60% {
+              }
 
-              75% {}
+              75% {
+              }
 
-              80% {}
+              80% {
+              }
 
-              95% {}
+              95% {
+              }
 
-              100% {}
+              100% {
+              }
             }
 
             @keyframes icon-top2 {
@@ -340,34 +345,43 @@
                 opacity: 0;
               }
 
-              5% {}
+              5% {
+              }
 
-              15% {}
+              15% {
+              }
 
               20% {
                 opacity: 0;
-                transform: translateY(100%)
+                transform: translateY(100%);
               }
 
               35% {
                 opacity: 1;
                 transform: scale(1);
-                transform: translateY(0)
+                transform: translateY(0);
               }
 
-              40% {}
+              40% {
+              }
 
-              55% {}
+              55% {
+              }
 
-              60% {}
+              60% {
+              }
 
-              75% {}
+              75% {
+              }
 
-              80% {}
+              80% {
+              }
 
-              95% {}
+              95% {
+              }
 
-              100% {}
+              100% {
+              }
             }
 
             @keyframes icon-top3 {
@@ -377,24 +391,29 @@
 
               40% {
                 opacity: 0;
-                transform: translateY(-100%)
+                transform: translateY(-100%);
               }
 
               55% {
                 opacity: 1;
                 transform: scale(1);
-                transform: translateY(0)
+                transform: translateY(0);
               }
 
-              60% {}
+              60% {
+              }
 
-              75% {}
+              75% {
+              }
 
-              80% {}
+              80% {
+              }
 
-              95% {}
+              95% {
+              }
 
-              100% {}
+              100% {
+              }
             }
 
             @keyframes icon-top4 {
@@ -403,37 +422,42 @@
               }
 
               5% {
-
               }
 
               15% {
-
               }
 
-              20% {}
+              20% {
+              }
 
-              35% {}
+              35% {
+              }
 
-              40% {}
+              40% {
+              }
 
-              55% {}
+              55% {
+              }
 
               60% {
                 opacity: 0;
-                transform: translateY(100%)
+                transform: translateY(100%);
               }
 
               75% {
                 opacity: 1;
                 transform: scale(1);
-                transform: translateY(0)
+                transform: translateY(0);
               }
 
-              80% {}
+              80% {
+              }
 
-              95% {}
+              95% {
+              }
 
-              100% {}
+              100% {
+              }
             }
 
             @keyframes icon-top5 {
@@ -441,37 +465,46 @@
                 opacity: 0;
               }
 
-              5% {}
+              5% {
+              }
 
-              15% {}
+              15% {
+              }
 
-              20% {}
+              20% {
+              }
 
-              35% {}
+              35% {
+              }
 
-              40% {}
+              40% {
+              }
 
-              55% {}
+              55% {
+              }
 
-              60% {}
+              60% {
+              }
 
-              75% {}
+              75% {
+              }
 
               80% {
                 opacity: 0;
-                transform: translateY(-100%)
+                transform: translateY(-100%);
               }
 
               95% {
                 opacity: 1;
                 transform: scale(1);
-                transform: translateY(0)
+                transform: translateY(0);
               }
 
-              100% {}
+              100% {
+              }
             }
 
-            &>div {
+            & > div {
               margin: auto;
               width: 100px;
               height: 65px;
@@ -481,7 +514,7 @@
               background-position-y: 30px;
             }
 
-            &>p {
+            & > p {
               text-align: center;
               width: 85px;
               margin: 0 auto;
@@ -491,49 +524,46 @@
           }
 
           // 图标烦恼
-          &>div:nth-child(1)>div {
-
-            &:nth-child(1)>div {
+          & > div:nth-child(1) > div {
+            &:nth-child(1) > div {
               background-image: url(../assets/imgs/images/icon/智慧商圈.png);
             }
 
-            &:nth-child(2)>div {
+            &:nth-child(2) > div {
               background-image: url(../assets/imgs/images/icon/智能报修.png);
             }
 
-            &:nth-child(3)>div {
+            &:nth-child(3) > div {
               background-image: url(../assets/imgs/images/icon/跳蚤市场.png);
             }
 
-            &:nth-child(4)>div {
+            &:nth-child(4) > div {
               background-image: url(../assets/imgs/images/icon/服务监督.png);
             }
 
-            &:nth-child(5)>div {
+            &:nth-child(5) > div {
               background-image: url(../assets/imgs/images/icon/公车出行.png);
             }
-
           }
 
-          &>div:nth-child(2)>div {
-
-            &:nth-child(1)>div {
+          & > div:nth-child(2) > div {
+            &:nth-child(1) > div {
               background-image: url(../assets/imgs/images/icon/能慧通.png);
             }
 
-            &:nth-child(2)>div {
+            &:nth-child(2) > div {
               background-image: url(../assets/imgs/images/icon/电瓶车充电.png);
             }
 
-            &:nth-child(3)>div {
+            &:nth-child(3) > div {
               background-image: url(../assets/imgs/images/icon/聚合收款码.png);
             }
 
-            &:nth-child(4)>div {
+            &:nth-child(4) > div {
               background-image: url(../assets/imgs/images/icon/智慧餐饮.png);
             }
 
-            &:nth-child(5)>div {
+            &:nth-child(5) > div {
               background-image: url(../assets/imgs/images/icon/智能云印.png);
             }
 
@@ -544,28 +574,26 @@
             // &:nth-child(7)>div {
             //   background-image: url(../assets/imgs/images/icon/辅导员系统.png);
             // }
-
           }
 
-          &>div:nth-child(3)>div {
-
-            &:nth-child(1)>div {
+          & > div:nth-child(3) > div {
+            &:nth-child(1) > div {
               background-image: url(../assets/imgs/images/icon/自习室预约.png);
             }
 
-            &:nth-child(2)>div {
+            &:nth-child(2) > div {
               background-image: url(../assets/imgs/images/icon/教工餐厅就餐.png);
             }
 
-            &:nth-child(3)>div {
+            &:nth-child(3) > div {
               background-image: url(../assets/imgs/images/icon/POS管理系统.png);
             }
 
-            &:nth-child(4)>div {
+            &:nth-child(4) > div {
               background-image: url(../assets/imgs/images/icon/消息推送.png);
             }
 
-            &:nth-child(5)>div {
+            &:nth-child(5) > div {
               background-image: url(../assets/imgs/images/icon/食安监管系统.png);
             }
 
@@ -580,54 +608,54 @@
             // &:nth-child(8)>div {
             //   background-image: url(../assets/imgs/images/icon/智能云印.png);
             // }
-
           }
-          
-          &>div:nth-child(4)>div {
 
-            &:nth-child(1)>div {
+          & > div:nth-child(4) > div {
+            &:nth-child(1) > div {
+              background-image: url(../assets/imgs/images/icon/智慧公寓.png);
+            }
+
+            &:nth-child(2) > div {
               background-image: url(../assets/imgs/images/icon/新一卡通.jpg);
             }
 
-            &:nth-child(2)>div {
+            &:nth-child(3) > div {
               background-image: url(../assets/imgs/images/icon/物流采购系统.jpeg);
             }
 
-            &:nth-child(3)>div {
+            &:nth-child(4) > div {
               background-image: url(../assets/imgs/images/icon/智慧门禁.png);
             }
 
-            &:nth-child(4)>div {
+            &:nth-child(5) > div {
               background-image: url(../assets/imgs/images/icon/智慧巡检.png);
             }
+          }
+          & > div:nth-child(5) > div {
 
-            &:nth-child(5)>div {
+            &:nth-child(1) > div {
               background-image: url(../assets/imgs/images/icon/数据驾驶舱.png);
             }
 
-          }
-          &>div:nth-child(5)>div {
+            // &:nth-child(1) > div {
+            //   background-image: url(../assets/imgs/images/icon/云餐厅.png);
+            // }
 
-            &:nth-child(1)>div {
-              background-image: url(../assets/imgs/images/icon/云餐厅.png);
-            }
+            // &:nth-child(2) > div {
+            //   background-image: url(../assets/imgs/images/icon/云餐厅.png);
+            // }
 
-            &:nth-child(2)>div {
-              background-image: url(../assets/imgs/images/icon/云餐厅.png);
-            }
+            // &:nth-child(3) > div {
+            //   background-image: url(../assets/imgs/images/icon/云餐厅.png);
+            // }
 
-            &:nth-child(3)>div {
-              background-image: url(../assets/imgs/images/icon/云餐厅.png);
-            }
+            // &:nth-child(4) > div {
+            //   background-image: url(../assets/imgs/images/icon/智慧巡检.png);
+            // }
 
-            &:nth-child(4)>div {
-              background-image: url(../assets/imgs/images/icon/智慧巡检.png);
-            }
-
-            &:nth-child(5)>div {
-              background-image: url(../assets/imgs/images/icon/.png);
-            }
-
+            // &:nth-child(5) > div {
+            //   background-image: url(../assets/imgs/images/icon/.png);
+            // }
           }
         }
       }
@@ -636,12 +664,24 @@
         overflow: hidden;
       }
 
-      .SmartLife>div {
+      .SmartLife > div {
         flex-grow: 1;
         background-size: 100% 100%;
         box-sizing: content-box;
         display: flex;
-        animation: animationSmartLife 20s linear(0 0%, 0.7 5.74%, 1.03 7.75%, 1 26.25%, 1.07 50.6%, 1 68.72%, 1.01 72.2%, 1 86.7%, 1 100%) infinite;
+        animation: animationSmartLife 20s
+          linear(
+            0 0%,
+            0.7 5.74%,
+            1.03 7.75%,
+            1 26.25%,
+            1.07 50.6%,
+            1 68.72%,
+            1.01 72.2%,
+            1 86.7%,
+            1 100%
+          )
+          infinite;
         flex-direction: column;
         gap: 20px;
         padding: 10px;
@@ -661,17 +701,17 @@
           background-size: 100% 100%;
         }
 
-        &>div {
+        & > div {
           width: 100%;
           display: flex;
 
-          &>div {
+          & > div {
             flex-grow: 1;
             display: flex;
             color: #ffffff;
             align-items: center;
 
-            &>div {
+            & > div {
               width: 33%;
               // height: 40px;
               padding: 10px 20px;
@@ -689,7 +729,7 @@
                 &::before {
                   position: absolute;
                   left: 0;
-                  content: ' ';
+                  content: " ";
                   height: 35px;
                   vertical-align: middle;
                   display: inline-block;
@@ -700,7 +740,7 @@
                 &::after {
                   position: absolute;
                   right: 0;
-                  content: ' ';
+                  content: " ";
                   height: 35px;
                   vertical-align: middle;
                   display: inline-block;
@@ -721,7 +761,7 @@
     }
 
     .platformPayment {
-      &>div.appListInfo>div {
+      & > div.appListInfo > div {
         background-image: url(../assets/imgs/apng/波形.png);
         background-repeat: no-repeat;
         background-size: contain;
@@ -731,7 +771,7 @@
         padding: 10px;
         position: relative;
 
-        &>div {
+        & > div {
           position: absolute;
           display: flex;
           background-repeat: no-repeat;
@@ -746,7 +786,7 @@
           }
         }
 
-        &>div:nth-child(1) {
+        & > div:nth-child(1) {
           width: 120px;
           height: 120px;
           background-image: url(../assets/imgs/apng/泡泡.png);
@@ -754,7 +794,7 @@
           bottom: 40px;
         }
 
-        &>div:nth-child(2) {
+        & > div:nth-child(2) {
           width: 164px;
           height: 164px;
           background-image: url(../assets/imgs/apng/泡泡-绿.png);
@@ -762,7 +802,7 @@
           top: 40px;
         }
 
-        &>div:nth-child(3) {
+        & > div:nth-child(3) {
           width: 172px;
           height: 172px;
           background-image: url(../assets/imgs/apng/泡泡-蓝.png);
@@ -774,7 +814,7 @@
           }
         }
 
-        &>div:nth-child(4) {
+        & > div:nth-child(4) {
           width: 120px;
           height: 120px;
           background-image: url(../assets/imgs/apng/泡泡.png);
@@ -785,14 +825,14 @@
     }
 
     .SmartIoT {
-      &>div.appListInfo {
+      & > div.appListInfo {
         width: 200%;
         // gap: 20px;
         padding: 20px 0;
         font-weight: 600;
         color: #00fffc;
 
-        &>div {
+        & > div {
           animation: animationL_R 10s linear infinite;
           width: 50%;
           padding: 0 10px;
@@ -815,16 +855,16 @@
             }
           }
 
-          &>div {
+          & > div {
             flex-grow: 1;
             display: flex;
             gap: 8px;
 
-            &>div {
+            & > div {
               background-image: url(../assets/imgs/apng/数据展示框6.png);
               background-size: 100% 100%;
 
-              &>div {
+              & > div {
                 flex-grow: 1;
                 display: flex;
                 align-items: center;
@@ -858,7 +898,7 @@
         padding: 20px 0;
         width: 200%;
 
-        &>div {
+        & > div {
           animation: animationL_R2 10s linear infinite;
           width: 50%;
           padding: 0 10px;
@@ -882,11 +922,11 @@
             }
           }
 
-          &>div:nth-child(2) {
+          & > div:nth-child(2) {
             display: flex;
             gap: 20px;
 
-            &>div:nth-child(1) {
+            & > div:nth-child(1) {
               width: 230px;
 
               p {
@@ -903,16 +943,15 @@
                 background-size: 100% 100%;
                 font-weight: 600;
                 font-size: 30px;
-                color: #FFFFFF;
+                color: #ffffff;
                 text-align: center;
                 line-height: 53px;
                 margin-bottom: 10px;
                 margin-left: 10px;
-
               }
             }
 
-            &>div:nth-child(2) {
+            & > div:nth-child(2) {
               flex-grow: 1;
               display: grid;
               gap: 10px;
@@ -921,7 +960,7 @@
               text-align: center;
               align-items: center;
 
-              &>div {
+              & > div {
                 display: flex;
                 align-items: center;
                 flex-direction: column-reverse;
@@ -939,19 +978,18 @@
                 }
               }
 
-              &>div:nth-child(-n+2) {
+              & > div:nth-child(-n + 2) {
                 height: 100%;
                 background-image: url(../assets/imgs/apng/数据展示框4-宽.png);
                 background-size: 100% 100%;
               }
             }
-
           }
         }
       }
     }
 
-    &>div:nth-child(2) {
+    & > div:nth-child(2) {
       flex-grow: 1;
       // background-image: url(../assets/imgs/images/背景框2.png);
       background-size: 100% 100%;
@@ -962,7 +1000,7 @@
     &.itmeBoxWidth {
       background-image: url(../assets/imgs/apng/板块底边线-宽.png);
 
-      &>div:nth-child(2) {
+      & > div:nth-child(2) {
         background-image: url(../assets/imgs/images/中型框背景.png);
       }
 
@@ -1039,7 +1077,7 @@
         // gap: 50px;
       }
 
-      &.supermarketList>div>p {
+      &.supermarketList > div > p {
         height: 90px;
         line-height: 100px;
 
@@ -1055,7 +1093,7 @@
         display: inline-flex;
       }
 
-      &.supermarketList .appListInfo>div {
+      &.supermarketList .appListInfo > div {
         height: 80px;
         font-size: 20px;
         line-height: 30px;
@@ -1067,7 +1105,7 @@
         gap: 24px;
         margin-top: 40px;
 
-        &>div {
+        & > div {
           padding: 10px 20px;
           width: calc(50% - 15px);
           // background-image: url(../assets/imgs/数字框.png);
@@ -1090,7 +1128,7 @@
           gap: 24px;
           margin-top: 40px;
 
-          &>div {
+          & > div {
             width: calc(33% - 15px);
             display: inline-flex;
             line-height: 80px;
@@ -1115,7 +1153,7 @@
           margin-top: 30px;
           gap: 20px;
 
-          &>div {
+          & > div {
             width: calc(30% - 15px);
             height: 120px;
             color: #0ffbd6;
@@ -1136,19 +1174,19 @@
             }
           }
 
-          &>div {
+          & > div {
             padding: 0;
             background: none;
             width: calc(50% - 15px);
             color: #0ffbd6;
             font-size: 18px;
 
-            &>div>div {
+            & > div > div {
               display: flex;
               gap: 10px;
               // margin-top: 10px;
 
-              &>div {
+              & > div {
                 // background-image: url(../assets/imgs/数字框.png);
                 background-size: 100% 100%;
                 width: 33%;
@@ -1163,8 +1201,8 @@
     }
 
     @font-face {
-      font-family: 'HYk2gj';
-      src: url('../assets/font/阿里妈妈数黑体 Bold 1.004_zitidi.com.ttf');
+      font-family: "HYk2gj";
+      src: url("../assets/font/阿里妈妈数黑体 Bold 1.004_zitidi.com.ttf");
     }
 
     .itmeTitle {
@@ -1245,7 +1283,7 @@
       margin-bottom: 30px;
       gap: 10px;
 
-      &>.title {
+      & > .title {
         width: 71px;
         background-image: url(../assets/imgs/images/在校师生人数.png);
         background-position: center;
@@ -1266,7 +1304,8 @@
         line-height: 50px;
         line-height: 80px;
         text-align: center;
-        text-shadow: 0 0 2px #00fffc, 0 0 2px #00fffc, 0 0 20px #00fffc, 0 0 20px #00fffc;
+        text-shadow: 0 0 2px #00fffc, 0 0 2px #00fffc, 0 0 20px #00fffc,
+          0 0 20px #00fffc;
       }
     }
 
@@ -1275,7 +1314,7 @@
       flex-wrap: wrap;
       gap: 10px;
 
-      &>div {
+      & > div {
         width: 102px;
         display: flex;
         flex-direction: column-reverse;
@@ -1290,7 +1329,7 @@
         color: #00fffc;
         font-size: 12px;
 
-        &>p:last-child {
+        & > p:last-child {
           color: #ffffff;
           font-weight: 600;
           font-size: 20px;
@@ -1306,7 +1345,7 @@
       justify-content: space-around;
       flex-wrap: wrap;
       gap: 10px;
-      background-image: url('../assets/imgs/apng/板块背景-左上.png');
+      background-image: url("../assets/imgs/apng/板块背景-左上.png");
       // background-image: url(../assets/imgs/);
 
       div {
@@ -1332,7 +1371,8 @@
           font-size: 24px;
           background-image: url(../assets/imgs/images/数据展示框.png);
           background-size: 100% 100%;
-          text-shadow: 0 0 4px #00fffc, 0 0 20px #00fffc, 0 0 30px #00fffc, 0 0 40px #00fffc;
+          text-shadow: 0 0 4px #00fffc, 0 0 20px #00fffc, 0 0 30px #00fffc,
+            0 0 40px #00fffc;
         }
       }
     }
@@ -1349,7 +1389,7 @@
       align-items: center;
       justify-content: center;
 
-      &>div {
+      & > div {
         width: 50%;
         color: #ffffff;
         text-align: left;
@@ -1436,13 +1476,13 @@
       display: flex;
       flex-direction: column;
       padding: 18px;
-      background-image: url('../assets/imgs/apng/板块背景-右上.png');
+      background-image: url("../assets/imgs/apng/板块背景-右上.png");
 
       .appNum {
         display: flex;
         justify-content: space-around;
 
-        &>div {
+        & > div {
           display: flex;
           flex-direction: column;
           text-align: center;
@@ -1479,7 +1519,7 @@
         text-align: center;
         gap: 10px;
 
-        &>div {
+        & > div {
           display: flex;
           align-items: center;
           gap: 15px;
@@ -1518,14 +1558,14 @@
       display: flex;
       flex-direction: column;
       padding: 18px 18px 0 18px;
-      background-image: url('../assets/imgs/apng/板块背景-右中.png');
+      background-image: url("../assets/imgs/apng/板块背景-右中.png");
 
       .foodData {
         display: flex;
         justify-content: space-around;
         gap: 20px;
 
-        &>div {
+        & > div {
           display: flex;
           flex-direction: column;
           text-align: center;
@@ -1566,7 +1606,7 @@
         text-align: center;
         gap: 10px;
 
-        &>div {
+        & > div {
           display: flex;
           align-items: center;
           gap: 15px;
@@ -1601,7 +1641,7 @@
     }
 
     .userData {
-      background-image: url('../assets/imgs/apng/板块背景-左中.png');
+      background-image: url("../assets/imgs/apng/板块背景-左中.png");
     }
 
     // 维修订单
@@ -1611,9 +1651,9 @@
       row-gap: 5px;
       column-gap: 5px;
       flex-direction: column;
-      background-image: url('../assets/imgs/apng/板块背景-右下.png');
+      background-image: url("../assets/imgs/apng/板块背景-右下.png");
 
-      &>.repairTitle {
+      & > .repairTitle {
         display: flex;
         column-gap: 5px;
         font-family: PingFang SC;
@@ -1622,7 +1662,7 @@
         color: #00fffc;
         text-align: center;
 
-        >div {
+        > div {
           width: 111px;
           height: 24px;
           background: rgba(0, 129, 144, 0.2);
@@ -1652,7 +1692,7 @@
           color: #fff;
           text-align: center;
 
-          >div {
+          > div {
             width: 111px;
             height: 24px;
             background: rgba(0, 129, 144, 0.2);
@@ -1672,25 +1712,25 @@
     // background-position-y: 32px;
     background-repeat: no-repeat;
 
-    &>div {
+    & > div {
       margin: auto;
       position: relative;
       width: 850px;
     }
 
-    &>div>div {
+    & > div > div {
       position: absolute;
       width: 220px;
       height: 220px;
       background-size: 100% 100%;
-      transition: all .5s;
+      transition: all 0.5s;
 
       &:hover {
         transform: scale(1.08);
         z-index: 6;
 
         &::before {
-          content: ' ';
+          content: " ";
           width: 100px;
           height: 120px;
           position: absolute;
@@ -2014,7 +2054,7 @@
   flex-direction: column;
   color: #fff;
 
-  &>div {
+  & > div {
     display: flex;
     gap: 15px;
     height: 30px;
@@ -2045,14 +2085,14 @@
       align-items: center;
       position: relative;
 
-      &>div:first-child {
+      & > div:first-child {
         height: 10px;
         border-radius: 10px;
         background: #00d2ff;
         animation: width-x 5s linear infinite;
       }
 
-      &>div:last-child {
+      & > div:last-child {
         width: 100%;
         text-align: center;
         position: absolute;
@@ -2061,7 +2101,8 @@
         font-size: 22px;
         color: #061222;
         -webkit-text-stroke: 1px #11c7df;
-        text-shadow: 0 2px #11c7df, 2px 0 #11c7df, -2px 0 #11c7df, 0 -2px #11c7df;
+        text-shadow: 0 2px #11c7df, 2px 0 #11c7df, -2px 0 #11c7df,
+          0 -2px #11c7df;
       }
     }
   }
