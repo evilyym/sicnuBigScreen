@@ -359,7 +359,7 @@
               </div>
 
               <div v-show="nav2 == 5">
-                <div style="margin-left: 20px;" >
+                <div style="margin-left: 20px;">
                   <div></div>
                   <p>数据驾驶舱</p>
                   <p>2024年7月</p>
@@ -592,31 +592,23 @@
         <div class="repairBox">
           <div class="repairTitle">
             <div>姓名</div>
-            <div>分类</div>
+            <!-- <div>分类</div> -->
             <div>订单数量</div>
             <div>完成数</div>
           </div>
           <div style="overflow: hidden">
             <div class="repairTable transformBox">
-              <div class="repairTableItem" v-for="itme in [
-                1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18,
-                19, 20,
-              ]">
-                <div>姓名</div>
-                <div>分类</div>
-                <div>{{ itme }}</div>
-                <div>完成数</div>
+              <div class="repairTableItem" :key="itme.value1" v-for="itme in allData.kettle_repair">
+                <div>{{ itme.value2 }}</div>
+                <div>{{ itme.value1 }}</div>
+                <div>{{ itme.value3 }}</div>
               </div>
             </div>
             <div style="margin-top: 5px" class="repairTable transformBox">
-              <div class="repairTableItem" v-for="itme in [
-                1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18,
-                19, 20,
-              ]">
-                <div>姓名{{ itme }}</div>
-                <div>分类{{ itme }}</div>
-                <div>{{ itme }}</div>
-                <div>{{ itme * 5 }}</div>
+              <div class="repairTableItem" :key="itme.value1 + '2'" v-for="itme in allData.kettle_repair">
+                <div>{{ itme.value2 }}</div>
+                <div>{{ itme.value1 }}</div>
+                <div>{{ itme.value3 }}</div>
               </div>
             </div>
           </div>
@@ -919,6 +911,8 @@ if (/dev-/.test(location.hostname)) {
   jumpAddress = 'http://172.24.65.43';
   hpptAddress = 'http://172.24.65.43';
 }
+jumpAddress = '';
+hpptAddress = '';
 
 if (route.query?.ym == 7) {
   hpptAddress = ''
@@ -968,6 +962,7 @@ const allData = ref({
   logistics_info_construction: {},
   logistics_personnel: {},
   kettle_apartment_data: {},
+  kettle_repair: [],
 })
 
 const bodyMounted = () => {

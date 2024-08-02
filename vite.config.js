@@ -36,7 +36,7 @@ export default defineConfig({
   server: {
     proxy: {
       "/data_screen": {
-        target: "https://dev-sicnu-data-screen.goliveplus.cn/",
+        target: "https://dataease.sicnu.edu.cn/",
         changeOrigin: true,
         // rewrite: (path) => path.replace(/^\/yAxios\/api/, ""),
       },

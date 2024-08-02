@@ -147,7 +147,6 @@ watch(
 watch(
   () => props.end,
   () => {
-    console.log(111);
     if (props.autoPlay) {
       startCount();
     }
