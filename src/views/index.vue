@@ -209,26 +209,26 @@
         <div class="foodBox">
           <div class="foodData">
             <div>
-              <div class="foodDataNum">￥6373</div>
+              <div class="foodDataNum">￥{{ allData.canteen_data.total_amount }}</div>
               <div class="foodTitle">交易额</div>
             </div>
             <div>
-              <div class="foodDataNum">52</div>
+              <div class="foodDataNum">{{ allData.canteen_data.total_num }}</div>
               <div class="foodTitle">订单量</div>
             </div>
             <div>
-              <div class="foodDataNum">￥122</div>
+              <div class="foodDataNum">￥{{ allData.canteen_data.total_average }}</div>
               <div class="foodTitle">客单价</div>
             </div>
           </div>
           <div class="payChannel"></div>
           <!-- top5排行 -->
           <div class="chartsContent">
-            <div v-for="(itme, index) in arrTab" style="margin-top: 0px">
-              <div class="chartsContentText">{{ itme.name }}</div>
+            <div v-for="(itme, index) in canteenRankList" style="margin-top: 0px">
+              <div class="chartsContentText">{{ itme.area_name }} <span>{{ itme.area_name }}</span></div>
               <div class="chartsContentBar">
-                <div :style="{ width: itme.balance / 20 + '%' }"></div>
-                <div class="chartsContentVal">{{ itme.balance }}</div>
+                <div :style="{ width: itme.amount / allData.canteen_data.total_amount * 100 + '%' }"></div>
+                <div class="chartsContentVal">{{ itme.amount }}</div>
               </div>
             </div>
           </div>
@@ -847,12 +847,24 @@ const sortVal = (val1, val2) => {
 arrTab.value.sort(sortVal);
 
 const arr = ref(array);
-
+// allData.canteen_data.canteen_rank_list.slice(0, 5)
+const canteenRankList = ref([]);
+const canteenRankListNum = ref(0);
 const nav = ref(0);
 const nav2 = ref(1);
 const navStart = ref(true);
 const isFull = ref(document.fullscreenElement !== null);
 
+const cateringMoving = () => {
+  const lenNew = canteenRankListNum.value * 5;
+  const lenNum = allData.value.canteen_data.canteen_rank_list.length;
+  lenNew > lenNum && (canteenRankListNum.value = 0)
+  canteenRankList.value = allData.value.canteen_data.canteen_rank_list.slice(lenNew, lenNew + 5)
+  canteenRankListNum.value++
+}
+setInterval(() => {
+  cateringMoving()
+}, 5000)
 // setInterval(() => { navStart.value && nav.value++ && nav.value == 5 && (nav.value = 0) }, 15000)
 setTimeout(() => {
   nav2.value < 5 ? (nav2.value++) : (nav2.value = 1);
@@ -958,6 +970,7 @@ const getWeek = () => {
   return "星期" + "日一二三四五六".charAt(new Date().getDay());
 };
 const allData = ref({
+  canteen_data: {},
   life_user_situation: {},
   logistics_info_construction: {},
   logistics_personnel: {},
@@ -1031,6 +1044,7 @@ const getAllData = () =>
     .then((data) => {
       allData.value = data.data.data;
       bodyMounted();
+      cateringMoving();
     })
 
 getAllData()

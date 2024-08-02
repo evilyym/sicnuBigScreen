@@ -632,7 +632,6 @@
             }
           }
           & > div:nth-child(5) > div {
-
             &:nth-child(1) > div {
               background-image: url(../assets/imgs/images/icon/数据驾驶舱.png);
             }
@@ -1584,6 +1583,9 @@
             font-weight: 600;
             font-size: 20px;
             color: #fefefe;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
           }
 
           .foodTitle {
@@ -2071,6 +2073,20 @@
     .chartsContentText {
       width: 50px;
       flex: none;
+      cursor: pointer;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      &:hover{
+        span{
+          display: block;
+          position: absolute;
+          top: -100%;
+          background-color: #00d2ff;
+          padding: 2px 5px;
+          border-radius: 5px;
+        }
+      }
     }
 
     .chartsContentVal {
