@@ -245,8 +245,8 @@
         <div class="mainBox">
           <div class="mainApp" v-show="nav == 0">
             <div class="itmeTitle">信息化进程</div>
-            <div class="appList">
-              <div v-show="nav2 == 1">
+            <div class="appList" ref="appListDom">
+              <div v-show="nav2">
                 <div>
                   <div></div>
                   <p>智慧商圈</p>
@@ -274,7 +274,7 @@
                 </div>
               </div>
 
-              <div v-show="nav2 == 2">
+              <div v-show="nav2">
                 <div>
                   <div></div>
                   <p>能慧通</p>
@@ -302,7 +302,7 @@
                 </div>
               </div>
 
-              <div v-show="nav2 == 3">
+              <div v-show="nav2">
                 <div>
                   <div></div>
                   <p>自习室预约</p>
@@ -330,7 +330,7 @@
                 </div>
               </div>
 
-              <div v-show="nav2 == 4">
+              <div v-show="nav2">
                 <div>
                   <div></div>
                   <p>智慧公寓</p>
@@ -358,7 +358,7 @@
                 </div>
               </div>
 
-              <div v-show="nav2 == 5">
+              <div v-show="nav2">
                 <div style="margin-left: 20px;">
                   <div></div>
                   <p>数据驾驶舱</p>
@@ -390,7 +390,7 @@
                   <p>20216上线</p>
                 </div> -->
               </div>
-
+              <p class="appListSole"></p>
             </div>
           </div>
 
@@ -829,7 +829,7 @@
 <script setup>
 import * as echarts from "echarts";
 import autofit from "autofit.js";
-import { ref, watch } from "vue";
+import { ref, watch, onMounted } from "vue";
 import array from "../arr";
 
 import array1 from "../arrTab";
@@ -843,6 +843,10 @@ const arrTab = ref(array1[1].list[1].list.splice(0, 5));
 const sortVal = (val1, val2) => {
   return val2.balance - val1.balance;
 };
+
+onMounted(() => {
+  getAppVN()
+})
 
 arrTab.value.sort(sortVal);
 
@@ -865,22 +869,54 @@ const cateringMoving = () => {
 setInterval(() => {
   cateringMoving()
 }, 5000)
+const appListDom = ref();
+const counter = ref(0);
 // setInterval(() => { navStart.value && nav.value++ && nav.value == 5 && (nav.value = 0) }, 15000)
 setTimeout(() => {
-  nav2.value < 5 ? (nav2.value++) : (nav2.value = 1);
-}, 15000)
+  // appListDom.value.style.background = "red"
+  counter.value++;
+  // appListDom.value.scrollLeft = 172 * 3;
+  // nav2.value < 5 ? (nav2.value++) : (nav2.value = 1);
+}, 1500)
 watch(
-  () => nav2.value,
+  () => counter.value,
   () => {
-    let d = 15000;
-    if (nav2.value == 5) {
-      d = 3000;
+    let d = 3000;
+    if (counter.value == 0) {
+      d = 15000;
     }
     setTimeout(() => {
-      nav2.value++ && nav2.value == 6 && (nav2.value = 1)
+      counter.value++ && counter.value > 21 && (counter.value = 1)
     }, d)
+    appListDom.value.childNodes[5].style.width = 50 + 172 * (counter.value - 1) + 'px';
+
+    appListDom.value.scrollLeft = 172 * (counter.value - 5);
+    allListVN.value[counter.value - 1].style.opacity = 1;
   }
 );
+const allListVN = ref([]);
+const getAppVN = () => {
+  for (let index = 0; index < appListDom.value.childNodes.length && index < 5; index++) {
+    for (let j = 0; j < appListDom.value.childNodes[index].childNodes.length && j < 5; j++) {
+      if (appListDom.value.length > 20) return false
+      // appListDom.value.childNodes[index].childNodes[j].style.opacity = 0;
+      allListVN.value.push(appListDom.value.childNodes[index].childNodes[j])
+    }
+  }
+}
+
+// watch(
+//   () => nav2.value,
+//   () => {
+//     let d = 15000;
+//     if (nav2.value == 5) {
+//       d = 3000;
+//     }
+//     setTimeout(() => {
+//       nav2.value++ && nav2.value == 6 && (nav2.value = 1)
+//     }, d)
+//   }
+// );
 
 autofit.init();
 
