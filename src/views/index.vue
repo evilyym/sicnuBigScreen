@@ -846,6 +846,7 @@ const sortVal = (val1, val2) => {
 
 onMounted(() => {
   getAppVN()
+  setApplistSt()
 })
 
 arrTab.value.sort(sortVal);
@@ -886,12 +887,13 @@ watch(
       d = 15000;
     }
     setTimeout(() => {
-      counter.value++ && counter.value > 21 && (counter.value = 1)
+      counter.value++ && counter.value > 21 && (counter.value = 1) && setApplistSt()
     }, d)
     appListDom.value.childNodes[5].style.width = 50 + 172 * (counter.value - 1) + 'px';
 
     appListDom.value.scrollLeft = 172 * (counter.value - 5);
     allListVN.value[counter.value - 1].style.opacity = 1;
+    allListVN.value[counter.value - 1].style.transform = 'translateY(0px)';
   }
 );
 const allListVN = ref([]);
@@ -903,6 +905,19 @@ const getAppVN = () => {
       allListVN.value.push(appListDom.value.childNodes[index].childNodes[j])
     }
   }
+}
+// 归零者
+const setApplistSt = () => {
+  allListVN.value.forEach((i, index) => {
+    if (index < 20) {
+      i.style.opacity = 0;
+      if ((index + 1) % 2 == 1) {
+        i.style.transform = 'translateY(100px)';
+      } else {
+        i.style.transform = 'translateY(-100px)';
+      }
+    }
+  })
 }
 
 // watch(
